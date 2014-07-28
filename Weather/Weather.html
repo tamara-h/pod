@@ -1,6 +1,6 @@
 <html>
     <script>
-    function getweather() {
+    function gettemp() {
         var url = "http://api.openweathermap.org/data/2.5/weather" +
             "?q=Swansea,uk&amp;units=metric";
    
@@ -9,11 +9,36 @@
         request.send(null);
         var reply = JSON.parse(request.responseText);
         var temperature = Math.round(reply.main.temp - 272.15);
+  
+		
+		request = new XMLHttpRequest();
+		url = "http://10.150.85.50:8000/temp=" + temperature;
+		request.open("GET", url, false);
+        request.send(null);
+        alert("Temp = " + temperature);
+    }
+	
+	function getweather() {
+        var url = "http://api.openweathermap.org/data/2.5/weather" +
+            "?q=Swansea,uk&amp;units=metric";
+   
+        var request = new XMLHttpRequest();
+        request.open("GET", url, false);
+        request.send(null);
+        var reply = JSON.parse(request.responseText);
         var description = reply.weather[0].description
-        alert("Temp = " + temperature + "C\n" + description);
+		
+		request = new XMLHttpRequest();
+		url = "http://10.150.85.50:8000/weather=" + description;
+		request.open("GET", url, false);
+        request.send(null);
+        alert(description);
     }
     </script>
     <body>
+        <input type="submit" value="Temperature" onclick="gettemp()">
+		
         <input type="submit" value="Weather" onclick="getweather()">
+		
     </body>
 </html>
