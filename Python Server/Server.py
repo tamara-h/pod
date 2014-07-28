@@ -12,7 +12,7 @@ def hello_world_app(environ, start_response):
     api.players.name.ban("exterminationguy", "Test")
     '''
     print("Request URL {0}".format(serv.util.request_uri(environ)))    
-    return [b"Hello World"]
+    return [b"If this text displays, server was accessed successfully"]
 
 httpd = make_server('', 8000, hello_world_app)
 print("Serving on port 8000...")
