@@ -1,0 +1,19 @@
+<html>
+    <script>
+    function getweather() {
+        var url = "http://api.openweathermap.org/data/2.5/weather" +
+            "?q=Swansea,uk&amp;units=metric";
+   
+        var request = new XMLHttpRequest();
+        request.open("GET", url, false);
+        request.send(null);
+        var reply = JSON.parse(request.responseText);
+        var temperature = Math.round(reply.main.temp - 272.15);
+        var description = reply.weather[0].description
+        alert("Temp = " + temperature + "C\n" + description);
+    }
+    </script>
+    <body>
+        <input type="submit" value="Weather" onclick="getweather()">
+    </body>
+</html>
