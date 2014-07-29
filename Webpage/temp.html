@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pod</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="c:/users/maddy/documents/yrs/bootstrap.css" rel="stylesheet" media="screen">
+  </head>
+  <body>
+  	<div class="slider">
+  	<input type="range" min="10" max="30" value="18" step="1" onchange="showValue(this.value)" />
+	<span id="range">18</span>
+	</div>
+	<script type="text/javascript">
+	function showValue(newValue)
+	{
+	document.getElementById("range").innerHTML=newValue;
+	}
+</script>

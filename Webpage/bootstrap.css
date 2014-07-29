@@ -4,20 +4,14 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
-
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
-b, strong {
-  color:green;
-}
-
-
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
 body {
-  margin: 20;
+  margin: 0;
 }
 article,
 aside,
@@ -1934,7 +1928,7 @@ pre code {
     width: 41.66666667%;
   }
   .col-lg-4 {
-    width: 15%;
+    width: 33.33333333%;
   }
   .col-lg-3 {
     width: 25%;
@@ -3763,9 +3757,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .tab-content > .tab-pane {
   display: none;
-}
-.tab-pane > .a {
-  display: block;
 }
 .tab-content > .active {
   display: block;
