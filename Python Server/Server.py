@@ -2,12 +2,9 @@ from wsgiref.simple_server import make_server
 from enum import Enum
 import wsgiref as serv
 import API2 as JAPI
-import random
 import math
 import copy
 import json
-
-pLog = []
 
 def print(*args, **kwargs):
     __builtins__.print(*args, **kwargs)
@@ -25,7 +22,6 @@ class server():
         status = '200 OK' # HTTP Status
         headers = [('Content-type', 'text/plain; charset=utf-8'), ('Access-Control-Allow-Origin', '*')] # HTTP Headers
         start_response(status, headers)
-
 
         #print("Request URL {0}".format(serv.util.request_uri(environ)))
         requestURL = serv.util.request_uri(environ)
@@ -134,9 +130,9 @@ class serverInterface():
         elif self.indoorTemperature > self.idealTemperature:
             self.actionIf(self.house["fireOn"], self.extinguishFire)
 
-        self.actionIf(bufferDiffers(buffer, "windowsOpen"), self.openWindows if buffer["windowsOpen"] else self.closeWindows)
-        self.actionIf(bufferDiffers(buffer, "fireOn"), self.lightFire if buffer["fireOn"] else self.extinguishFire)
-        self.actionIf(bufferDiffers(buffer, "doorsOpen"), self.openDoors if buffer["doorsOpen"] else self.closeDoors)
+        self.actionIf(self.bufferDiffers(buffer, "windowsOpen"), self.openWindows if buffer["windowsOpen"] else self.closeWindows)
+        self.actionIf(self.bufferDiffers(buffer, "fireOn"), self.lightFire if buffer["fireOn"] else self.extinguishFire)
+        self.actionIf(self.bufferDiffers(buffer, "doorsOpen"), self.openDoors if buffer["doorsOpen"] else self.closeDoors)
         
     def bufferDiffers(self, buffer, val):
         if self.house[val] != buffer[val]:
