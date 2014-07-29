@@ -118,11 +118,13 @@ class serverInterface():
         
         # OPEN WINDOWS IF OUTSIDE TEMPERATURE IS MORE DESIRABLE THAN INSIDE TEMPERATURE >5*
         if abs(self.indoorTemperature - self.idealTemperature) - abs(self.temperature - self.idealTemperature) > 5:
-            buffer[""]
+            buffer["windowsOpen"]   = False
             self.actionIf(self.house["windowsOpen"], self.closeWindows)
 
         # CLOSE DOORS & WINDOWS FOR RAIN
         if self.weather == Weather.Rainy:
+            buffer["windowsOpen"]   = False
+            buffer["doorsOpen"]     = False
             self.actionIf(self.house["windowsOpen"], self.closeWindows)
             self.actionIf(self.house["doorsOpen"], self.closeDoors)
 
