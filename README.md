@@ -12,12 +12,13 @@ This is our project. It is a way to control your house, but without actually mov
 ~*Discussion thing*~
 
 Oops, I didn't realise about the temperature limits; I'll have to adjust the values tomorrow as some of the features would theoretically require it to go above 27 too.
-
+--> temp range can be viewed under webpage/temp.html but can be increased if need be- can also be changed to a slider but that looked gross
 I tidied some of the HTML and JS up and moved some about to make it a bit easier to navigate and edit should the server IP change. I've moved some functions to "/js/pod.js" and updated all code to match that. I've not added anything in terms of content, though. I also sorted the CSS and JS imports out in the headers and downloaded a local copy of the bootstrap and jQuery JavaScript files and included them in every document. ~ Ashley
+--> cool . We may also want to put the python scripts running the Twilio stuff with the other python stuff but that can be done tomorrow easy B)
 
 
 
 
-matt smells
+matt smells really bad
 
 Created by Tamara, Maddy, Matt, Ashley and Luca
