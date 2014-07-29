@@ -28,3 +28,37 @@
 
       </div>
     </div>
+	
+	<div class="page-header">
+  <p><h3>Doors</h3></p>
+  <span id="doorStatus" class="label label-success">Fail</span>
+  
+<script>
+
+function doorsStatus() {
+	var request = new XMLHttpRequest();
+	var url = "http://10.150.85.50:8000/ignore=x";
+	request.open("GET", url, false);
+    request.send(null);
+	var data = JSON.parse(request.responseText);
+	alert(data);
+	//var doorIsOpen = data.houseStatus.doorsOpen;
+	//var door = document.getElementById("doorStatus");
+	//door.innerHTML = "bye";
+}
+
+doorsStatus();
+
+
+</script>
+
+</body>
+</html>  
+  
+  
+  
+  
+  
+  
+  
+  
