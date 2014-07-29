@@ -90,7 +90,7 @@ function gettemp() {
       //  alert("Temp = " + temperature);
 	}
 	
-function indoorTemp() {
+function indoorTemp(temp) {
 		var request = new XMLHttpRequest();
 		url = "http://10.150.85.50:8000/indoorTemp=" + temp;
 		request.open("GET", url, false);

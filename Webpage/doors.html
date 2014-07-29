@@ -32,12 +32,14 @@
 	<div class="page-header">
   <p><h3>Door Status</h3></p>
   <span id="doorStatus" class="label label-success">Fail</span>
-  
   <div class="btn-group">
   <button type="button" class="btn btn-default" onclick="doorsStatus(True)">Open Doors</button>
-  <button type="button" class="btn btn-default" onclick="doorsStatus(False)">Close Doors</button>
-  
-  
+  <button type="button" class="btn btn-default" onclick="doorsStatus(False)">Lock Doors</button>
+  <!-- I thought it would make more sense to say lock doors than close doors? but for the purposes of showing in minecraft we can have the door open or closed-->
+  <br>
+  <br>
+  <br>
+  <div class="alert alert-warning" role="alert"><b>Alert!</b> You have gone half an hour without locking your door (call python script to send text also here?)</div> 
 <script>
 
 function doorsStatus() {
@@ -62,9 +64,10 @@ function doorsStatus() {
 doorsStatus();
 
 function doorChange(state){
-
-
-
+		var request = new XMLHttpRequest();
+		url = "http://10.150.85.50:8000/doorIsOpen=" + state;
+		request.open("GET", url, false);
+        request.send(null);
 }
 
 
