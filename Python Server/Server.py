@@ -41,14 +41,30 @@ class server():
 
     @staticmethod
     def formReply(var, val):
-        returnStr = bytes("Server accessed successfully.\nYour request was: " + var + " = " + val + "."
-            + "\n\nCurrent Variables Held in Server:"
-            + "\n   Target Ideal Temperature:\t" + str(server.mcServer.temperature) + "*C"
-            + "\n   Temperature:\t\t\t" + str(server.mcServer.temperature) + "*C"
-            + "\n   Indoor Temp:\t\t\t" + str(server.mcServer.indoorTemperature) + "*C"
-            + "\n   Weather: " + str(server.mcServer.weather)
-            + "\n   House Information:\n    " + "\n    ".join(["{0:15.15}: \t\t{1}".format(key, "Yes" if value else "No") for key, value in server.mcServer.house.items()])
-            + "\n\n\nServer Log for Request: \n    " + "\n    ".join(server.pLog), 'utf-8')
+        json = True
+
+        if json:
+            returnStr = bytes(
+                    '{' + "\n" +
+                    '\t"temperature": ' + str(server.mcServer.temperature) + ',\n' +
+                    '\t"idealTemperature": ' + str(server.mcServer.idealTemperature) + ',\n' +
+                    '\t"indoorTemperature": ' + str(server.mcServer.indoorTemperature) +  ',\n' +
+                    '\t"weather": "' + ('sun' if (server.mcServer.indoorTemperature == Weather.Sunny) else 'rainy') + '",\n' +
+                    '\t"houseStatus": {' + '\n' +
+                    ''.join(['\t\t"{}": {},\n'.format(key, 'true' if value else 'false') for key, value in server.mcServer.house.items()])
+                    + '\t}'
+                    + '\n'
+                    '}'
+                , 'utf-8')
+        else:
+            returnStr = bytes("Server accessed successfully.\nYour request was: " + var + " = " + val + "."
+                + "\n\nCurrent Variables Held in Server:"
+                + "\n   Target Ideal Temperature:\t" + str(server.mcServer.idealTemperature) + "*C"
+                + "\n   Temperature:\t\t\t" + str(server.mcServer.temperature) + "*C"
+                + "\n   Indoor Temp:\t\t\t" + str(server.mcServer.indoorTemperature) + "*C"
+                + "\n   Weather: " + str(server.mcServer.weather)
+                + "\n   House Information:\n    " + "\n    ".join(["{0:15.15}: \t\t{1}".format(key, "Yes" if value else "No") for key, value in server.mcServer.house.items()])
+                + "\n\n\nServer Log for Request: \n    " + "\n    ".join(server.pLog), 'utf-8')
         return [returnStr]
 
 class Weather(Enum):
@@ -83,12 +99,12 @@ class serverInterface():
         
     def setTemperature(self, temp):
         print("[World Status Update] Temperature is: " + temp)
-        self.temperature = temp
+        self.temperature = int(temp)
         self.worldUpdate()
 
     def setIndoorTemp(self, temp):
         print("[World Status Update] Indoor Temperature is " + temp)
-        self.indoorTemperature = temp
+        self.indoorTemperature = int(temp)
         self.worldUpdate()
         
 
@@ -114,6 +130,13 @@ class serverInterface():
             else:
                 print("[House Info] Doors Already Closed")
 
+        if (self.idealTemperature - self.indoorTemperature) > 3:
+            print("[House Info] Temperature is more than 3*C below ideal temperature. Engaging fire.")
+            fireOn = True
+            self.lightFire()
+        elif (self.idealTemperature > self.indoorTemperature):
+            print("[House Info] Temperature is hotter than the ideal temperature, fire put out.")
+
     # Abstractions
     def openWindows(self):
         print("[House Change] Opening Windows")
@@ -126,8 +149,8 @@ class serverInterface():
 
     def lightFire(self):
         print("[House Change] Lighting fire")
-        self.enableRedstone("119 71 97")
-        self.disableRedstone("119 71 97")
+        self.enableRedstone("123 71 97")
+        self.disableRedstone("123 71 97")
 
 
     def openDoors(self):
