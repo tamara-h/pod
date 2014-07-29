@@ -30,8 +30,13 @@
     </div>
 	
 	<div class="page-header">
-  <p><h3>Doors</h3></p>
+  <p><h3>Door Status</h3></p>
   <span id="doorStatus" class="label label-success">Fail</span>
+  
+  <div class="btn-group">
+  <button type="button" class="btn btn-default" onclick="doorsStatus(True)">Open Doors</button>
+  <button type="button" class="btn btn-default" onclick="doorsStatus(False)">Close Doors</button>
+  
   
 <script>
 
@@ -41,13 +46,30 @@ function doorsStatus() {
 	request.open("GET", url, false);
     request.send(null);
 	var data = JSON.parse(request.responseText);
-	alert(data);
-	//var doorIsOpen = data.houseStatus.doorsOpen;
-	//var door = document.getElementById("doorStatus");
-	//door.innerHTML = "bye";
+	//alert(data);
+	var doorIsOpen = data.houseStatus.doorsOpen;
+	var door = document.getElementById("doorStatus");
+	
+	if (doorIsOpen) {
+		door.innerHTML = "Open";
+	} else {
+		door.innerHTML = "Close";
+	}
+	
+	
 }
 
 doorsStatus();
+
+function doorChange(state){
+
+
+
+}
+
+
+
+
 
 
 </script>
