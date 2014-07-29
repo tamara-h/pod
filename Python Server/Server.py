@@ -46,7 +46,8 @@ class server():
         returnStr = bytes(json.dumps(dict(temperature = server.mcServer.temperature, idealTemperature = server.mcServer.idealTemperature,
                         indoorTemperature = server.mcServer.indoorTemperature,
                         weather = "sun" if server.mcServer.weather == Weather.Sunny else "rain",
-                        houseStatus = server.mcServer.house)), 'utf-8')
+                        houseStatus = server.mcServer.house,
+                        printedData = server.pLog)), 'utf-8')
         return [returnStr]
 
 class Weather(Enum):
@@ -72,18 +73,20 @@ class serverInterface():
 
     def resolveRequest(self, var, val):
         # Switch var
+        # Sensory information updates
         if var == "temp":
             self.setTemperature(val)
         elif var == "weather":
             self.setWeather(val)
         elif var == "indoortemp":
             self.setIndoorTemp(val)
+        # Forced house updates
         elif var == "doorsopen":
-            self.openDoors() if val == "true" else self.closeDoors()
+            self.openDoors()    if val == "true" else self.closeDoors()
         elif var == "windowsopen":
-            self.openWindows() if val == "true" else self.closeWindows()
+            self.openWindows()  if val == "true" else self.closeWindows()
         elif var == "fireon":
-            self.lightFire() if val == "true" else self.extinguishFire()
+            self.lightFire()    if val == "true" else self.extinguishFire()
         
         
     def setTemperature(self, temp):
@@ -101,10 +104,8 @@ class serverInterface():
         print("[World Status Update] Weather is: " + weather)
         if "rain" in weather:
             self.weather = Weather.Rainy
-            self.api.server.run_command("weather rain")
         else:
             self.weather = Weather.Sunny
-            self.api.server.run_command("weather clear")
         self.worldUpdate()
 
     def worldUpdate(self):
@@ -114,25 +115,33 @@ class serverInterface():
         
         # OPEN WINDOWS IF OUTSIDE TEMPERATURE IS MORE DESIRABLE THAN INSIDE TEMPERATURE >5*
         if abs(self.indoorTemperature - self.idealTemperature) - abs(self.temperature - self.idealTemperature) > 5:
-            buffer["windowsOpen"]   = False
-            self.actionIf(self.house["windowsOpen"], self.closeWindows)
+            buffer["windowsOpen"]   = True
+            buffer["fireOn"]        = False
 
         # CLOSE DOORS & WINDOWS FOR RAIN
         if self.weather == Weather.Rainy:
             buffer["windowsOpen"]   = False
             buffer["doorsOpen"]     = False
-            self.actionIf(self.house["windowsOpen"], self.closeWindows)
-            self.actionIf(self.house["doorsOpen"], self.closeDoors)
 
         # TEMPERATURE SENSITIVE FIRE
         if self.idealTemperature - self.indoorTemperature > 3:
-            self.actionIf(not self.house["fireOn"], self.lightFire)
+            buffer["fireOn"]        = True
         elif self.indoorTemperature > self.idealTemperature:
-            self.actionIf(self.house["fireOn"], self.extinguishFire)
+            buffer["fireOn"]        = False
 
-        self.actionIf(self.bufferDiffers(buffer, "windowsOpen"), self.openWindows if buffer["windowsOpen"] else self.closeWindows)
-        self.actionIf(self.bufferDiffers(buffer, "fireOn"), self.lightFire if buffer["fireOn"] else self.extinguishFire)
-        self.actionIf(self.bufferDiffers(buffer, "doorsOpen"), self.openDoors if buffer["doorsOpen"] else self.closeDoors)
+        # UPDATE WEATHER
+        if self.weather == Weather.Sunny:
+            self.api.server.run_command("weather clear")
+        else:
+            self.api.server.run_command("weather rain")
+        
+        # Reflect buffer changes in-game
+        self.actionIf(self.bufferDiffers(buffer, "windowsOpen"  ), self.openWindows if buffer["windowsOpen"]    else self.closeWindows  )
+        self.actionIf(self.bufferDiffers(buffer, "fireOn"       ), self.lightFire   if buffer["fireOn"]         else self.extinguishFire)
+        self.actionIf(self.bufferDiffers(buffer, "doorsOpen"    ), self.openDoors   if buffer["doorsOpen"]      else self.closeDoors    )
+
+        # Now merge buffer into house
+        self.house = buffer
         
     def bufferDiffers(self, buffer, val):
         if self.house[val] != buffer[val]:
