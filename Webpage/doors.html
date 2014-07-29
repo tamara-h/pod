@@ -39,7 +39,7 @@
   <br>
   <br>
   <br>
-  <div class="alert alert-warning" role="alert"><b>Alert!</b> You have gone half an hour without locking your door (call python script to send text also here?)</div> 
+  <div class="alert alert-warning" role="alert" id="Alert"></div> 
 <script>
 
 function doorsStatus() {
@@ -48,16 +48,22 @@ function doorsStatus() {
 	request.open("GET", url, false);
     request.send(null);
 	var data = JSON.parse(request.responseText);
-	//alert(data);
 	var doorIsOpen = data.houseStatus.doorsOpen;
+	//need data to be send saying whether user is in house
+	//var userOutside = data.houseStatus.userNotInHouse
 	var door = document.getElementById("doorStatus");
 	
 	if (doorIsOpen) {
+		//if (userOutside){
+			//call python script to send alert text
+		//}	
+		var ShowAlert = document.GetElementbyId("Alert");
+		ShowAlert.innerHTML = "<b>Alert!</b> You have gone half an hour without locking your door"
+		
 		door.innerHTML = "Open";
 	} else {
 		door.innerHTML = "Close";
 	}
-	
 	
 }
 
@@ -69,12 +75,6 @@ function doorChange(state){
 		request.open("GET", url, false);
         request.send(null);
 }
-
-
-
-
-
-
 </script>
 
 </body>
