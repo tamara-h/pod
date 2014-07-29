@@ -1,6 +1,45 @@
 
 <!DOCTYPE html>
 <html>
+  <script>
+ <!-- okay this is the start of my JavaScript code the example of a call to it (this is a button but you can mess with whatever else idk is
+ <!--		<input type="submit" value="Temperature" onclick="gettemp()">  --> 
+
+    function gettemp() {
+        var url = "http://api.openweathermap.org/data/2.5/weather" +
+            "?q=Swansea,uk&amp;units=metric";
+   
+        var request = new XMLHttpRequest();
+        request.open("GET", url, false);
+        request.send(null);
+        var reply = JSON.parse(request.responseText);
+        var temperature = Math.round(reply.main.temp - 272.15);
+  
+		
+		request = new XMLHttpRequest();
+		url = "http://10.150.85.50:8000/temp=" + temperature;
+		request.open("GET", url, false);
+        request.send(null);
+        alert("Temp = " + temperature);
+    }
+	
+	function getweather() {
+        var url = "http://api.openweathermap.org/data/2.5/weather" +
+            "?q=Swansea,uk&amp;units=metric";
+   
+        var request = new XMLHttpRequest();
+        request.open("GET", url, false);
+        request.send(null);
+        var reply = JSON.parse(request.responseText);
+        var description = reply.weather[0].description
+		
+		request = new XMLHttpRequest();
+		url = "http://10.150.85.50:8000/weather=" + description;
+		request.open("GET", url, false);
+        request.send(null);
+        alert(description);
+    }
+    </script>
   <head>
     <title>Pod</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
