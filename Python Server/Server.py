@@ -34,7 +34,8 @@ class server():
         val = rURLComponents[2]
         print("Variable: " + var + " has been set to value: " + val)
         if not var == "ignore":
-            server.mcServer.resolveRequest(var.lower(), val.lower())
+            pass
+            #server.mcServer.resolveRequest(var.lower(), val.lower())
         else:
             print("Ignored request, responding with data.")
         
@@ -65,11 +66,11 @@ class serverInterface():
         self.house["doorsOpen"]     = False
         self.house["fireOn"]        = False
         
-        mc_conn = JAPI.Connection()    
-        self.api = JAPI.JSONAPI(mc_conn)
+        #mc_conn = JAPI.Connection()    
+        #self.api = JAPI.JSONAPI(mc_conn)
 
         # Initialise everything
-        self.worldUpdate()
+        #self.worldUpdate()
 
     def resolveRequest(self, var, val):
         # Switch var

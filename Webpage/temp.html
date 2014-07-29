@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html>
-
-
   <head>
     <title>Pod</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +9,6 @@
   <body>
     <div class="navbar-wrapper">
       <div class="container">
-
         <div class="navbar navbar-inverse navbar-static-top" role="navigation">
           <div class="container">
             <div class="navbar-header">
@@ -25,44 +22,40 @@
             </div>
           </div>
         </div>
-
       </div>
+    </div>
+    <!--
+    <div class="slider">
+      <input type="range" min="10" max="30" value="18" step="1" onchange="showValue(this.value)" />
+      <span id="range">18</span>
+  	</div>
+    -->
+	
+    <div class="page-header">
+      <p><h3>Outdoor Temperature: <g id="OutdoorTemp"></g>&deg;C</h3></p>
+    </div>
+    
+    <div class="page-header">
+      <h3>Temperature</h3><small>Select a temperature for inside your home</small>
+    </div>
+	
+    <div class="btn-group">
+      <button type="button" class="btn btn-default" onclick="indoorTemp(15)">15&deg;C</button>
+      <button type="button" class="btn btn-default" onclick="indoorTemp(16)">16&deg;C</button>
+      <button type="button" class="btn btn-default" onclick="indoorTemp(17)">17&deg;C</button>
+      <button type="button" class="btn btn-default" onclick="indoorTemp(18)">18&deg;C</button>
+      <button type="button" class="btn btn-default" onclick="indoorTemp(19)">19&deg;C</button>
+      <button type="button" class="btn btn-default" onclick="indoorTemp(20)">20&deg;C</button>
+      <button type="button" class="btn btn-default" onclick="indoorTemp(21)">21&deg;C</button>
+      <button type="button" class="btn btn-default" onclick="indoorTemp(22)">22&deg;C</button>
+      <button type="button" class="btn btn-default" onclick="indoorTemp(23)">23&deg;C</button>
+      <button type="button" class="btn btn-default" onclick="indoorTemp(24)">24&deg;C</button>
+      <button type="button" class="btn btn-default" onclick="indoorTemp(25)">25&deg;C</button>
     </div>
 
 
- <!-- 	<div class="slider">
-  	<input type="range" min="10" max="30" value="18" step="1" onchange="showValue(this.value)" />
-    <span id="range">18</span>
-  	</div> -->
 	
-	<div class="page-header">
-  <p><h3>Outdoor Temperature: <g id="OutdoorTemp"></g>&deg;C</h3></p>
-  
-  
-  
-</div>
-	
-	
-	<div class="page-header">
-  <h3>Temperature</h3><small>Select a temperature for inside your home</small>
-</div>
-	
-	<div class="btn-group">
-  <button type="button" class="btn btn-default" onclick="indoorTemp(15)">15&deg;C</button>
-  <button type="button" class="btn btn-default" onclick="indoorTemp(16)">16&deg;C</button>
-  <button type="button" class="btn btn-default" onclick="indoorTemp(17)">17&deg;C</button>
-  <button type="button" class="btn btn-default" onclick="indoorTemp(18)">18&deg;C</button>
-  <button type="button" class="btn btn-default" onclick="indoorTemp(19)">19&deg;C</button>
-  <button type="button" class="btn btn-default" onclick="indoorTemp(20)">20&deg;C</button>
-  <button type="button" class="btn btn-default" onclick="indoorTemp(21)">21&deg;C</button>
-  <button type="button" class="btn btn-default" onclick="indoorTemp(22)">22&deg;C</button>
-  <button type="button" class="btn btn-default" onclick="indoorTemp(23)">23&deg;C</button>
-  <button type="button" class="btn btn-default" onclick="indoorTemp(24)">24&deg;C</button>
-  <button type="button" class="btn btn-default" onclick="indoorTemp(25)">25&deg;C</button>
-</div>
-
-
-	
+<<<<<<< HEAD
 	<script type="text/javascript">
 	function showValue(newValue)
 	{
@@ -98,6 +91,43 @@ function indoorTemp(temp) {
 }	
 gettemp();
 
+=======
+    <script type="text/javascript">
+      function showValue(newValue)
+      {
+        document.getElementById("range").innerHTML=newValue;
+      }
+      
+      function gettemp() {
+              var url = "http://api.openweathermap.org/data/2.5/weather" +
+                  "?q=Swansea,uk&amp;units=metric";
+         
+              var request = new XMLHttpRequest();
+              request.open("GET", url, false);
+              request.send(null);
+              var reply = JSON.parse(request.responseText);
+              var temperature = Math.round(reply.main.temp - 272.15);
+        
+          //alert("Temp = " + temperature);
+          request = new XMLHttpRequest();
+          url = "http://10.150.85.50:8000/temp=" + temperature;
+          request.open("GET", url, false);
+              request.send(null);
+          var outTemp = document.getElementById("OutdoorTemp");
+          outTemp.innerHTML = temperature;
+            //  alert("Temp = " + temperature);
+        }
+        
+      function indoorTemp(temp) {
+          XHRequest("indoorTemp", temp);
+          var request = new XMLHttpRequest();
+          url = "http://10.150.85.50:8000/indoorTemp=" + temp;
+          request.open("GET", url, false);
+              request.send(null);
+>>>>>>> HTML/JS-Tidy-up
 
-</script>
-</body>
+      }	
+      gettemp();
+    </script>
+  </body>
+</html>

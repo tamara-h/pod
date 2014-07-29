@@ -1,71 +1,60 @@
-
 <!DOCTYPE html>
 <html>
-  <script>
- <!-- okay this is the start of my JavaScript code the example of a call to it (this is a button but you can mess with whatever else idk is
- <!-- to get temperature		<input type="submit" value="Temperature" onclick="gettemp()">  --> 
- <!-- to get description   <input type="submit" value="Weather" onclick="getweather()">
- <!-- to get icon         <input type="submit" value="Weather" onclick="geticon()">
- <!--       					<img id="icon" src="" alt="weather">
-
-   function geticon() {
-        var url = "http://api.openweathermap.org/data/2.5/weather" +
-            "?q=Swansea,uk&amp;units=metric";
-   
-        var request = new XMLHttpRequest();
-        request.open("GET", url, false);
-        request.send(null);
-        var reply = JSON.parse(request.responseText);
-        var icon = "http://openweathermap.org/img/w/" +
-                reply.weather[0].icon + ".png";
-        var img = document.getElementById("icon");
-        img.src = icon;
-        //alert("Temp = " + temperature + "C\n" + description + "\n" + icon);
-    }
-	
-	function getweather() {
-        var url = "http://api.openweathermap.org/data/2.5/weather" +
-            "?q=Swansea,uk&amp;units=metric";
-   
-        var request = new XMLHttpRequest();
-        request.open("GET", url, false);
-        request.send(null);
-        var reply = JSON.parse(request.responseText);
-        var description = reply.weather[0].description
-		
-		request = new XMLHttpRequest();
-		url = "http://10.150.85.50:8000/weather=" + description;
-		request.open("GET", url, false);
-        request.send(null);
-        alert(description);
-    }
-	
-	function gettemp() {
-        var url = "http://api.openweathermap.org/data/2.5/weather" +
-            "?q=Swansea,uk&amp;units=metric";
-   
-        var request = new XMLHttpRequest();
-        request.open("GET", url, false);
-        request.send(null);
-        var reply = JSON.parse(request.responseText);
-        var temperature = Math.round(reply.main.temp - 272.15);
-  
-		
-		//request = new XMLHttpRequest();
-		//url = "http://10.150.85.50:8000/temp=" + temperature;
-		//request.open("GET", url, false);
-        //request.send(null);
-        alert("Temp = " + temperature);
-	}
-
-	
-		
-    </script>
   <head>
     <title>Pod</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
-    <link href="bootstrap.css" rel="stylesheet" media="screen">
+    <link href="css/bootstrap.css" rel="stylesheet" media="screen">
+    <!-- Bootstrap JS relies on jQuery -->
+    <script src="js/jquery-1.11.1.js" type="text/javascript"></script>
+    <script src="js/bootstrap.js" type="text/javascript"></script>
+    <script src="js/pod.js" type="text/javascript"></script>
+    <script>
+       <!-- okay this is the start of my JavaScript code the example of a call to it (this is a button but you can mess with whatever else idk is
+       <!-- to get temperature		<input type="submit" value="Temperature" onclick="gettemp()">  --> 
+       <!-- to get description   <input type="submit" value="Weather" onclick="getweather()">
+       <!-- to get icon     <input type="submit" value="Weather" onclick="geticon()">
+       <!--     					<img id="icon" src="" alt="weather">
+       
+      // If you move these functions to "/js/pod.js" (literal copy/paste will be fine) they'll be accessible in all the other HTML files.
+      function getWeather() {
+        var url = "http://api.openweathermap.org/data/2.5/weather" +
+        "?q=Swansea,uk&amp;units=metric";
+        var request = new XMLHttpRequest();
+        request.open("GET", url, false);
+        request.send(null);
+        var reply = JSON.parse(request.responseText);
+        return reply;
+      }
+      function geticon() {
+        var reply = getWeather();
+        var icon = "http://openweathermap.org/img/w/" +
+          reply.weather[0].icon + ".png";
+        var img = document.getElementById("icon");
+        img.src = icon;
+        //alert("Temp = " + temperature + "C\n" + description + "\n" + icon);
+      }
+
+      function getweather() {
+        var reply = getWeather();
+        var description = reply.weather[0].description
+        
+        // I defined XHRequest in "pod.js" under /js/ - It saves having to write code for creating XMLHttpRequests to the Python server over and over
+        //   XHRequest(variable, value) will do http://ip/variable=value - This will help if the IP changes since there'll only be one thing to change :]
+        XHRequest("weather", description);
+        
+        alert(description);
+      }
+
+      function gettemp() {
+        var reply = getWeather();
+        var temperature = Math.round(reply.main.temp - 273.15);
+      
+        // The old code for notifying the server of the temperature here was commented out, I'm not sure if it was meant to be but I left this commented just in-case.
+        //XHRequest("temp", temperature);
+        alert("Temp = " + temperature);
+      }
+    </script>
   </head>
   <body>
   	<!--	<h3>Pod</h3>
