@@ -57,6 +57,7 @@
 	<div class="page-header">
   <p><h3>Outdoor Temperature: <g id="OutdoorTemp">0</g></h3></p>
   
+  <input type="submit" value="Temperature" onclick="gettemp()">
   
 </div>
 	
@@ -66,17 +67,17 @@
 </div>
 	
 	<div class="btn-group">
-  <button type="button" class="btn btn-default" onclick="indoorTemp(15)">15</button>
-  <button type="button" class="btn btn-default" onclick="indoorTemp(16)">16</button>
-  <button type="button" class="btn btn-default" onclick="indoorTemp(17)">17</button>
-  <button type="button" class="btn btn-default" onclick="indoorTemp(18)">18</button>
-  <button type="button" class="btn btn-default" onclick="indoorTemp(19)">19</button>
-  <button type="button" class="btn btn-default" onclick="indoorTemp(20)">20</button>
-  <button type="button" class="btn btn-default" onclick="indoorTemp(21)">21</button>
-  <button type="button" class="btn btn-default" onclick="indoorTemp(22)">22</button>
-  <button type="button" class="btn btn-default" onclick="indoorTemp(23)">23</button>
-  <button type="button" class="btn btn-default" onclick="indoorTemp(24)">24</button>
-  <button type="button" class="btn btn-default" onclick="indoorTemp(25)">25</button>
+  <button type="button" class="btn btn-default" onclick="indoorTemp()">15</button>
+  <button type="button" class="btn btn-default">16</button>
+  <button type="button" class="btn btn-default">17</button>
+  <button type="button" class="btn btn-default">18</button>
+  <button type="button" class="btn btn-default">19</button>
+  <button type="button" class="btn btn-default">20</button>
+  <button type="button" class="btn btn-default">21</button>
+  <button type="button" class="btn btn-default">22</button>
+  <button type="button" class="btn btn-default">23</button>
+  <button type="button" class="btn btn-default">24</button>
+  <button type="button" class="btn btn-default">25</button>
 </div>
 
 
@@ -97,7 +98,8 @@ function gettemp() {
         request.send(null);
         var reply = JSON.parse(request.responseText);
         var temperature = Math.round(reply.main.temp - 272.15);
-		
+  
+		//alert("Temp = " + temperature);
 		request = new XMLHttpRequest();
 		url = "http://10.150.85.50:8000/temp=" + temperature;
 		request.open("GET", url, false);
@@ -107,11 +109,9 @@ function gettemp() {
       //  alert("Temp = " + temperature);
 	}
 	
-function indoorTemp(temp) {
-		var request = new XMLHttpRequest();
-		url = "http://10.150.85.50:8000/indoorTemp=" + temp;
-		request.open("GET", url, false);
-        request.send(null);
+function indoorTemp() {
+	alert("This button works");
+
 }	
 gettemp();
 
