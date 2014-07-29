@@ -1,14 +1,10 @@
-def doorOpen():
-	#door unlocked
+from twilio.rest import TwilioRestClient
 
-	from twilio.rest import TwilioRestClient 
-	 
-	# put your own credentials here 
+def doorOpen(): 
 	ACCOUNT_SID = "AC42e4c31d0bb66d30387c967b1b8ebc61" 
 	AUTH_TOKEN = "0de403b3b1383b04811db2ad769a646d" 
 	 
-	client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN) 
-	 
+	client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN)
 	client.messages.create(
 		to="447476915987", 
 		from_="+441631402052", 
@@ -16,13 +12,7 @@ def doorOpen():
 	)
 
 
-def temp():
-
-	#temp max/min
-
-	from twilio.rest import TwilioRestClient 
-	 
-	# put your own credentials here 
+def temp(): 
 	ACCOUNT_SID = "AC42e4c31d0bb66d30387c967b1b8ebc61" 
 	AUTH_TOKEN = "0de403b3b1383b04811db2ad769a646d" 
 	 
@@ -36,11 +26,6 @@ def temp():
 
 
 def rain():
-	#rain, take washing inside
-
-	from twilio.rest import TwilioRestClient 
-	 
-	# put your own credentials here 
 	ACCOUNT_SID = "AC42e4c31d0bb66d30387c967b1b8ebc61" 
 	AUTH_TOKEN = "0de403b3b1383b04811db2ad769a646d" 
 	 

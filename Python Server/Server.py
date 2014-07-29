@@ -3,6 +3,7 @@ from enum import Enum
 import wsgiref as serv
 import API2 as JAPI
 import random
+import math
 
 pLog = []
 
@@ -34,8 +35,11 @@ class server():
         var = rURLComponents[0]
         val = rURLComponents[2]
         print("Variable: " + var + " has been set to value: " + val)
-        server.mcServer.resolveRequest(var.lower(), val.lower())
-
+        if not var == "ignore":
+            server.mcServer.resolveRequest(var.lower(), val.lower())
+        else:
+            print("Ignored request, responding with data.")
+        
         #return [b"String"]
         return server.formReply(var, val)
 
@@ -120,22 +124,25 @@ class serverInterface():
 
     def worldUpdate(self):
         print("[Info] Re-initialising entire environment...")
-        if self.weather == Weather.Rainy:
-            if self.house["windowsOpen"] == True:
-                self.closeWindows()
-            else:
-                print("[House Info] Windows Already Closed")
-            if self.house["doorsOpen"] == True:
-                self.closeDoors()
-            else:
-                print("[House Info] Doors Already Closed")
 
-        if (self.idealTemperature - self.indoorTemperature) > 3:
-            print("[House Info] Temperature is more than 3*C below ideal temperature. Engaging fire.")
-            fireOn = True
-            self.lightFire()
-        elif (self.idealTemperature > self.indoorTemperature):
-            print("[House Info] Temperature is hotter than the ideal temperature, fire put out.")
+        # OPEN WINDOWS IF OUTSIDE TEMPERATURE IS MORE DESIRABLE THAN INSIDE TEMPERATURE >5*
+        if abs(self.indoorTemperature - self.idealTemperature) - abs(self.temperature - self.idealTemperature) > 5:
+            self.actionIf(self.house["windowsOpen"], self.closeWindows)
+
+        # CLOSE DOORS & WINDOWS FOR RAIN
+        if self.weather == Weather.Rainy:
+            self.actionIf(self.house["windowsOpen"], self.closeWindows)
+            self.actionIf(self.house["doorsOpen"], self.closeDoors)
+
+        # TEMPERATURE SENSITIVE FIRE
+        if self.idealTemperature - self.indoorTemperature > 3:
+            self.actionIf(not self.house["fireOn"], self.lightFire)
+        elif self.indoorTemperature > self.idealTemperature:
+            self.actionIf(self.house["fireOn"], self.extinguishFire)
+
+    def actionIf(self, condition, action):
+        if condition:
+            action()
 
     # Abstractions
     def openWindows(self):
@@ -148,10 +155,15 @@ class serverInterface():
 
 
     def lightFire(self):
-        print("[House Change] Lighting fire")
+        print("[House Change] Lighting Fire")
         self.enableRedstone("123 71 97")
         self.disableRedstone("123 71 97")
+        self.house["fireOn"] = True
 
+    def extinguishFire(self):
+        print("[House Change] Extinguish Fire")
+        self.setBlocks("air", ["119 71 97"])
+        self.house["fireOn"] = False
 
     def openDoors(self):
         print("[House Change] Opening Doors")
