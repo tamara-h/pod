@@ -47,22 +47,10 @@ class server():
 
     @staticmethod
     def formReply(var, val):
-        jsonSend = True
-
-        if jsonSend:
-            returnStr = bytes(json.dumps(dict(temperature = server.mcServer.temperature, idealTemperature = server.mcServer.idealTemperature,
-                            indoorTemperature = server.mcServer.indoorTemperature,
-                            weather = "sun" if server.mcServer.weather == Weather.Sunny else "rain",
-                            houseStatus = server.mcServer.house)), 'utf-8')
-        else:
-            returnStr = bytes("Server accessed successfully.\nYour request was: " + var + " = " + val + "."
-                + "\n\nCurrent Variables Held in Server:"
-                + "\n   Target Ideal Temperature:\t" + str(server.mcServer.idealTemperature) + "*C"
-                + "\n   Temperature:\t\t\t" + str(server.mcServer.temperature) + "*C"
-                + "\n   Indoor Temp:\t\t\t" + str(server.mcServer.indoorTemperature) + "*C"
-                + "\n   Weather: " + str(server.mcServer.weather)
-                + "\n   House Information:\n    " + "\n    ".join(["{0:15.15}: \t\t{1}".format(key, "Yes" if value else "No") for key, value in server.mcServer.house.items()])
-                + "\n\n\nServer Log for Request: \n    " + "\n    ".join(server.pLog), 'utf-8')
+        returnStr = bytes(json.dumps(dict(temperature = server.mcServer.temperature, idealTemperature = server.mcServer.idealTemperature,
+                        indoorTemperature = server.mcServer.indoorTemperature,
+                        weather = "sun" if server.mcServer.weather == Weather.Sunny else "rain",
+                        houseStatus = server.mcServer.house)), 'utf-8')
         return [returnStr]
 
 class Weather(Enum):
