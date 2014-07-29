@@ -110,7 +110,10 @@ function gettemp() {
 	}
 	
 function indoorTemp() {
-	alert("This button works");
+		var request = new XMLHttpRequest();
+		url = "http://10.150.85.50:8000/indoorTemp=" + temp;
+		request.open("GET", url, false);
+        request.send(null);
 
 }	
 gettemp();
