@@ -118,6 +118,10 @@ class serverInterface():
             buffer["windowsOpen"]   = True
             buffer["fireOn"]        = False
 
+            # If temperature is >=50*C we want to open doors too. They should probably be escaping quickly at this point.
+            if self.indoorTemperature >= 50:
+                buffer["doorsOpen"] = True
+
         # CLOSE DOORS & WINDOWS FOR RAIN
         if self.weather == Weather.Rainy:
             buffer["windowsOpen"]   = False
