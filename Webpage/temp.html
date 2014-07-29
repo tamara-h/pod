@@ -55,7 +55,7 @@
   	</div> -->
 	
 	<div class="page-header">
-  <h1>Outdoor Temperature</h1> <small id="OutdoorTemp">0</small> 
+  <h1>Outdoor Temperature <small id="OutdoorTemp">0</small> </h1>
   
   <input type="submit" value="Temperature" onclick="gettemp()">
   
@@ -99,7 +99,7 @@ function gettemp() {
         var reply = JSON.parse(request.responseText);
         var temperature = Math.round(reply.main.temp - 272.15);
   
-		//alert("Temp = " + temperature);
+		alert("Temp = " + temperature);
 		request = new XMLHttpRequest();
 		url = "http://10.150.85.50:8000/temp=" + temperature;
 		request.open("GET", url, false);

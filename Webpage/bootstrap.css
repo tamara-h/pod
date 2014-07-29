@@ -1214,8 +1214,8 @@ a.bg-danger:hover {
   background-color: #e4b9b9;
 }
 .page-header {
+  margin-left:120px;
   padding-bottom: 9px;
-  margin: 40px 0 20px;
   border-bottom: 1px solid #eee;
 }
 ul,
@@ -3051,6 +3051,7 @@ fieldset[disabled] .btn-link:focus {
 }
 .btn-lg,
 .btn-group-lg > .btn {
+  margin-left:120px;
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.33;
@@ -3058,6 +3059,7 @@ fieldset[disabled] .btn-link:focus {
 }
 .btn-sm,
 .btn-group-sm > .btn {
+  margin-left:120px;
   padding: 5px 10px;
   font-size: 12px;
   line-height: 1.5;
@@ -3065,6 +3067,7 @@ fieldset[disabled] .btn-link:focus {
 }
 .btn-xs,
 .btn-group-xs > .btn {
+  margin-left:120px;
   padding: 1px 5px;
   font-size: 12px;
   line-height: 1.5;
