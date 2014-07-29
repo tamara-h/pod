@@ -1,27 +1,6 @@
 <!DOCTYPE html>
 <html>
-<script>
-function gettemp() {
-        var url = "http://api.openweathermap.org/data/2.5/weather" +
-            "?q=Swansea,uk&amp;units=metric";
-   
-        var request = new XMLHttpRequest();
-        request.open("GET", url, false);
-        request.send(null);
-        var reply = JSON.parse(request.responseText);
-        var temperature = Math.round(reply.main.temp - 272.15);
-  
-		alert("Temp = " + temperature);
-		request = new XMLHttpRequest();
-		url = "http://10.150.85.50:8000/temp=" + temperature;
-		request.open("GET", url, false);
-        request.send(null);
-        alert("Temp = " + temperature);
-	}
-	
 
-
-</script>
 
   <head>
     <title>Pod</title>
@@ -76,7 +55,7 @@ function gettemp() {
   	</div> -->
 	
 	<div class="page-header">
-  <h1>Outdoor Temperature </h1>
+  <h1>Outdoor Temperature<small id="OutdoorTemp">0</small> </h1>
   
   <input type="submit" value="Temperature" onclick="gettemp()">
   
@@ -109,3 +88,29 @@ function gettemp() {
 	document.getElementById("range").innerHTML=newValue;
 	}
 </script>
+<script>
+function gettemp() {
+        var url = "http://api.openweathermap.org/data/2.5/weather" +
+            "?q=Swansea,uk&amp;units=metric";
+   
+        var request = new XMLHttpRequest();
+        request.open("GET", url, false);
+        request.send(null);
+        var reply = JSON.parse(request.responseText);
+        var temperature = Math.round(reply.main.temp - 272.15);
+  
+		alert("Temp = " + temperature);
+		request = new XMLHttpRequest();
+		url = "http://10.150.85.50:8000/temp=" + temperature;
+		request.open("GET", url, false);
+        request.send(null);
+		var outTemp = document.getElementById("OutdoorTemp");
+		outTemp.innerHTML = temperature;
+      //  alert("Temp = " + temperature);
+	}
+	
+gettemp();
+
+
+</script>
+</body>
