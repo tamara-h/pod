@@ -3,9 +3,12 @@
 <html>
   <script>
  <!-- okay this is the start of my JavaScript code the example of a call to it (this is a button but you can mess with whatever else idk is
- <!--		<input type="submit" value="Temperature" onclick="gettemp()">  --> 
+ <!-- to get temperature		<input type="submit" value="Temperature" onclick="gettemp()">  --> 
+ <!-- to get description   <input type="submit" value="Weather" onclick="getweather()">
+ <!-- to get icon         <input type="submit" value="Weather" onclick="geticon()">
+ <!--       					<img id="icon" src="" alt="weather">
 
-    function gettemp() {
+   function geticon() {
         var url = "http://api.openweathermap.org/data/2.5/weather" +
             "?q=Swansea,uk&amp;units=metric";
    
@@ -13,14 +16,11 @@
         request.open("GET", url, false);
         request.send(null);
         var reply = JSON.parse(request.responseText);
-        var temperature = Math.round(reply.main.temp - 272.15);
-  
-		
-		//request = new XMLHttpRequest();
-		//url = "http://10.150.85.50:8000/temp=" + temperature;
-		//request.open("GET", url, false);
-        //request.send(null);
-        alert("Temp = " + temperature);
+        var icon = "http://openweathermap.org/img/w/" +
+                reply.weather[0].icon + ".png";
+        var img = document.getElementById("icon");
+        img.src = icon;
+        //alert("Temp = " + temperature + "C\n" + description + "\n" + icon);
     }
 	
 	function getweather() {
@@ -39,6 +39,27 @@
         request.send(null);
         alert(description);
     }
+	
+	function gettemp() {
+        var url = "http://api.openweathermap.org/data/2.5/weather" +
+            "?q=Swansea,uk&amp;units=metric";
+   
+        var request = new XMLHttpRequest();
+        request.open("GET", url, false);
+        request.send(null);
+        var reply = JSON.parse(request.responseText);
+        var temperature = Math.round(reply.main.temp - 272.15);
+  
+		
+		//request = new XMLHttpRequest();
+		//url = "http://10.150.85.50:8000/temp=" + temperature;
+		//request.open("GET", url, false);
+        //request.send(null);
+        alert("Temp = " + temperature);
+	}
+
+	
+		
     </script>
   <head>
     <title>Pod</title>
@@ -49,10 +70,10 @@
   <body>
   	<!--	<h3>Pod</h3>
 
-    	<a href="c:/users/maddy/documents/yrs/lights.html"><div class="btn btn-info">Lights</div></a>
-    	<a href="/weather"><div class="btn btn-info">Weather</div></a>
-    	<a href="/temperature"><div class="btn btn-info">Temperature</div></a>
-    	<a href="/temperature"><div class="btn btn-info">Power</div></a>
+    	<a href="lights.html"><div class="btn btn-info">Lights</div></a>
+    	<a href="weather"><div class="btn btn-info">Weather</div></a>
+    	<a href="temperature"><div class="btn btn-info">Temperature</div></a>
+    	<a href="temperature"><div class="btn btn-info">Power</div></a>
 	<script src="http://code.jquery.com/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
 
@@ -178,37 +199,37 @@
           <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
           <h2>Weather</h2>
           <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-          <p><a class="btn btn-default" href="#" role="button">Edit &raquo;</a></p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
           <h2>Lighting</h2>
           <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-          <p><a class="btn btn-default" href="#" role="button">Edit &raquo;</a></p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
           <h2>Power</h2>
           <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">Edit &raquo;</a></p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
           <h2>Door</h2>
           <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">Edit &raquo;</a></p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
           <h2>Temperature</h2>
           <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">Edit &raquo;</a></p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
           <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
           <h2>Mode</h2>
           <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">Edit &raquo;</a></p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
   </center>
