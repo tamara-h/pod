@@ -1,17 +1,16 @@
 from wsgiref.simple_server import make_server
+from enum import Enum
 import wsgiref as serv
 import API2 as JAPI
 import random
 
-
-
 def request(environ, start_response):
+    global mcServer
+    
     status = '200 OK' # HTTP Status
     headers = [('Content-type', 'text/plain; charset=utf-8')] # HTTP Headers
     start_response(status, headers)
-    
-    mc_conn = JAPI.Connection()    
-    api = JAPI.JSONAPI(mc_conn)
+
 
     #print("Request URL {0}".format(serv.util.request_uri(environ)))
     requestURL = serv.util.request_uri(environ)
@@ -23,64 +22,80 @@ def request(environ, start_response):
     var = rURLComponents[0]
     val = rURLComponents[2]
 
-    # Now we switch var
-    if var == "temp":
-        setTemperature(api, val)
-    elif var == "weather":
-        setWeather(api, val)
-
-    lightFire(api)
+    mcServer.resolveRequest(var, val)    
 
     return [b"If this text displays, server was accessed successfully"]
 
+class Weather(Enum):
+    Sunny = 1,
+    Rainy = 2,
 
-def setTemperature(api, temp):
-    print("[World Status Update] Temperature is: " + temp)
-    
+class serverInterface():
+    def __init__(self):
+        self.temp = 30
+        self.weather = Weather.Sunny
+        
+        mc_conn = JAPI.Connection()    
+        self.api = JAPI.JSONAPI(mc_conn)
 
-def setWeather(api, weather):
-    print("[World Status Update] Weather is: " + weather)
-    if "rain" in weather:
-        print("Rainy")
-        api.server.run_command("weather rain")
-    else:
-        print("Sunny")
-        api.server.run_command("weather sun")
+    def resolveRequest(self, var, val):
+        # Switch var
+        if var == "temp":
+            self.setTemperature(val)
+        elif var == "weather":
+            self.setWeather(val)
+        
+    def setTemperature(self, temp):
+        print("[World Status Update] Temperature is: " + temp)
+        
 
-# Abstractions
-def openWindows(api):
-    print("[House Change] Opening Windows")
-    setWindows(api, "air")
-    
-def closeWindows(api):
-    print("[House Change] Closing Windows")
-    setWindows(api, "glass")
+    def setWeather(self, weather):
+        print("[World Status Update] Weather is: " + weather)
+        if "rain" in weather:
+            self.weather = Weather.Rainy
+            self.api.server.run_command("weather rain")
+        else:
+            self.weather = Weather.Sunny
+            self.api.server.run_command("weather sun")
 
+    def worldUpdate(currTemp, currWeather):
+        pass
 
-def lightFire(api):
-    print("[House Change] Lighting fire")
-    enableRedstone(api, "119 71 97")
-    disableRedstone(api, "119 71 97")
-
-
-# Backend for abstractions
-def enableRedstone(api, position):
-    print("[House Change] Enabling redstone at " + position)
-    setBlocks(api, "redstone_torch", [position])
-
-def disableRedstone(api, position):
-    print("[House Change] Disabling redstone at " + position)
-    setBlocks(api, "air", [position])
+    # Abstractions
+    def openWindows(self):
+        print("[House Change] Opening Windows")
+        self.setWindows("air")
+        
+    def closeWindows(self):
+        print("[House Change] Closing Windows")
+        self.setWindows("glass")
 
 
-def setWindows(api, windowType):
-    windows = ["119 72 99", "119 72 100", "118 72 100", "117 72 100", "116 72 100", "115 72 100"]
-    setBlocks(api, windowType, windows)
+    def lightFire(self):
+        print("[House Change] Lighting fire")
+        self.enableRedstone("119 71 97")
+        self.disableRedstone("119 71 97")
 
-def setBlocks(api, blockType, blockList):
-    for block in blockList:
-        api.server.run_command("setblock " + block + " minecraft:" + blockType)
-    
+
+    # Backend for abstractions
+    def enableRedstone(self, position):
+        print("[House Change] Enabling redstone at " + position)
+        self.setBlocks("redstone_torch", [position])
+
+    def disableRedstone(self, position):
+        print("[House Change] Disabling redstone at " + position)
+        self.setBlocks("air", [position])
+
+
+    def setWindows(self, windowType):
+        windows = ["119 72 99", "119 72 100", "118 72 100", "117 72 100", "116 72 100", "115 72 100"]
+        self.setBlocks(windowType, windows)
+
+    def setBlocks(self, blockType, blockList):
+        for block in blockList:
+            self.api.server.run_command("setblock " + block + " minecraft:" + blockType)
+
+mcServer = serverInterface()
 httpd = make_server('', 8000, request)
 print("[Online] Awaiting requests on port 8000")
 
