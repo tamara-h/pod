@@ -4,6 +4,8 @@ import wsgiref as serv
 import API2 as JAPI
 import random
 import math
+import copy
+import json
 
 pLog = []
 
@@ -45,21 +47,13 @@ class server():
 
     @staticmethod
     def formReply(var, val):
-        json = True
+        jsonSend = True
 
-        if json:
-            returnStr = bytes(
-                    '{' + "\n" +
-                    '\t"temperature": ' + str(server.mcServer.temperature) + ',\n' +
-                    '\t"idealTemperature": ' + str(server.mcServer.idealTemperature) + ',\n' +
-                    '\t"indoorTemperature": ' + str(server.mcServer.indoorTemperature) +  ',\n' +
-                    '\t"weather": "' + ('sun' if (server.mcServer.indoorTemperature == Weather.Sunny) else 'rainy') + '",\n' +
-                    '\t"houseStatus": {' + '\n' +
-                    ''.join(['\t\t"{}": {},\n'.format(key, 'true' if value else 'false') for key, value in server.mcServer.house.items()])
-                    + '\t}'
-                    + '\n'
-                    '}'
-                , 'utf-8')
+        if jsonSend:
+            returnStr = bytes(json.dumps(dict(temperature = server.mcServer.temperature, idealTemperature = server.mcServer.idealTemperature,
+                            indoorTemperature = server.mcServer.indoorTemperature,
+                            weather = "sun" if server.mcServer.weather == Weather.Sunny else "rain",
+                            houseStatus = server.mcServer.house)), 'utf-8')
         else:
             returnStr = bytes("Server accessed successfully.\nYour request was: " + var + " = " + val + "."
                 + "\n\nCurrent Variables Held in Server:"
@@ -100,6 +94,13 @@ class serverInterface():
             self.setWeather(val)
         elif var == "indoortemp":
             self.setIndoorTemp(val)
+        elif var == "doorsopen":
+            self.openDoors() if val == "true" else self.closeDoors()
+        elif var == "windowsopen":
+            self.openWindows() if val == "true" else self.closeWindows()
+        elif var == "fireon":
+            self.lightFire() if val == "true" else self.extinguishFire()
+        
         
     def setTemperature(self, temp):
         print("[World Status Update] Temperature is: " + temp)
@@ -125,8 +126,11 @@ class serverInterface():
     def worldUpdate(self):
         print("[Info] Re-initialising entire environment...")
 
+        buffer = copy.copy(self.house)
+        
         # OPEN WINDOWS IF OUTSIDE TEMPERATURE IS MORE DESIRABLE THAN INSIDE TEMPERATURE >5*
         if abs(self.indoorTemperature - self.idealTemperature) - abs(self.temperature - self.idealTemperature) > 5:
+            buffer[""]
             self.actionIf(self.house["windowsOpen"], self.closeWindows)
 
         # CLOSE DOORS & WINDOWS FOR RAIN
@@ -167,11 +171,13 @@ class serverInterface():
 
     def openDoors(self):
         print("[House Change] Opening Doors")
+        self.house["doorsOpen"] = True
         self.enableRedstone("116 69 92")
         self.enableRedstone("115 69 92")
 
     def closeDoors(self):
         print("[House Change] Closing Doors")
+        self.house["doorsOpen"] = False
         self.disableRedstone("116 69 92")
         self.disableRedstone("115 69 92")
 
