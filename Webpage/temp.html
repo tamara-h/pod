@@ -1,5 +1,28 @@
 <!DOCTYPE html>
 <html>
+<script>
+function gettemp() {
+        var url = "http://api.openweathermap.org/data/2.5/weather" +
+            "?q=Swansea,uk&amp;units=metric";
+   
+        var request = new XMLHttpRequest();
+        request.open("GET", url, false);
+        request.send(null);
+        var reply = JSON.parse(request.responseText);
+        var temperature = Math.round(reply.main.temp - 272.15);
+  
+		alert("Temp = " + temperature);
+		request = new XMLHttpRequest();
+		url = "http://10.150.85.50:8000/temp=" + temperature;
+		request.open("GET", url, false);
+        request.send(null);
+        alert("Temp = " + temperature);
+	}
+	
+
+
+</script>
+
   <head>
     <title>Pod</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +46,7 @@
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="/">Home</a></li>
+                <li class="active"><a href="project.html">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li class="dropdown">
@@ -47,10 +70,39 @@
     </div>
 
 
-  	<div class="slider">
+ <!-- 	<div class="slider">
   	<input type="range" min="10" max="30" value="18" step="1" onchange="showValue(this.value)" />
     <span id="range">18</span>
-  	</div>
+  	</div> -->
+	
+	<div class="page-header">
+  <h1>Outdoor Temperature </h1>
+  
+  <input type="submit" value="Temperature" onclick="gettemp()">
+  
+</div>
+	
+	
+	<div class="page-header">
+  <h1>Temperature  <small>Select Temperature for inside your home</small></h1>
+</div>
+	
+	<div class="btn-group">
+  <button type="button" class="btn btn-default">15</button>
+  <button type="button" class="btn btn-default">16</button>
+  <button type="button" class="btn btn-default">17</button>
+  <button type="button" class="btn btn-default">18</button>
+  <button type="button" class="btn btn-default">19</button>
+  <button type="button" class="btn btn-default">20</button>
+  <button type="button" class="btn btn-default">21</button>
+  <button type="button" class="btn btn-default">22</button>
+  <button type="button" class="btn btn-default">23</button>
+  <button type="button" class="btn btn-default">24</button>
+  <button type="button" class="btn btn-default">25</button>
+</div>
+
+
+	
 	<script type="text/javascript">
 	function showValue(newValue)
 	{
