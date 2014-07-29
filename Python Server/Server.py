@@ -134,6 +134,16 @@ class serverInterface():
         elif self.indoorTemperature > self.idealTemperature:
             self.actionIf(self.house["fireOn"], self.extinguishFire)
 
+        self.actionIf(bufferDiffers(buffer, "windowsOpen"), self.openWindows if buffer["windowsOpen"] else self.closeWindows)
+        self.actionIf(bufferDiffers(buffer, "fireOn"), self.lightFire if buffer["fireOn"] else self.extinguishFire)
+        self.actionIf(bufferDiffers(buffer, "doorsOpen"), self.openDoors if buffer["doorsOpen"] else self.closeDoors)
+        
+    def bufferDiffers(self, buffer, val):
+        if self.house[val] != buffer[val]:
+            return True
+        else:
+            return False
+        
     def actionIf(self, condition, action):
         if condition:
             action()
