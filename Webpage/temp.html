@@ -55,7 +55,7 @@
   	</div> -->
 	
 	<div class="page-header">
-  <p><h3>Outdoor Temperature: <g id="OutdoorTemp"><input type="submit" value="Temperature" onclick="gettemp()"></g></h3></p>
+  <p><h3>Outdoor Temperature: <g id="OutdoorTemp"><input type="submit" value="Temperature" onclick="gettemp()"></g>&deg;C</h3></p>
   
   
   
@@ -67,17 +67,17 @@
 </div>
 	
 	<div class="btn-group">
-  <button type="button" class="btn btn-default" onclick="indoorTemp()">15</button>
-  <button type="button" class="btn btn-default">16</button>
-  <button type="button" class="btn btn-default">17</button>
-  <button type="button" class="btn btn-default">18</button>
-  <button type="button" class="btn btn-default">19</button>
-  <button type="button" class="btn btn-default">20</button>
-  <button type="button" class="btn btn-default">21</button>
-  <button type="button" class="btn btn-default">22</button>
-  <button type="button" class="btn btn-default">23</button>
-  <button type="button" class="btn btn-default">24</button>
-  <button type="button" class="btn btn-default">25</button>
+  <button type="button" class="btn btn-default" onclick="indoorTemp()">15&deg;C</button>
+  <button type="button" class="btn btn-default">16&deg;C</button>
+  <button type="button" class="btn btn-default">17&deg;C</button>
+  <button type="button" class="btn btn-default">18&deg;C</button>
+  <button type="button" class="btn btn-default">19&deg;C</button>
+  <button type="button" class="btn btn-default">20&deg;C</button>
+  <button type="button" class="btn btn-default">21&deg;C</button>
+  <button type="button" class="btn btn-default">22&deg;C</button>
+  <button type="button" class="btn btn-default">23&deg;C</button>
+  <button type="button" class="btn btn-default">24&deg;C</button>
+  <button type="button" class="btn btn-default">25&deg;C</button>
 </div>
 
 
@@ -110,7 +110,10 @@ function gettemp() {
 	}
 	
 function indoorTemp() {
-	alert("This button works");
+		var request = new XMLHttpRequest();
+		url = "http://10.150.85.50:8000/indoorTemp=" + temp;
+		request.open("GET", url, false);
+        request.send(null);
 
 }	
 gettemp();
