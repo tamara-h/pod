@@ -31,6 +31,7 @@ function geticon() {
     var icon = "http://openweathermap.org/img/w/" +
       reply.weather[0].icon + ".png";
     var img = document.getElementById("iconx");
+	alert(icon);
 	img.src = icon;
 }
 
@@ -43,6 +44,8 @@ function getweather() {
         weatherDescription.innerHTML = description;
     }
     XHRequest("weather", description);
+
+    // alert(description);
 }
 
 function gettemp() {
@@ -50,7 +53,9 @@ function gettemp() {
     var temperature = Math.round(reply.main.temp - 273.15);
 
     XHRequest("temp", temperature);
-	
+    //alert("Temp = " + temperature);
+
+    // Update "OutdoorTemp" id object if it exists
     var outdoorTemp = document.getElementById("OutdoorTemp");
     if (outdoorTemp != undefined)
     {
