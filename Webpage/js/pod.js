@@ -43,8 +43,8 @@ function getweather() {
     {
         weatherDescription.innerHTML = description;
     }
-	
-    XHRequest("weather", description);
+	//TEMPORARY COMMENTING OUT FOR TESTING PURPOSES NOW
+    //XHRequest("weather", description);
 }
 
 function gettemp() {
@@ -55,6 +55,17 @@ function gettemp() {
     {
         outdoorTemp.innerHTML = temperature;
     }
-	
-    XHRequest("temp", temperature);
+	//TEMPORARY COMMENTING OUT FOR TESTING PURPOSES NOW
+    //XHRequest("temp", temperature);
 }
+
+function getPressure() {
+	var reply = getWeatherFromAPI();
+	var pressure = reply.main.pressure;
+	var currentPressure = document.getElementById("currentPressure");
+	if (currentPressure != undefined) {
+		currentPressure.innerHTML = pressure;
+	}
+}
+
+
