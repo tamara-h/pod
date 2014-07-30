@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link href="css/bootstrap.css" rel="stylesheet" media="screen">
+		<script src="js/jquery-1.11.1.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<div id="podFloatContainer" class="podMove">
+			<span class="podRotate">
+				<span class="podResize">
+					pod
+				</span>
+			</span>
+		</div>
+		
+		<script type="text/javascript">
+			var podTemplate = $('#podFloatContainer');
+			
+			function addPod() {
+				var newPod = podTemplate.clone();
+				newPod.appendTo('body');
+				newPod.css({left:Math.random() * window.innerWidth,top:Math.random() * window.innerHeight})
+			}
+			
+			for (var i = 0; i <= 25; i++)
+				addPod();
+		</script>
+	</body>
+</html>

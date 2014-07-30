@@ -59,9 +59,9 @@ class Weather(Enum):
 
 class ServerInterface():
     def __init__(self):
-        self.idealTemperature       = 23
-        self.temperature            = 30
-        self.indoorTemperature      = 30
+        self.idealTemperature       = 20
+        self.temperature            = 20
+        self.indoorTemperature      = 20
         self.weather                = Weather.Sunny
         self.house                  = {}
         self.house["windowsOpen"]   = False

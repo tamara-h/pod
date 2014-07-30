@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD
   <head>
     <title>Pod</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,3 +26,42 @@
 </ul>
 
 bro
+=======
+	<head>
+		<link href="css/bootstrap.css" rel="stylesheet" media="screen">
+		<script src="js/jquery-1.11.1.js" type="text/javascript"></script>
+	</head>
+	<body>
+		<swag id="swag" class="swagM">
+			<swag class="swagR">
+				<swag class="swag">
+					<!-- This might actually be an interesting
+							background effect if I tuned down the colour
+							and timing so it was a lot more subtle,
+							and wrote "pod" instead of "bro". -->
+					bro
+				</swag>
+			</swag>
+		</swag>
+		
+		<script type="text/javascript">
+			var swag = $('#swag');
+			broCount = 1;
+			function addBro() {
+				broCount += 1;
+				if (broCount > 100)
+				{
+					// Little precaution just incase someone leaves their
+					//  browser open on this page before we get rid of this
+					return;
+				}
+				var moreswag = swag.clone();
+				moreswag.appendTo('body');
+				moreswag.css({left:Math.random() * window.innerWidth,top:Math.random() * window.innerHeight, color: "#"+((1<<24)*Math.random()|0).toString(16)})
+			}
+			
+			setInterval(addBro, 500);
+		</script>
+	</body>
+</html>
+>>>>>>> origin/master
