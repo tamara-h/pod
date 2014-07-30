@@ -33,8 +33,8 @@ function geticon() {
     var img = document.getElementById("iconx");
 
 	//alert(icon);
-	document.iconx.src = icon;
-    //img.src = icon;
+	//document.iconx.src = icon;
+    img.src = icon;
     //alert("Temp = " + temperature + "C\n" + description + "\n" + icon);
 
 }
