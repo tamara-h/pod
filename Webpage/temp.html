@@ -40,7 +40,7 @@
       <h3>Temperature</h3><small>Select a temperature for inside your home</small>
     </div>
 	
-    <div class="btn-group" data-toggle="buttons">
+    <div class="btn-group" id="tempButtons" data-toggle="buttons">
       <label class="btn btn-default" onclick="indoorTemp(15)"><input type="radio">15&deg;C</input></label>
       <label class="btn btn-default" onclick="indoorTemp(16)"><input type="radio">16&deg;C</input></label>
       <label class="btn btn-default" onclick="indoorTemp(17)"><input type="radio">17&deg;C</input></label>
@@ -55,6 +55,13 @@
     </div>
 	
     <script type="text/javascript">
+		$(function() {
+			// Automatically select temperature which is active on server
+			var data = JSON.parse(XHRequest("ignore", "x"));
+			var temperature = data["indoorTemperature"];
+			$('#tempButtons').children(':contains(' + temperature + ')').addClass("active");
+		});
+	
       function showValue(newValue)
       {
         document.getElementById("range").innerHTML = newValue;
