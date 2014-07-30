@@ -13,7 +13,7 @@ class TwilioMessages():
     
 
 class TwilioClient():
-    enabled = True
+    enabled = False
     template = "{} xoxo Pod"
     
     def __init__(self):
