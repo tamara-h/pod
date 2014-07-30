@@ -12,6 +12,17 @@ def print(*args, **kwargs):
     for arg in args:
         server.pLog.append(arg)
 
+class twilioMessages():
+    prefix          = ""
+    suffix          = "xoxo Pod"
+    flood           = "Warning! Water levels are running high in your area. Suggestion: flee! Every Pod for themselves \o/"
+    rain            = "Attention! It is raining. Suggestion: take washing inside."
+    tempWarn        = "Caution! Your house is reaching either the max/min temperature. Suggestion: either turn it up, or turn it down."
+    doorLeftOpen    = "Bad news, your front door has been left unlocked. Suggestion: lock it."
+    
+    messageTemplate = "{}{} {}"
+    
+
 class twilioClient():
     enabled = True
     template = "{} xoxo Pod"
@@ -24,11 +35,11 @@ class twilioClient():
         
     def sendMessage(self, message, phoneNo = "447476915987"):
         if self.enabled:
-            print("[INFO] Sent text {} to {}".format(twilioClient.template.format(message), phoneNo))
+            print("[INFO] Sent text '{}' to {}".format(twilioMessages.messageTemplate.format(twilioMessages.prefix, message, twilioMessages.suffix), phoneNo))
             self.client.messages.create(
                 to      = phoneNo,
                 from_   = "441631402052",
-                body    = twilioClient.template.format(message)
+                body    = twilioMessages.messageTemplate.format(twilioMessages.prefix, message, twilioMessages.suffix)
                 )
         else:
             print("[WARNING] Request sent to Twilio; Twilio has been disabled in the server script")
@@ -167,7 +178,7 @@ class serverInterface():
 
         # Min temp 15; Max temp 25
         if self.indoorTemperature <= 16 or self.indoorTemperature >= 24:
-            server.twilio.sendMessage("Caution! Your house is reaching either the max/min temperature. Suggestion: Either turn it up or down.")
+            server.twilio.sendMessage(twilioMessages.tempWarn)
         
         # Reflect buffer changes in-game
         self.actionIf(self.bufferDiffers(buffer, "windowsOpen"  ), self.openWindows if buffer["windowsOpen"]    else self.closeWindows  )
@@ -237,7 +248,7 @@ class serverInterface():
                 self.setBlocks("water" if not unflood else "air", [str(x) + " " + str(innerHouseRect[0][1]) + " " + str(z)])#
 
         if not unflood:
-            server.twilio.sendMessage("Warning! Water levels are running high in your area. Suggestion: flee! Every Pod for themselves \o/")
+            server.twilio.sendMessage(twilioMessages.flood)
         self.house["flooded"] = True
 
     def drainHouse(self):
