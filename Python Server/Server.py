@@ -6,6 +6,7 @@ import API2     as JAPI
 import math
 import copy
 import json
+import time
 
 def print(*args, **kwargs):
     __builtins__.print(*args, **kwargs)
@@ -183,6 +184,7 @@ class ServerInterface():
     def lightFire(self):
         print("[House Change] Lighting Fire")
         self.enableRedstone("123 71 97")
+        time.sleep(0.1)
         self.disableRedstone("123 71 97")
         self.house["fireOn"] = True
 
@@ -225,6 +227,7 @@ class ServerInterface():
 
         if not unflood:
             server.twilio.sendMessage(TwilioMessages.flood)
+        
         self.house["flooded"] = True
 
     def drainHouse(self):

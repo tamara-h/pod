@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Example</title>
+		<script src="http://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
+	
+		<style>
+			hr {
+				border: 0px;
+				border-bottom: 1px solid black;
+				border-left: 1px solid black;
+				height: 1px;
+				border-right: 1px solid black;
+			}
+		</style>
+	</head>
+	
+	
+	<body>
+		<script type="text/javascript">
+			function s(vari, value) {
+				XHRequest(vari, value)
+			}
+			
+			function XHRequest(variable, value)
+			{
+				var request = new XMLHttpRequest();
+				var url = "http://10.150.85.50:8000/" + variable + "=" + value;
+				request.open("GET", url, false);
+				request.send(null);
+				
+				return request.responseText;
+			}
+		</script>
+		<div style="width: 400px; border-radius: 5px; background-color: skyblue; text-align: center; margin: 5px; padding: 5px">
+			<button onclick="s('doorsopen', true)">Open doors</button>
+			<button onclick="s('doorsopen', false)">Close doors</button>
+			<hr/>
+			<button onclick="s('windowsopen', true)">Open windows</button>
+			<button onclick="s('windowsopen', false)">Close windows</button>
+			<hr/>
+			<button onclick="s('fireon', true)">Start fire</button>
+			<button onclick="s('fireon', false)">Stop fire</button>
+			<hr/>
+			<button onclick="s('flooded', true)">Flood</button>
+			<button onclick="s('flooded', false)">Drain</button>
+			<hr/>
+			<button onclick="s('poweron', true)">Power on</button>
+			<button onclick="s('poweron', false)">Power off</button>
+		</div>
+	</body>
+</html>
