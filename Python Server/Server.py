@@ -204,11 +204,17 @@ class ServerInterface():
         self.disableRedstone("115 69 92")
 
     def enablePower(self):
+        self.enableRedstone("111 69 97")
+        self.enableRedstone("111 69 96")
         self.enableRedstone("113 70 94")
+        self.enableRedstone("113 70 99")
         self.house["powerOn"] = True
 
     def disablePower(self):
+        self.disableRedstone("111 69 97")
+        self.disableRedstone("111 69 96")
         self.disableRedstone("113 70 94")
+        self.disableRedstone("113 70 99")
         self.house["powerOn"] = True
 
     def floodHouse(self, unflood = False):
