@@ -2,7 +2,7 @@
 
 
 
-- Implement Twilio stuff
-- Flood Stuff
-- Make webpage prettier/Actually the same as each other as some pages have slightly different styles
-- Finish the pages for Settings,Doors, Lights, Power, Weather
+- Implement Twilio stuff ***done***
+- Flood Stuff 
+- Make webpage prettier/Actually the same as each other as some pages have slightly different styles 
+- Finish the pages for Settings,Doors, Lights, Power, Weather ***done***
