@@ -25,14 +25,18 @@
 </ul>
 
 <form style="margin-left:120px">
-<select style="margin-top:20px">
-  <option>Upstairs</option>
-  <option>Downstairs</option>
-</select>
+
 <br><br>
-<input type="radio" name="LightsOn" value="On">On<br>
-<input type="radio" name="LightsOn" value="Off">Off
+<label class="btn btn-default" onclick="PowerOn(true)"><input type="radio">Lights On</input></label>
+<label class="btn btn-default" onclick="PowerOn(false)"><input type="radio">Lights Off</input></label
 </form>
 
   </body>
+  
+  <script>
+  function PowerOn(ifOn) {
+  XHRequest("PowerOn", ifOn);
+  }
+  </script>
+  
 </html>
