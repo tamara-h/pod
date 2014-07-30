@@ -4885,6 +4885,7 @@ a.thumbnail.active {
 }
 .list-group {
   padding-left: 0;
+  width: 500px;
   margin-bottom: 20px;
 }
 .list-group-item {
