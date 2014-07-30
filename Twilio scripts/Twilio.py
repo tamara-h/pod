@@ -21,7 +21,7 @@ def temp():
 	client.messages.create(
 		to="+447476915987", 
 		from_="+441631402052", 
-		body="Caution! Your house is reaching either the max/min temperature. Suggesion: either turn it up or down. xoxo, Pod",  
+		body="Caution! Your house is reaching either the max/min temperature. Suggestion: either turn it up, or turn it down. xoxo, Pod",  
 	)
 	
 def flood():
