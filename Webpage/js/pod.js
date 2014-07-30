@@ -68,4 +68,30 @@ function getPressure() {
 	}
 }
 
+function getHumidity() {
+	var reply = getWeatherFromAPI();
+	var humidity = reply.main.humidity;
+	var currentHumidity = document.getElementById("currentHumidity");
+	if (currentHumidity != undefined) {
+		currentHumidity.innerHTML = humidity;
+	}
+}
 
+function getWindSpeed() {
+	var reply = getWeatherFromAPI();
+	var speed = reply.wind.speed;
+	var currentSpeed = document.getElementById("windSpeed");
+	if (currentSpeed != undefined) {
+		currentSpeed.innerHTML = speed;
+	}
+}
+
+//This function may not be necessary if we implement a way of letting the user set a location- at the moment all it does is display what location it is calling the API for 
+function getLocationFromAPI() {
+	var reply = getWeatherFromAPI();
+	var location = reply.name;
+	var APILocation = document.getElementById("APILocation");
+	if (APILocation != undefined) {
+		APILocation.innerHTML = location;
+	}
+}

@@ -29,7 +29,7 @@
 	
 	
 	<div class="page-header">
-      <p><h3><img id="iconx" src="">&nbsp;&nbsp;Detailed weather for today</h3></p>
+      <p><h3><img id="iconx" src="">&nbsp;&nbsp;Detailed weather for today for <span id="APILocation"></span></h3></p>
     </div>	
 	<ul class="list-group" style="margin-left:120px;">
 	
@@ -37,18 +37,21 @@
 <ul class="list-group">
 
   <li class="list-group-item"><b>Weather Description: </b> <span id="weatherDescription"></span></li>
+  <li class="list-group-item"><b>Temperature:</b> <span id="OutdoorTemp"></span>&deg;C</li>
+  <li class="list-group-item"><b>Wind Speed: </b> <span id="windSpeed"></span>m/s</li>
   <li class="list-group-item"><b>Barometric Pressure: </b> <span id="currentPressure"></span> mBar</li>
-  <li class="list-group-item">Morbi leo risus</li>
-  <li class="list-group-item">Porta ac consectetur ac</li>
-  <li class="list-group-item">Vestibulum at eros</li>
+  <li class="list-group-item"><b>Humidity:</b> <span id="currentHumidity"></span>%</li> 
 </ul>
 
-	
 	
 <script type="text/javascript">
 	getweather();
 	geticon();
 	getPressure(); 
+	getHumidity();
+	getWindSpeed();
+	getLocationFromAPI();
+	gettemp();
 </script>
 	
   </body>
