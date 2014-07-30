@@ -234,8 +234,10 @@ class serverInterface():
         innerHouseRect = [(114, 74, 94), (118, 74, 99)]
         for x in range(innerHouseRect[0][0], innerHouseRect[1][0] + 1):
             for z in range(innerHouseRect[0][2], innerHouseRect[1][2] + 1):
-                self.setBlocks("water" if not unflood else "air", [str(x) + " " + str(innerHouseRect[0][1]) + " " + str(z)])
-        server.twilio.sendMessage("Warning! Your area is flooding!")
+                self.setBlocks("water" if not unflood else "air", [str(x) + " " + str(innerHouseRect[0][1]) + " " + str(z)])#
+
+        if not unflood:
+            server.twilio.sendMessage("Warning! Water levels are running high in your area. Suggestion: flee! Every Pod for themselves \o/")
         self.house["flooded"] = True
 
     def drainHouse(self):
