@@ -10,14 +10,35 @@ swag.swag {
 	text-decoration: blink;
 	font-size: 24px;
 	animation: size 1s infinite;
+	-webkit-animation: size 1s infinite;
+}
+
+.podRotate {
+	animation: rotate 3s infinite;
+	-webkit-animation: rotate 3s infinite;
+}
+
+.podMove {
+	animation: move 3s infinite;
+	-webkit-animation: move 3s infinite;
+	position: absolute;
+	color: #EEE;
+}
+
+.podResize {
+	font-size: 24px;
+	animation: size 3s infinite;
+	-webkit-animation: size 3s infinite;
 }
 
 swag.swagR {
 	animation: rotate 0.5s infinite;
+	-webkit-animation: rotate 0.5s infinite;
 }
 
 swag.swagM {
 	animation: move 1s infinite;
+	-webkit-animation: move 1s infinite;
 	position: absolute;
 }
 
@@ -25,12 +46,24 @@ swag.swagM {
 	from { transform: translate(20px, 20px); } to { transform: translate(50px, 150px); }
 }
 
+@-webkit-keyframes move {
+	from { -webkit-transform: translate(20px, 20px); } to { -webkit-transform: translate(50px, 150px); }
+}
+
 @keyframes rotate {	
 	from { transform: rotate(0deg); } to { transform: rotate(359deg); }
 }
 
+@-webkit-keyframes rotate {	
+	from { -webkit-transform: rotate(0deg); } to { -webkit-transform: rotate(359deg); }
+}
+
 @keyframes size {
 	form { transform: scale(1, 1); } to { transform: scale(2, 2); }
+}
+
+@-webkit-keyframes size {
+	form { -webkit-transform: scale(1, 1); } to { -webkit-transform: scale(2, 2); }
 }
 
 html {

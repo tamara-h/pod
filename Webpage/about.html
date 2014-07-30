@@ -19,8 +19,15 @@
 		
 		<script type="text/javascript">
 			var swag = $('#swag');
-			
+			broCount = 1;
 			function addBro() {
+				broCount += 1;
+				if (broCount > 100)
+				{
+					// Little precaution just incase someone leaves their
+					//  browser open on this page before we get rid of this
+					return;
+				}
 				var moreswag = swag.clone();
 				moreswag.appendTo('body');
 				moreswag.css({left:Math.random() * window.innerWidth,top:Math.random() * window.innerHeight, color: "#"+((1<<24)*Math.random()|0).toString(16)})
