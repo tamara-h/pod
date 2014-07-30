@@ -4,4 +4,4 @@
 
 - Implement Twilio stuff
 - Flood Stuff
-- Make webpage prettier
+- Make webpage prettier/Acutually the same as each other as some pages have slightly different styles

@@ -49,7 +49,7 @@ function gettemp() {
     var temperature = Math.round(reply.main.temp - 273.15);
 
     XHRequest("temp", temperature);
-    alert("Temp = " + temperature);
+    //alert("Temp = " + temperature);
 
     // Update "OutdoorTemp" id object if it exists
     var outdoorTemp = document.getElementById("OutdoorTemp");
