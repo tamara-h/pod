@@ -18,6 +18,7 @@ swag.swagR {
 
 swag.swagM {
 	animation: move 1s infinite;
+	position: absolute;
 }
 
 @keyframes move {
