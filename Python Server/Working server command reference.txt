@@ -1,0 +1,16 @@
+Server commands:
+http://ip/var=val
+
+Acceptable vars	| Acceptable vals
+-----------------------------------
+Temp		| Integer
+Weather		| String (Searches for "rain" in string)
+IndoorTemp	| Integer
+DoorsOpen	| Boolean
+WindowsOpen	| Boolean
+FireOn		| Boolean
+PowerOn		| Boolean
+Flooded		| Boolean
+----------------------------------
+
+*NB: Not caps-sensitive, all data is lowercased upon receiving

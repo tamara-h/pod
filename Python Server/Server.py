@@ -126,6 +126,9 @@ class ServerInterface():
             buffer["windowsOpen"]   = True
             buffer["fireOn"]        = False
 
+        if self.indoorTemperature >= 3000:
+            server.twilio.sendMessage(TwilioMessages.extremeHeat)
+
         # CLOSE DOORS & WINDOWS FOR RAIN
         if self.weather == Weather.Rainy:
             buffer["windowsOpen"]   = False

@@ -7,6 +7,7 @@ class TwilioMessages():
     rain            = "Attention! It is raining. Suggestion: take washing inside."
     tempWarn        = "Caution! Your house is reaching either the max/min temperature. Suggestion: either turn it up, or turn it down."
     doorLeftOpen    = "Bad news, your front door has been left unlocked. Suggestion: lock it."
+    extremeHeat     = "Your house is above 3,000*C. Looks like you annoyed the Russians. Pod has not yet been upgraded to allow it to accurately give advice for nuclear wars, but we'll be sure to inform you when it can!"
     
     messageTemplate = "{}{} {}"
     
