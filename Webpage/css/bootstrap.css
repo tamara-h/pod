@@ -6,35 +6,30 @@
 
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 
-.swag {
+swag.swag {
 	text-decoration: blink;
 	font-size: 24px;
-	animation: rotate 2s infinite, size 2s infinite;
-	-webkit-animation-name: rotate, size;
-	-webkit-animation-duration: 0.5s;
-	-webkit-animation-iteration-count: infinite;
-	-webkit-animation-timing-function: linear;
+	animation: size 1s infinite;
 }
 
-@keyframes rotate {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(359deg);
-	}
+swag.swagR {
+	animation: rotate 0.5s infinite;
+}
+
+swag.swagM {
+	animation: move 1s infinite;
+}
+
+@keyframes move {
+	from { transform: translate(20px, 20px); } to { transform: translate(50px, 150px); }
+}
+
+@keyframes rotate {	
+	from { transform: rotate(0deg); } to { transform: rotate(359deg); }
 }
 
 @keyframes size {
-	form { transform: scale(1, 1); } to { transform: scale(2, 2); }}
-}
-@-webkit-keyframes rotate {
-	from {
-		-webkit-transform: rotate(0deg);
-	}
-	to {
-		-webkit-transform: rotate(359deg);
-	}
+	form { transform: scale(1, 1); } to { transform: scale(2, 2); }
 }
 
 html {
