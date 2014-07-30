@@ -33,8 +33,6 @@ function geticon() {
     var img = document.getElementById("iconx");
 	
     img.src = icon;
-    //alert("Temp = " + temperature + "C\n" + description + "\n" + icon);
-
 }
 
 function getweather() {
@@ -45,18 +43,18 @@ function getweather() {
     {
         weatherDescription.innerHTML = description;
     }
+	
     XHRequest("weather", description);
 }
 
 function gettemp() {
     var reply = getWeatherFromAPI();
     var temperature = Math.round(reply.main.temp - 273.15);
-
-    XHRequest("temp", temperature);
-	
     var outdoorTemp = document.getElementById("OutdoorTemp");
     if (outdoorTemp != undefined)
     {
         outdoorTemp.innerHTML = temperature;
     }
+	
+    XHRequest("temp", temperature);
 }
