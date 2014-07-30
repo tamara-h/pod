@@ -6,7 +6,36 @@
 
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 
-<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+.swag {
+	text-decoration: blink;
+	font-size: 24px;
+	animation: rotate 2s infinite, size 2s infinite;
+	-webkit-animation-name: rotate, size;
+	-webkit-animation-duration: 0.5s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
+}
+
+@keyframes rotate {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(359deg);
+	}
+}
+
+@keyframes size {
+	form { transform: scale(1, 1); } to { transform: scale(2, 2); }}
+}
+@-webkit-keyframes rotate {
+	from {
+		-webkit-transform: rotate(0deg);
+	}
+	to {
+		-webkit-transform: rotate(359deg);
+	}
+}
 
 html {
   font-family: sans-serif;
