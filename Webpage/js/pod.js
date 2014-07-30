@@ -31,9 +31,7 @@ function geticon() {
     var icon = "http://openweathermap.org/img/w/" +
       reply.weather[0].icon + ".png";
     var img = document.getElementById("iconx");
-
-	//alert(icon);
-	//document.iconx.src = icon;
+	
     img.src = icon;
     //alert("Temp = " + temperature + "C\n" + description + "\n" + icon);
 
