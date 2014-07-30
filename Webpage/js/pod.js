@@ -32,9 +32,7 @@ function geticon() {
       reply.weather[0].icon + ".png";
     var img = document.getElementById("iconx");
 	alert(icon);
-	document.iconx.src = icon;
-    //img.src = icon;
-    //alert("Temp = " + temperature + "C\n" + description + "\n" + icon);
+	img.src = icon;
 }
 
 function getweather() {
