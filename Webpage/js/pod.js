@@ -38,7 +38,11 @@ function geticon() {
 function getweather() {
     var reply = getWeatherFromAPI();
     var description = reply.weather[0].description;
-    
+    var weatherDescription = document.getElementById("weatherDescription");
+	if (weatherDescription != undefined)
+    {
+        weatherDescription.innerHTML = description;
+    }
     XHRequest("weather", description);
 
     alert(description);
