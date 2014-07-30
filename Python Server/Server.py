@@ -1,7 +1,8 @@
-from wsgiref.simple_server import make_server
-from enum import Enum
-import wsgiref as serv
-import API2 as JAPI
+from wsgiref.simple_server  import make_server
+from twilio.rest            import TwilioRestClient
+from enum                   import Enum
+import wsgiref  as serv
+import API2     as JAPI
 import math
 import copy
 import json
@@ -11,9 +12,32 @@ def print(*args, **kwargs):
     for arg in args:
         server.pLog.append(arg)
 
+class twilioClient():
+    enabled = True
+    template = "{} xoxo Pod"
+    
+    def __init__(self):
+        self.ACCOUNT_SID = "AC42e4c31d0bb66d30387c967b1b8ebc61"
+        self.AUTH_TOKEN  = "0de403b3b1383b04811db2ad769a646d"
+
+        self.client = TwilioRestClient(self.ACCOUNT_SID, self.AUTH_TOKEN)
+        
+    def sendMessage(self, message, phoneNo = "447476915987"):
+        if self.enabled:
+            print("[INFO] Sent text {} to {}".format(twilioClient.template.format(message), phoneNo))
+            self.client.messages.create(
+                to      = phoneNo,
+                from_   = "441631402052",
+                body    = twilioClient.template.format(message)
+                )
+        else:
+            print("[WARNING] Request sent to Twilio; Twilio has been disabled in the server script")
+        
+
 class server():
-    pLog = []
-    mcServer = None
+    pLog        = []
+    mcServer    = None
+    twilio      = None
 
     @staticmethod
     def request(environ, start_response):
@@ -64,6 +88,8 @@ class serverInterface():
         self.house["windowsOpen"]   = False
         self.house["doorsOpen"]     = False
         self.house["fireOn"]        = False
+        self.house["powerOn"]       = False
+        self.house["flooded"]       = False
         
         mc_conn = JAPI.Connection()    
         self.api = JAPI.JSONAPI(mc_conn)
@@ -87,6 +113,10 @@ class serverInterface():
             self.openWindows()  if val == "true" else self.closeWindows()
         elif var == "fireon":
             self.lightFire()    if val == "true" else self.extinguishFire()
+        elif var == "poweron":
+            self.enablePower()  if val == "true" else self.disablePower()
+        elif var == "flooded":
+            self.floodHouse()   if val == "true" else self.drainHouse()
         
         
     def setTemperature(self, temp):
@@ -111,16 +141,12 @@ class serverInterface():
     def worldUpdate(self):
         print("[Info] Re-initialising entire environment...")
 
-        buffer = copy.copy(self.house)
+        buffer = self.house.copy()
         
-        # OPEN WINDOWS IF OUTSIDE TEMPERATURE IS MORE DESIRABLE THAN INSIDE TEMPERATURE >5*
-        if abs(self.indoorTemperature - self.idealTemperature) - abs(self.temperature - self.idealTemperature) > 5:
+        # OPEN WINDOWS IF OUTSIDE TEMPERATURE IS MORE DESIRABLE THAN INSIDE TEMPERATURE >3S*
+        if abs(self.indoorTemperature - self.idealTemperature) - abs(self.temperature - self.idealTemperature) > 3:
             buffer["windowsOpen"]   = True
             buffer["fireOn"]        = False
-
-            # If temperature is >=50*C we want to open doors too. They should probably be escaping quickly at this point.
-            if self.indoorTemperature >= 50:
-                buffer["doorsOpen"] = True
 
         # CLOSE DOORS & WINDOWS FOR RAIN
         if self.weather == Weather.Rainy:
@@ -138,6 +164,10 @@ class serverInterface():
             self.api.server.run_command("weather clear")
         else:
             self.api.server.run_command("weather rain")
+
+        # Min temp 15; Max temp 25
+        if self.indoorTemperature <= 16 or self.indoorTemperature >= 24:
+            server.twilio.sendMessage("Caution! Your house is reaching either the max/min temperature. Suggestion: Either turn it up or down.")
         
         # Reflect buffer changes in-game
         self.actionIf(self.bufferDiffers(buffer, "windowsOpen"  ), self.openWindows if buffer["windowsOpen"]    else self.closeWindows  )
@@ -160,10 +190,12 @@ class serverInterface():
     # Abstractions
     def openWindows(self):
         print("[House Change] Opening Windows")
+        self.house["windowsOpen"] = True
         self.setWindows("air")
         
     def closeWindows(self):
         print("[House Change] Closing Windows")
+        self.house["windowsOpen"] = False
         self.setWindows("glass")
 
 
@@ -190,6 +222,26 @@ class serverInterface():
         self.disableRedstone("116 69 92")
         self.disableRedstone("115 69 92")
 
+    def enablePower(self):
+        self.enableRedstone("113 70 94")
+        self.house["powerOn"] = True
+
+    def disablePower(self):
+        self.disableRedstone("113 70 94")
+        self.house["powerOn"] = True
+
+    def floodHouse(self, unflood = False):
+        innerHouseRect = [(114, 74, 94), (118, 74, 99)]
+        for x in range(innerHouseRect[0][0], innerHouseRect[1][0] + 1):
+            for z in range(innerHouseRect[0][2], innerHouseRect[1][2] + 1):
+                self.setBlocks("water" if not unflood else "air", [str(x) + " " + str(innerHouseRect[0][1]) + " " + str(z)])
+        server.twilio.sendMessage("Warning! Your area is flooding!")
+        self.house["flooded"] = True
+
+    def drainHouse(self):
+        self.floodHouse(True)
+        self.house["flooded"] = False
+
     # Backend for abstractions
     def enableRedstone(self, position):
         print("[R-Change] Enabling redstone at " + position)
@@ -201,15 +253,16 @@ class serverInterface():
 
 
     def setWindows(self, windowType):
-        windows = ["119 72 99", "119 72 100", "118 72 100", "117 72 100", "116 72 100", "115 72 100"]
+        windows = ["119 72 99", "119 72 100", "118 72 100", "117 72 100", "116 72 100", "115 72 100", "118 73 93", "118 72 93", "109 74 98"]
         self.setBlocks(windowType, windows)
 
     def setBlocks(self, blockType, blockList):
         for block in blockList:
             self.api.server.run_command("setblock " + block + " minecraft:" + blockType)
 
+server.twilio   = twilioClient()
 server.mcServer = serverInterface()
-httpd = make_server('', 8000, server.request)
+httpd           = make_server('', 8000, server.request)
 print("[Online] Awaiting requests on port 8000")
 
 # Serve until process is killed
