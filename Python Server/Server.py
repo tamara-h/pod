@@ -1,5 +1,5 @@
 from wsgiref.simple_server  import make_server
-from twilio.rest            import TwilioRestClient
+from STwilio                import TwilioMessages, TwilioClient
 from enum                   import Enum
 import wsgiref  as serv
 import API2     as JAPI
@@ -11,39 +11,6 @@ def print(*args, **kwargs):
     __builtins__.print(*args, **kwargs)
     for arg in args:
         server.pLog.append(arg)
-
-class twilioMessages():
-    prefix          = ""
-    suffix          = "xoxo Pod"
-    flood           = "Warning! Water levels are running high in your area. Suggestion: flee! Every Pod for themselves \o/"
-    rain            = "Attention! It is raining. Suggestion: take washing inside."
-    tempWarn        = "Caution! Your house is reaching either the max/min temperature. Suggestion: either turn it up, or turn it down."
-    doorLeftOpen    = "Bad news, your front door has been left unlocked. Suggestion: lock it."
-    
-    messageTemplate = "{}{} {}"
-    
-
-class twilioClient():
-    enabled = True
-    template = "{} xoxo Pod"
-    
-    def __init__(self):
-        self.ACCOUNT_SID = "AC42e4c31d0bb66d30387c967b1b8ebc61"
-        self.AUTH_TOKEN  = "0de403b3b1383b04811db2ad769a646d"
-
-        self.client = TwilioRestClient(self.ACCOUNT_SID, self.AUTH_TOKEN)
-        
-    def sendMessage(self, message, phoneNo = "447476915987"):
-        if self.enabled:
-            print("[INFO] Sent text '{}' to {}".format(twilioMessages.messageTemplate.format(twilioMessages.prefix, message, twilioMessages.suffix), phoneNo))
-            self.client.messages.create(
-                to      = phoneNo,
-                from_   = "441631402052",
-                body    = twilioMessages.messageTemplate.format(twilioMessages.prefix, message, twilioMessages.suffix)
-                )
-        else:
-            print("[WARNING] Request sent to Twilio; Twilio has been disabled in the server script")
-        
 
 class server():
     pLog        = []
@@ -89,7 +56,7 @@ class Weather(Enum):
     Sunny = 1,
     Rainy = 2,
 
-class serverInterface():
+class ServerInterface():
     def __init__(self):
         self.idealTemperature       = 23
         self.temperature            = 30
@@ -178,7 +145,7 @@ class serverInterface():
 
         # Min temp 15; Max temp 25
         if self.indoorTemperature <= 16 or self.indoorTemperature >= 24:
-            server.twilio.sendMessage(twilioMessages.tempWarn)
+            server.twilio.sendMessage(TwilioMessages.tempWarn)
         
         # Reflect buffer changes in-game
         self.actionIf(self.bufferDiffers(buffer, "windowsOpen"  ), self.openWindows if buffer["windowsOpen"]    else self.closeWindows  )
@@ -248,7 +215,7 @@ class serverInterface():
                 self.setBlocks("water" if not unflood else "air", [str(x) + " " + str(innerHouseRect[0][1]) + " " + str(z)])#
 
         if not unflood:
-            server.twilio.sendMessage(twilioMessages.flood)
+            server.twilio.sendMessage(TwilioMessages.flood)
         self.house["flooded"] = True
 
     def drainHouse(self):
@@ -273,8 +240,8 @@ class serverInterface():
         for block in blockList:
             self.api.server.run_command("setblock " + block + " minecraft:" + blockType)
 
-server.twilio   = twilioClient()
-server.mcServer = serverInterface()
+server.twilio   = TwilioClient()
+server.mcServer = ServerInterface()
 httpd           = make_server('', 8000, server.request)
 print("[Online] Awaiting requests on port 8000")
 
