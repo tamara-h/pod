@@ -157,7 +157,7 @@ function windowStatus() {
 
 function appliances() {
 	var cost = 0;
-	var Usage = document.getElementById("usage");
+	var usage = document.getElementById("usage");
 	
 	PowerOn();
 	LightsOn();
@@ -170,13 +170,18 @@ function appliances() {
 		powerUsage = "0"
 	}
 	
-	if (Usage != undefined)
+	if (usage != undefined)
     {
         usage.innerHTML = powerUsage;
     }
 	
 	//cost in pounds = kWh * cost/kWh in pounds
-	cost = (appliancesOn * 0.1084);
+	cost = (powerUsage * 0.1084);
+	
+	var costx = document.getElementById("cost")
+	if (costx != undefined) {
+		costx.innerHTML = cost;
+	}
 
 }
 
