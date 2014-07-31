@@ -23,14 +23,21 @@
   <li><a href="temp.html" title="Temperature"><img src="http://i.imgur.com/ByjVYbI.jpg"></a></li>
   <li class="active"><a href="settings.html" title="Settings"><img src="http://i.imgur.com/2HeYUdi.jpg"></a></li>
 </ul>
+<<<<<<< HEAD
 <form style="margin-top:20px">
 <input type="radio" name="sex" value="Holiday">Holiday mode<br>
 <p> This is a mode which limits power consumption for when you are away from home for a long period of time</p><br>
 <input type="radio" name="sex" value="Day">Day mode<br>
+=======
+<form>
+<input type="radio" name="sex" value="Holiday" onclick="changeMode(holiday)">Holiday mode<br>
+<p> This is a mode which turns off the power in your home for when you are away for a long period of time</p><br>
+<input type="radio" name="sex" value="Day" onclick="changeMode(day)">Day mode<br>
+>>>>>>> origin/master
 <p> This is a mode for everyday living during the day. It limits light use but does not restrict power usage.</p><br>
-<input type="radio" name="sex" value="Night">Night mode <br>
+<input type="radio" name="sex" value="Night" onclick="changeMode(night)">Night mode <br>
 <p> This is a mode for during the night. It does not limit light usage, but does limit power usage.</p><br>
-<input type="radio" name="sex" value="Away">Away from home <br>
+<input type="radio" name="sex" value="Away" onclick="changeMode(away)">Away from home <br>
 <p> This is a mode for when you are out of the house - for example during work.</p>
 
 </form>
@@ -40,26 +47,49 @@
 <h3>Change location </h3>
 
 <div style="color:black;"> 
-<form name="input" method="get">
-<select>
-  <option value="Swansea" action="updateLocation("swansea,uk")>Swansea</option>
-  <option value="Plymouth" action="updateLocation("plymouth,uk")>Plymouth</option>
+<select id="location">
+  <option value="Swansea">Swansea</option>
+  <option value="Plymouth">Plymouth</option>
   <option value="Cardiff">Cardiff</option>
 </select>
-<input type="submit" value="Submit">
 </div>
-</form>
+
+<script type="text/javascript">
+	$(function() {
+		var locations = {"Swansea": "swansea,uk", "Plymouth": "plymouth,uk", "Cardiff": "cardiff,uk"}
+		
+		function displayLocation() {
+			var location = localStorage.getItem("location");
+			$.each(locations, function(k, v) {
+				if (v == location){
+					$('#APILocation').html(k);
+				}
+			});
+		}
+		displayLocation();
+		
+		$('#location').change(function() {
+			var location = $(this).val();
+			localStorage.setItem("location", locations[location]);
+			displayLocation();
+		});
+		
+		$('#location').val("selectedIndex", -1);
+	});
+</script>
+
 <h4><b>current location: </b><span id="APILocation"></span></h4>
 <!--
 <form name="input" action="demo_form_action.asp" method="get">
 Username: <input type="text" name="user">
 <input type="submit" value="Submit">
 </form>
-
+-->
 
 <script>
 getLocationFromAPI();
 updateLocation();
+changeMode();
 </script>
 </body>
 

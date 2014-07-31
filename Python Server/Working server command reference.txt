@@ -10,6 +10,7 @@ DoorsOpen	| Boolean
 WindowsOpen	| Boolean
 FireOn		| Boolean
 PowerOn		| Boolean
+LightsOn        | Boolean
 Flooded		| Boolean
 ----------------------------------
 

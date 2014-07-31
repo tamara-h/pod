@@ -8,12 +8,8 @@ function XHRequest(variable, value)
     return request.responseText;
 }
 
-function updateLocation(newLocation) {
-	return newLocation 
-}
-
 function getWeatherFromAPI() {
-    var url = "http://api.openweathermap.org/data/2.5/weather?q=" + updateLocation() + "&amp;units=metric";
+    var url = "http://api.openweathermap.org/data/2.5/weather?q=" + localStorage.getItem("location") + "&amp;units=metric";
     var request = new XMLHttpRequest();
     request.open("GET", url, false);
     request.send(null);
@@ -71,6 +67,14 @@ function getPressure() {
 	}
 }
 
+function PowerOn(ifOn) {
+  XHRequest("PowerOn", ifOn);
+}
+  
+function LightsOn(ifOn) { 
+	XHRequest("LightsOn", ifOn);
+}  
+
 function getHumidity() {
 	var reply = getWeatherFromAPI();
 	var humidity = reply.main.humidity;
@@ -97,4 +101,32 @@ function getLocationFromAPI() {
 	if (APILocation != undefined) {
 		APILocation.innerHTML = location;
 	}
+}
+
+
+function changeMode(type) {
+switch (type) {
+	case holiday: 
+		PowerOn(false);
+		LightsOn(false);
+		break;
+	case day:
+		PowerOn(true);
+		LightsOn(false);
+		break;
+	case night:
+		PowerOn(false);
+		LightsOn(true);
+		break;
+	case away:
+		PowerOn(false);
+		LightsOn(false);
+		break;
+
+	}
+}
+// Auto set location if unset
+if (localStorage.getItem("location") === null)
+{
+	localStorage.setItem("location", "plymouth,uk");
 }
