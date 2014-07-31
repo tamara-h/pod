@@ -9,7 +9,7 @@ function XHRequest(variable, value)
 }
 
 function getWeatherFromAPI() {
-    var url = "http://api.openweathermap.org/data/2.5/weather?q=" + updateLocation() + "&amp;units=metric";
+    var url = "http://api.openweathermap.org/data/2.5/weather?q=" + localStorage.getItem("location") + "&amp;units=metric";
     var request = new XMLHttpRequest();
     request.open("GET", url, false);
     request.send(null);
