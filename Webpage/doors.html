@@ -1,75 +1,92 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Pod</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap -->
-    <link href="css/bootstrap.css" rel="stylesheet" media="screen">
-    <!-- Bootstrap JS relies on jQuery -->
-    <script src="js/jquery-1.11.1.js" type="text/javascript"></script>
-    <script src="js/bootstrap.js" type="text/javascript"></script>
-    <script src="js/pod.js" type="text/javascript"></script>
-  </head>
-  
-  <body style="background-color:black; color:white;">
-  <ul class="nav nav-tabs">
-  <li>
-    <a href="project.html" title="Home"><img src="http://i.imgur.com/pRt9NhZ.jpg"></a>
-  </li>
-  <li><a href="about.html" title="About"><img src="http://i.imgur.com/W38JOgd.jpg"></a></li>
-  <li><a href="weather.html" title="Weather"><img src="http://i.imgur.com/s2AIbEM.jpg"></a></li>
-  <li><a href="lights.html" title="Lights"><img src="http://i.imgur.com/y4cdFTM.jpg"></a></li>
-  <li><a href="power.html" title="Power"><img src="http://i.imgur.com/jMNRGzh.jpg"></a></li>
-  <li class="active"><a href="doors.html" title="Doors"><img src="http://i.imgur.com/i5cIKIg.jpg"></a></li>
-  <li><a href="temp.html"  title="Temperature"><img src="http://i.imgur.com/ByjVYbI.jpg"></a></li>
-  <li><a href="settings.html" title="Settings"><img src="http://i.imgur.com/2HeYUdi.jpg"></a></li>
-</ul>
-    <div class="container">
-    <div class="page-header-container">
-      <p><h3>Door Status <span id="doorStatus" class="label label-success">Fail</span>
-</h3></p>
-    </div>
-    <div class="alert alert-warning alert-dismissible" role="alert" id="Alert" style="display: none">
-		<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-		<span id="alertContent">Warning! Your doors are open!</span>
-	</div>
-    <div class="btn-group btn-group-unmargin">
-      <button type="button" class="btn btn-primary" onclick="doorChange(true)">Open Doors</button>
-      <button type="button" class="btn btn-danger" onclick="doorChange(false)">Lock Doors</button>
-    </div>
-    <br/>
-    <br/>
-    <br/> 
-    <script type="text/javascript">
-      function doorsStatus() {
-		var responseText = XHRequest("ignore", "x");
-		var data = JSON.parse(responseText);
-		
-		var doorOpen = data.houseStatus.doorsOpen;
-		
-		$('#doorStatus').html( doorOpen ? "Open" : "Closed" );
-		
-		if (doorOpen)
-			$('#Alert').show();
-		else
-			$('#Alert').hide();
-	  }
 
-      doorsStatus();
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	  <meta name="generator" content=
+	  "HTML Tidy for Linux/x86 (vers 25 March 2009), see www.w3.org" />
 
-      function doorChange(state){
-        XHRequest("doorsOpen", state);
-		doorsStatus();
-      }
-    </script>
-</div>	
-  </body>
-</html>  
-  
-  
-  
-  
-  
-  
-  
-  
+	  <title>Pod</title>
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	  <!-- Bootstrap -->
+	  <link href="css/bootstrap.css" rel="stylesheet" media="screen" type="text/css" />
+	  <!-- Bootstrap JS relies on jQuery -->
+
+	  <script src="js/jquery-1.11.1.js" type="text/javascript">
+	</script>
+	  <script src="js/bootstrap.js" type="text/javascript">
+	</script>
+	  <script src="js/pod.js" type="text/javascript">
+	</script>
+	</head>
+
+	<body style="background-color:black; color:white;">
+	  <ul class="nav nav-tabs">
+		<li><a href="project.html" title="Home"><img src=
+		"http://i.imgur.com/pRt9NhZ.jpg" /></a></li>
+
+		<li><a href="about.html" title="About"><img src=
+		"http://i.imgur.com/W38JOgd.jpg" /></a></li>
+
+		<li><a href="weather.html" title="Weather"><img src=
+		"http://i.imgur.com/s2AIbEM.jpg" /></a></li>
+
+		<li><a href="lights.html" title="Lights"><img src=
+		"http://i.imgur.com/y4cdFTM.jpg" /></a></li>
+
+		<li><a href="power.html" title="Power"><img src=
+		"http://i.imgur.com/jMNRGzh.jpg" /></a></li>
+
+		<li class="active"><a href="doors.html" title="Doors"><img src=
+		"http://i.imgur.com/i5cIKIg.jpg" /></a></li>
+
+		<li><a href="temp.html" title="Temperature"><img src=
+		"http://i.imgur.com/ByjVYbI.jpg" /></a></li>
+
+		<li><a href="settings.html" title="Settings"><img src=
+		"http://i.imgur.com/2HeYUdi.jpg" /></a></li>
+	  </ul>
+
+	  <div class="container">
+		<div class="page-header-container">
+		  <h3>Door Status <span id="doorStatus" class="label label-success">Fail</span></h3>
+		</div>
+
+		<div class="alert alert-warning alert-dismissible" role="alert" id="Alert" style=
+		"display: none">
+		  <button type="button" class="close" data-dismiss="alert"><span aria-hidden=
+		  "true">&times;</span><span class="sr-only">Close</span></button> <span id=
+		  "alertContent">Warning! Your doors are open!</span>
+		</div>
+
+		<div class="btn-group btn-group-unmargin">
+		  <button type="button" class="btn btn-primary" onclick="doorChange(true)">Open
+		  Doors</button> <button type="button" class="btn btn-danger" onclick=
+		  "doorChange(false)">Lock Doors</button>
+		</div><br />
+		<br />
+		<br />
+		<script type="text/javascript">
+		  function doorsStatus() {
+				var responseText = XHRequest("ignore", "x");
+				var data = JSON.parse(responseText);
+				
+				var doorOpen = data.houseStatus.doorsOpen;
+				
+				$('#doorStatus').html( doorOpen ? "Open" : "Locked" );
+				
+				if (doorOpen)
+						$('#Alert').show();
+				else
+						$('#Alert').hide();
+		  }
+
+		  doorsStatus();
+
+		  function doorChange(state){
+				XHRequest("doorsOpen", state);
+				doorsStatus();
+		  }
+		</script>
+	  </div>
+	</body>
+</html>
