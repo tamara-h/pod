@@ -3667,7 +3667,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav > li > a:hover,
 .nav > li > a:focus {
   text-decoration: none;
-  background-color: #363636;
+  background-color: transparent;
 }
 .nav > li.disabled > a {
   color: #777;
@@ -3682,20 +3682,25 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav .open > a,
 .nav .open > a:hover,
 .nav .open > a:focus {
-  background-color: #363636;
-  border-color: #363636;
+  background-color: transparent;
+  border-color: transparent;
+  box-shadow: 0px 0px 20px #fff;
 }
 .nav .nav-divider {
   height: 1px;
   margin: 9px 0;
   overflow: hidden;
-  background-color: #e5e5e5;
+  background-color: transparent;
 }
-.nav > li > a > img {
+.nav > li > a:hover > img {
   max-width: none;
+  box-shadow: 0px 0px 20px #fff;
 }
 .nav-tabs {
-  border-bottom:3px solid #363636;
+  //* border-bottom:3px solid #363636;*//
+}
+.nav-tabs > img:hover{
+  box-shadow: 0px 0px 20px #fff;
 }
 .nav-tabs > li {
   float: left;
@@ -3708,16 +3713,19 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-radius: 4px 4px 0 0;
 }
 .nav-tabs > li > a:hover {
-  border-color: #363636;
+  border-color: transparent;
 }
 .nav-tabs > li.active > a,
 .nav-tabs > li.active > a:hover,
 .nav-tabs > li.active > a:focus {
   color: #555;
   cursor: default;
-  background-color: #363636;
-  border: 1px solid #363636;
+  background-color: transparent;
+  border: 1px solid transparent;
   border-bottom-color: transparent;
+}
+.nav-tabs > li.active > a > img{
+  box-shadow: 0px 0px 20px #fff;
 }
 .nav-tabs.nav-justified {
   width: 100%;
