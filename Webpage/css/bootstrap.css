@@ -1280,6 +1280,12 @@ a.bg-danger:hover {
   margin: 40px 0 20px;
   border-bottom: 1px solid #eee;
 }
+
+.page-header-container {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 9px;
+  margin: 40px 0 20px;
+}
 ul,
 ol {
   margin-top: 0;
@@ -3319,6 +3325,10 @@ tbody.collapse.in {
   display: inline-block;
   vertical-align: middle;
 }
+.btn-group-unmargin {
+	margin-left: 0px;
+}
+
 .btn-group > .btn,
 .btn-group-vertical > .btn {
   position: relative;
