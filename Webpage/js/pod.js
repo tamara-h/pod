@@ -95,6 +95,26 @@ function getLocationFromAPI() {
 	}
 }
 
+
+function changeMode(type) {
+switch (type) {
+	case holiday: 
+		holidaymode();
+		break;
+	case day:
+		daymode();
+		break;
+	case night:
+		nightmode();
+		break;
+	case away:
+		awaymode();
+		break;
+
+}
+
+
+}
 // Auto set location if unset
 if (localStorage.getItem("location") === null)
 {
