@@ -125,6 +125,42 @@ switch (type) {
 
 	}
 }
+
+function doorChange(state){
+				XHRequest("doorsOpen", state);
+				doorsStatus();
+		  }
+
+function doorsStatus() {
+				var responseText = XHRequest("ignore", "x");
+				var data = JSON.parse(responseText);
+				
+				var doorOpen = data.houseStatus.doorsOpen;
+				
+				$('#doorStatus').html( doorOpen ? "Open" : "Locked" );
+				
+				if (doorOpen)
+					$('#Alert').show();
+				else
+					$('#Alert').hide();
+		  }
+
+function windowChange(state){
+				XHRequest("windowsOpen", state);
+				windowStatus();
+}
+		  
+function windowStatus() {
+				var responseText = XHRequest("ignore", "x");
+				var data = JSON.parse(responseText);
+				
+				var windowStatus = data.houseStatus.windowsOpen;
+				
+				$('#windowStatus').html( windowStatus ? "Open" : "Closed" );
+				
+}
+
+
 // Auto set location if unset
 if (localStorage.getItem("location") === null)
 {

@@ -62,27 +62,26 @@
 		</div><br />
 		<br />
 		<br />
+	  </div>
+	  <!-- WINDOWS STUFF AFTER THIS! -->
+	  <div class="container">
+		<div class="page-header-container">
+		  <h3>Windows Status <span id="windowStatus" class="label label-success">Fail</span></h3>
+		</div>
+
+		<div class="btn-group btn-group-unmargin">
+		  <button type="button" class="btn btn-primary" onclick="windowChange(true)">Open
+		  Windows</button> <button type="button" class="btn btn-danger" onclick=
+		  "windowChange(false)">Close Windows</button>
+		</div><br />
+		<br />
+		<br />
 		<script type="text/javascript">
-		  function doorsStatus() {
-				var responseText = XHRequest("ignore", "x");
-				var data = JSON.parse(responseText);
-				
-				var doorOpen = data.houseStatus.doorsOpen;
-				
-				$('#doorStatus').html( doorOpen ? "Open" : "Locked" );
-				
-				if (doorOpen)
-					$('#Alert').show();
-				else
-					$('#Alert').hide();
-		  }
 
+		  windowStatus();
+		  windowChange();
+		  doorChange();
 		  doorsStatus();
-
-		  function doorChange(state){
-				XHRequest("doorsOpen", state);
-				doorsStatus();
-		  }
 		</script>
 	  </div>
 	</body>

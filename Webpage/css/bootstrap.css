@@ -158,7 +158,8 @@ hr {
           box-sizing: content-box;
 }
 pre {
-  overflow: auto;
+  overflow: auto;
+  
 }
 code,
 kbd,
