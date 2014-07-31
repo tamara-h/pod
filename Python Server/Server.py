@@ -252,10 +252,14 @@ class ServerInterface():
         for block in blockList:
             self.api.server.run_command("setblock " + block + " minecraft:" + blockType)
 
-server.twilio   = TwilioClient()
-server.mcServer = ServerInterface()
-httpd           = make_server('', 8000, server.request)
-print("[Online] Awaiting requests on port 8000")
+def main():
+    server.twilio   = TwilioClient()
+    server.mcServer = ServerInterface()
+    httpd           = make_server('', 8000, server.request)
+    print("[Online] Awaiting requests on port 8000")
 
-# Serve until process is killed
-httpd.serve_forever()
+    # Serve until process is killed
+    httpd.serve_forever()
+
+if __name__ == "__main__":
+    main()
