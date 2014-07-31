@@ -36,12 +36,26 @@
 </form>
 <br>
 <br>
-<h3> change location </h3>
 
+<h3>Change location </h3>
+<form name="input" onChange="updateLocation()">
+<div style="color:black;"> <
+<select>
+  <option value="Swansea">Swansea</option>
+  <option value="Plymouth">Plymouth</option>
+  <option value="Cardiff">Cardiff</option>
+  <option value="audi">Audi</option>
+</select>
+</div>
+</form>
 <h4><b>current location: </b><span id="APILocation"></span></h4>
+
+
+
 
 <script>
 getLocationFromAPI();
+updatelocation();
 </script>
 </body>
 

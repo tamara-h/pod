@@ -8,6 +8,12 @@ function XHRequest(variable, value)
     return request.responseText;
 }
 
+function updateLocation() {
+	
+
+
+}
+
 function getWeatherFromAPI() {
     var url = "http://api.openweathermap.org/data/2.5/weather" +
     "?q=Swansea,uk&amp;units=metric";
@@ -44,7 +50,7 @@ function getweather() {
         weatherDescription.innerHTML = description;
     }
 	//TEMPORARY COMMENTING OUT FOR TESTING PURPOSES NOW
-    //XHRequest("weather", description);
+    XHRequest("weather", description);
 }
 
 function gettemp() {
@@ -56,7 +62,7 @@ function gettemp() {
         outdoorTemp.innerHTML = temperature;
     }
 	//TEMPORARY COMMENTING OUT FOR TESTING PURPOSES NOW
-    //XHRequest("temp", temperature);
+    XHRequest("temp", temperature);
 }
 
 function getPressure() {
