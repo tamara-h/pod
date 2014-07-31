@@ -245,7 +245,7 @@ class ServerInterface():
 
 
     def setWindows(self, windowType):
-        windows = ["119 72 99", "119 72 100", "118 72 100", "117 72 100", "116 72 100", "115 72 100", "118 73 93", "118 72 93", "109 74 98"]
+        windows = "[119 72 100", "118 72 100", "117 72 100", "116 72 100", "115 72 100", "118 73 93", "118 72 93", "109 74 98"]
         self.setBlocks(windowType, windows)
 
     def setBlocks(self, blockType, blockList):

@@ -300,3 +300,644 @@
 [10:26:31] [Thread-98/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["weather rain"]){AUTHED, ALLOWED} 
 [10:26:31] [Server thread/INFO]: Command run by remote user: 'weather rain'
 [10:26:31] [Server thread/INFO]: CONSOLE: Changed weather to rainy for 468 seconds.
+[10:36:24] [Thread-99/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["weather rain"]){AUTHED, ALLOWED} 
+[10:36:24] [Server thread/INFO]: Command run by remote user: 'weather rain'
+[10:36:24] [Server thread/INFO]: CONSOLE: Changed weather to rainy for 655 seconds.
+[10:36:54] [Thread-100/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["weather rain"]){AUTHED, ALLOWED} 
+[10:36:54] [Server thread/INFO]: Command run by remote user: 'weather rain'
+[10:36:54] [Server thread/INFO]: CONSOLE: Changed weather to rainy for 587 seconds.
+[10:45:10] [User Authenticator #1/INFO]: UUID of player trappingnoobs is 20bdea1bb4ab42d996f2d32f6f679d54
+[10:45:10] [Server thread/INFO]: trappingnoobs[/127.0.0.1:49624] logged in with entity id 208 at ([world] 115.2076237449509, 72.5, 98.55073705254097)
+[10:45:21] [Thread-101/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 119 71 97 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:21] [Server thread/INFO]: Command run by remote user: 'setblock 119 71 97 minecraft:air'
+[10:45:21] [Server thread/INFO]: Block placed
+[10:45:23] [Thread-102/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 116 69 92 minecraft:redstone_torch"]){AUTHED, ALLOWED} 
+[10:45:23] [Server thread/INFO]: Command run by remote user: 'setblock 116 69 92 minecraft:redstone_torch'
+[10:45:23] [Server thread/INFO]: Block placed
+[10:45:23] [Thread-103/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 115 69 92 minecraft:redstone_torch"]){AUTHED, ALLOWED} 
+[10:45:23] [Server thread/INFO]: Command run by remote user: 'setblock 115 69 92 minecraft:redstone_torch'
+[10:45:23] [Server thread/INFO]: Block placed
+[10:45:25] [Thread-104/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 119 72 99 minecraft:glass"]){AUTHED, ALLOWED} 
+[10:45:25] [Server thread/INFO]: Command run by remote user: 'setblock 119 72 99 minecraft:glass'
+[10:45:25] [Server thread/INFO]: Block placed
+[10:45:25] [Thread-105/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 119 72 100 minecraft:glass"]){AUTHED, ALLOWED} 
+[10:45:25] [Server thread/INFO]: Command run by remote user: 'setblock 119 72 100 minecraft:glass'
+[10:45:25] [Server thread/INFO]: Block placed
+[10:45:25] [Thread-106/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 118 72 100 minecraft:glass"]){AUTHED, ALLOWED} 
+[10:45:25] [Server thread/INFO]: Command run by remote user: 'setblock 118 72 100 minecraft:glass'
+[10:45:25] [Server thread/INFO]: Block placed
+[10:45:25] [Thread-107/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 117 72 100 minecraft:glass"]){AUTHED, ALLOWED} 
+[10:45:25] [Server thread/INFO]: Command run by remote user: 'setblock 117 72 100 minecraft:glass'
+[10:45:25] [Server thread/INFO]: Block placed
+[10:45:25] [Thread-108/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 116 72 100 minecraft:glass"]){AUTHED, ALLOWED} 
+[10:45:25] [Server thread/INFO]: Command run by remote user: 'setblock 116 72 100 minecraft:glass'
+[10:45:25] [Server thread/INFO]: Block placed
+[10:45:25] [Thread-109/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 115 72 100 minecraft:glass"]){AUTHED, ALLOWED} 
+[10:45:25] [Server thread/INFO]: Command run by remote user: 'setblock 115 72 100 minecraft:glass'
+[10:45:25] [Server thread/INFO]: Block placed
+[10:45:25] [Thread-110/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 118 73 93 minecraft:glass"]){AUTHED, ALLOWED} 
+[10:45:25] [Server thread/INFO]: Command run by remote user: 'setblock 118 73 93 minecraft:glass'
+[10:45:25] [Server thread/INFO]: Block placed
+[10:45:25] [Thread-111/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 118 72 93 minecraft:glass"]){AUTHED, ALLOWED} 
+[10:45:25] [Server thread/INFO]: Command run by remote user: 'setblock 118 72 93 minecraft:glass'
+[10:45:25] [Server thread/INFO]: Block placed
+[10:45:25] [Thread-112/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 109 74 98 minecraft:glass"]){AUTHED, ALLOWED} 
+[10:45:26] [Server thread/INFO]: Command run by remote user: 'setblock 109 74 98 minecraft:glass'
+[10:45:26] [Server thread/INFO]: Block placed
+[10:45:28] [Thread-113/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 111 69 97 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:28] [Server thread/INFO]: Command run by remote user: 'setblock 111 69 97 minecraft:air'
+[10:45:28] [Server thread/INFO]: Block placed
+[10:45:28] [Thread-114/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 111 69 96 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:28] [Server thread/INFO]: Command run by remote user: 'setblock 111 69 96 minecraft:air'
+[10:45:28] [Server thread/INFO]: Block placed
+[10:45:28] [Thread-115/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 113 70 94 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:28] [Server thread/INFO]: Command run by remote user: 'setblock 113 70 94 minecraft:air'
+[10:45:28] [Server thread/INFO]: Block placed
+[10:45:28] [Thread-116/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 113 70 99 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:28] [Server thread/INFO]: Command run by remote user: 'setblock 113 70 99 minecraft:air'
+[10:45:28] [Server thread/INFO]: Block placed
+[10:45:31] [Thread-117/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 123 71 97 minecraft:redstone_torch"]){AUTHED, ALLOWED} 
+[10:45:31] [Server thread/INFO]: Command run by remote user: 'setblock 123 71 97 minecraft:redstone_torch'
+[10:45:31] [Server thread/INFO]: Block placed
+[10:45:31] [Thread-118/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 123 71 97 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:31] [Server thread/INFO]: Command run by remote user: 'setblock 123 71 97 minecraft:air'
+[10:45:31] [Server thread/INFO]: Block placed
+[10:45:31] [Thread-119/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 119 72 99 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:31] [Server thread/INFO]: Command run by remote user: 'setblock 119 72 99 minecraft:air'
+[10:45:31] [Server thread/INFO]: Block placed
+[10:45:31] [Thread-120/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 119 72 100 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:31] [Server thread/INFO]: Command run by remote user: 'setblock 119 72 100 minecraft:air'
+[10:45:31] [Server thread/INFO]: Block placed
+[10:45:31] [Thread-121/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 118 72 100 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:31] [Server thread/INFO]: Command run by remote user: 'setblock 118 72 100 minecraft:air'
+[10:45:31] [Server thread/INFO]: Block placed
+[10:45:31] [Thread-122/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 117 72 100 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:31] [Server thread/INFO]: Command run by remote user: 'setblock 117 72 100 minecraft:air'
+[10:45:31] [Server thread/INFO]: Block placed
+[10:45:31] [Thread-123/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 116 72 100 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:31] [Server thread/INFO]: Command run by remote user: 'setblock 116 72 100 minecraft:air'
+[10:45:31] [Server thread/INFO]: Block placed
+[10:45:31] [Thread-124/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 115 72 100 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:31] [Server thread/INFO]: Command run by remote user: 'setblock 115 72 100 minecraft:air'
+[10:45:31] [Server thread/INFO]: Block placed
+[10:45:31] [Thread-125/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 118 73 93 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:31] [Server thread/INFO]: Command run by remote user: 'setblock 118 73 93 minecraft:air'
+[10:45:31] [Server thread/INFO]: Block placed
+[10:45:31] [Thread-126/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 118 72 93 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:31] [Server thread/INFO]: Command run by remote user: 'setblock 118 72 93 minecraft:air'
+[10:45:31] [Server thread/INFO]: Block placed
+[10:45:31] [Thread-127/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 109 74 98 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:32] [Server thread/INFO]: Command run by remote user: 'setblock 109 74 98 minecraft:air'
+[10:45:32] [Server thread/INFO]: Block placed
+[10:45:32] [Thread-128/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 116 69 92 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:32] [Server thread/INFO]: Command run by remote user: 'setblock 116 69 92 minecraft:air'
+[10:45:32] [Server thread/INFO]: Block placed
+[10:45:32] [Thread-129/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 115 69 92 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:32] [Server thread/INFO]: Command run by remote user: 'setblock 115 69 92 minecraft:air'
+[10:45:32] [Server thread/INFO]: Block placed
+[10:45:33] [Thread-130/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 111 69 97 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:34] [Server thread/INFO]: Command run by remote user: 'setblock 111 69 97 minecraft:air'
+[10:45:34] [Server thread/INFO]: The block couldn't be placed
+[10:45:34] [Thread-131/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 111 69 96 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:34] [Server thread/INFO]: Command run by remote user: 'setblock 111 69 96 minecraft:air'
+[10:45:34] [Server thread/INFO]: The block couldn't be placed
+[10:45:34] [Thread-132/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 113 70 94 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:34] [Server thread/INFO]: Command run by remote user: 'setblock 113 70 94 minecraft:air'
+[10:45:34] [Server thread/INFO]: The block couldn't be placed
+[10:45:34] [Thread-133/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 113 70 99 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:34] [Server thread/INFO]: Command run by remote user: 'setblock 113 70 99 minecraft:air'
+[10:45:34] [Server thread/INFO]: The block couldn't be placed
+[10:45:34] [Thread-134/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 119 71 97 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:34] [Server thread/INFO]: Command run by remote user: 'setblock 119 71 97 minecraft:air'
+[10:45:34] [Server thread/INFO]: Block placed
+[10:45:35] [Thread-135/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 119 72 99 minecraft:glass"]){AUTHED, ALLOWED} 
+[10:45:35] [Server thread/INFO]: Command run by remote user: 'setblock 119 72 99 minecraft:glass'
+[10:45:35] [Server thread/INFO]: Block placed
+[10:45:35] [Thread-136/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 119 72 100 minecraft:glass"]){AUTHED, ALLOWED} 
+[10:45:35] [Server thread/INFO]: Command run by remote user: 'setblock 119 72 100 minecraft:glass'
+[10:45:35] [Server thread/INFO]: Block placed
+[10:45:35] [Thread-137/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 118 72 100 minecraft:glass"]){AUTHED, ALLOWED} 
+[10:45:35] [Server thread/INFO]: Command run by remote user: 'setblock 118 72 100 minecraft:glass'
+[10:45:35] [Server thread/INFO]: Block placed
+[10:45:35] [Thread-138/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 117 72 100 minecraft:glass"]){AUTHED, ALLOWED} 
+[10:45:35] [Server thread/INFO]: Command run by remote user: 'setblock 117 72 100 minecraft:glass'
+[10:45:35] [Server thread/INFO]: Block placed
+[10:45:35] [Thread-139/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 116 72 100 minecraft:glass"]){AUTHED, ALLOWED} 
+[10:45:35] [Server thread/INFO]: Command run by remote user: 'setblock 116 72 100 minecraft:glass'
+[10:45:35] [Server thread/INFO]: Block placed
+[10:45:35] [Thread-140/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 115 72 100 minecraft:glass"]){AUTHED, ALLOWED} 
+[10:45:35] [Server thread/INFO]: Command run by remote user: 'setblock 115 72 100 minecraft:glass'
+[10:45:35] [Server thread/INFO]: Block placed
+[10:45:35] [Thread-141/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 118 73 93 minecraft:glass"]){AUTHED, ALLOWED} 
+[10:45:35] [Server thread/INFO]: Command run by remote user: 'setblock 118 73 93 minecraft:glass'
+[10:45:35] [Server thread/INFO]: Block placed
+[10:45:35] [Thread-142/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 118 72 93 minecraft:glass"]){AUTHED, ALLOWED} 
+[10:45:35] [Server thread/INFO]: Command run by remote user: 'setblock 118 72 93 minecraft:glass'
+[10:45:35] [Server thread/INFO]: Block placed
+[10:45:35] [Thread-143/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 109 74 98 minecraft:glass"]){AUTHED, ALLOWED} 
+[10:45:35] [Server thread/INFO]: Command run by remote user: 'setblock 109 74 98 minecraft:glass'
+[10:45:35] [Server thread/INFO]: Block placed
+[10:45:36] [Thread-144/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 116 69 92 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:36] [Server thread/INFO]: Command run by remote user: 'setblock 116 69 92 minecraft:air'
+[10:45:36] [Server thread/INFO]: The block couldn't be placed
+[10:45:36] [Thread-145/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 115 69 92 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:36] [Server thread/INFO]: Command run by remote user: 'setblock 115 69 92 minecraft:air'
+[10:45:36] [Server thread/INFO]: The block couldn't be placed
+[10:45:37] [Thread-146/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 114 74 94 minecraft:water"]){AUTHED, ALLOWED} 
+[10:45:37] [Server thread/INFO]: Command run by remote user: 'setblock 114 74 94 minecraft:water'
+[10:45:37] [Server thread/INFO]: Block placed
+[10:45:37] [Thread-147/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 114 74 95 minecraft:water"]){AUTHED, ALLOWED} 
+[10:45:37] [Server thread/INFO]: Command run by remote user: 'setblock 114 74 95 minecraft:water'
+[10:45:37] [Server thread/INFO]: Block placed
+[10:45:37] [Thread-148/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 114 74 96 minecraft:water"]){AUTHED, ALLOWED} 
+[10:45:37] [Server thread/INFO]: Command run by remote user: 'setblock 114 74 96 minecraft:water'
+[10:45:37] [Server thread/INFO]: Block placed
+[10:45:37] [Thread-149/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 114 74 97 minecraft:water"]){AUTHED, ALLOWED} 
+[10:45:37] [Server thread/INFO]: Command run by remote user: 'setblock 114 74 97 minecraft:water'
+[10:45:37] [Server thread/INFO]: Block placed
+[10:45:37] [Thread-150/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 114 74 98 minecraft:water"]){AUTHED, ALLOWED} 
+[10:45:37] [Server thread/INFO]: Command run by remote user: 'setblock 114 74 98 minecraft:water'
+[10:45:37] [Server thread/INFO]: Block placed
+[10:45:37] [Thread-151/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 114 74 99 minecraft:water"]){AUTHED, ALLOWED} 
+[10:45:38] [Server thread/INFO]: Command run by remote user: 'setblock 114 74 99 minecraft:water'
+[10:45:38] [Server thread/INFO]: Block placed
+[10:45:38] [Thread-152/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 115 74 94 minecraft:water"]){AUTHED, ALLOWED} 
+[10:45:38] [Server thread/INFO]: Command run by remote user: 'setblock 115 74 94 minecraft:water'
+[10:45:38] [Server thread/INFO]: Block placed
+[10:45:38] [Thread-153/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 115 74 95 minecraft:water"]){AUTHED, ALLOWED} 
+[10:45:38] [Server thread/INFO]: Command run by remote user: 'setblock 115 74 95 minecraft:water'
+[10:45:38] [Server thread/INFO]: Block placed
+[10:45:38] [Thread-154/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 115 74 96 minecraft:water"]){AUTHED, ALLOWED} 
+[10:45:38] [Server thread/INFO]: Command run by remote user: 'setblock 115 74 96 minecraft:water'
+[10:45:38] [Server thread/INFO]: Block placed
+[10:45:38] [Thread-155/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 115 74 97 minecraft:water"]){AUTHED, ALLOWED} 
+[10:45:38] [Server thread/INFO]: Command run by remote user: 'setblock 115 74 97 minecraft:water'
+[10:45:38] [Server thread/INFO]: Block placed
+[10:45:38] [Thread-156/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 115 74 98 minecraft:water"]){AUTHED, ALLOWED} 
+[10:45:38] [Server thread/INFO]: Command run by remote user: 'setblock 115 74 98 minecraft:water'
+[10:45:38] [Server thread/INFO]: Block placed
+[10:45:38] [Thread-157/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 115 74 99 minecraft:water"]){AUTHED, ALLOWED} 
+[10:45:38] [Server thread/INFO]: Command run by remote user: 'setblock 115 74 99 minecraft:water'
+[10:45:38] [Server thread/INFO]: Block placed
+[10:45:38] [Thread-158/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 116 74 94 minecraft:water"]){AUTHED, ALLOWED} 
+[10:45:38] [Server thread/INFO]: Command run by remote user: 'setblock 116 74 94 minecraft:water'
+[10:45:38] [Server thread/INFO]: Block placed
+[10:45:38] [Thread-159/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 116 74 95 minecraft:water"]){AUTHED, ALLOWED} 
+[10:45:38] [Server thread/INFO]: Command run by remote user: 'setblock 116 74 95 minecraft:water'
+[10:45:38] [Server thread/INFO]: Block placed
+[10:45:38] [Thread-160/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 116 74 96 minecraft:water"]){AUTHED, ALLOWED} 
+[10:45:38] [Server thread/INFO]: Command run by remote user: 'setblock 116 74 96 minecraft:water'
+[10:45:38] [Server thread/INFO]: Block placed
+[10:45:38] [Thread-161/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 116 74 97 minecraft:water"]){AUTHED, ALLOWED} 
+[10:45:38] [Server thread/INFO]: Command run by remote user: 'setblock 116 74 97 minecraft:water'
+[10:45:38] [Server thread/INFO]: Block placed
+[10:45:38] [Thread-162/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 116 74 98 minecraft:water"]){AUTHED, ALLOWED} 
+[10:45:38] [Server thread/INFO]: Command run by remote user: 'setblock 116 74 98 minecraft:water'
+[10:45:38] [Server thread/INFO]: Block placed
+[10:45:38] [Thread-163/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 116 74 99 minecraft:water"]){AUTHED, ALLOWED} 
+[10:45:38] [Server thread/INFO]: Command run by remote user: 'setblock 116 74 99 minecraft:water'
+[10:45:38] [Server thread/INFO]: Block placed
+[10:45:38] [Thread-164/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 117 74 94 minecraft:water"]){AUTHED, ALLOWED} 
+[10:45:38] [Server thread/INFO]: Command run by remote user: 'setblock 117 74 94 minecraft:water'
+[10:45:38] [Server thread/INFO]: Block placed
+[10:45:38] [Thread-165/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 117 74 95 minecraft:water"]){AUTHED, ALLOWED} 
+[10:45:38] [Server thread/INFO]: Command run by remote user: 'setblock 117 74 95 minecraft:water'
+[10:45:38] [Server thread/INFO]: Block placed
+[10:45:38] [Thread-166/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 117 74 96 minecraft:water"]){AUTHED, ALLOWED} 
+[10:45:38] [Server thread/INFO]: Command run by remote user: 'setblock 117 74 96 minecraft:water'
+[10:45:38] [Server thread/INFO]: Block placed
+[10:45:38] [Thread-167/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 117 74 97 minecraft:water"]){AUTHED, ALLOWED} 
+[10:45:38] [Server thread/INFO]: Command run by remote user: 'setblock 117 74 97 minecraft:water'
+[10:45:38] [Server thread/INFO]: Block placed
+[10:45:38] [Thread-168/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 117 74 98 minecraft:water"]){AUTHED, ALLOWED} 
+[10:45:38] [Server thread/INFO]: Command run by remote user: 'setblock 117 74 98 minecraft:water'
+[10:45:38] [Server thread/INFO]: Block placed
+[10:45:38] [Thread-169/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 117 74 99 minecraft:water"]){AUTHED, ALLOWED} 
+[10:45:38] [Server thread/INFO]: Command run by remote user: 'setblock 117 74 99 minecraft:water'
+[10:45:38] [Server thread/INFO]: Block placed
+[10:45:38] [Thread-170/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 118 74 94 minecraft:water"]){AUTHED, ALLOWED} 
+[10:45:38] [Server thread/INFO]: Command run by remote user: 'setblock 118 74 94 minecraft:water'
+[10:45:38] [Server thread/INFO]: Block placed
+[10:45:38] [Thread-171/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 118 74 95 minecraft:water"]){AUTHED, ALLOWED} 
+[10:45:39] [Server thread/INFO]: Command run by remote user: 'setblock 118 74 95 minecraft:water'
+[10:45:39] [Server thread/INFO]: Block placed
+[10:45:39] [Thread-172/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 118 74 96 minecraft:water"]){AUTHED, ALLOWED} 
+[10:45:39] [Server thread/INFO]: Command run by remote user: 'setblock 118 74 96 minecraft:water'
+[10:45:39] [Server thread/INFO]: Block placed
+[10:45:39] [Thread-173/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 118 74 97 minecraft:water"]){AUTHED, ALLOWED} 
+[10:45:39] [Server thread/INFO]: Command run by remote user: 'setblock 118 74 97 minecraft:water'
+[10:45:39] [Server thread/INFO]: Block placed
+[10:45:39] [Thread-174/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 118 74 98 minecraft:water"]){AUTHED, ALLOWED} 
+[10:45:39] [Server thread/INFO]: Command run by remote user: 'setblock 118 74 98 minecraft:water'
+[10:45:39] [Server thread/INFO]: Block placed
+[10:45:39] [Thread-175/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 118 74 99 minecraft:water"]){AUTHED, ALLOWED} 
+[10:45:39] [Server thread/INFO]: Command run by remote user: 'setblock 118 74 99 minecraft:water'
+[10:45:39] [Server thread/INFO]: Block placed
+[10:45:45] [Thread-176/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 111 69 97 minecraft:redstone_torch"]){AUTHED, ALLOWED} 
+[10:45:45] [Server thread/INFO]: Command run by remote user: 'setblock 111 69 97 minecraft:redstone_torch'
+[10:45:45] [Server thread/INFO]: Block placed
+[10:45:45] [Thread-177/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 111 69 96 minecraft:redstone_torch"]){AUTHED, ALLOWED} 
+[10:45:45] [Server thread/INFO]: Command run by remote user: 'setblock 111 69 96 minecraft:redstone_torch'
+[10:45:45] [Server thread/INFO]: Block placed
+[10:45:45] [Thread-178/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 113 70 94 minecraft:redstone_torch"]){AUTHED, ALLOWED} 
+[10:45:45] [Server thread/INFO]: Command run by remote user: 'setblock 113 70 94 minecraft:redstone_torch'
+[10:45:45] [Server thread/INFO]: Block placed
+[10:45:45] [Thread-179/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 113 70 99 minecraft:redstone_torch"]){AUTHED, ALLOWED} 
+[10:45:45] [Server thread/INFO]: Command run by remote user: 'setblock 113 70 99 minecraft:redstone_torch'
+[10:45:45] [Server thread/INFO]: Block placed
+[10:45:54] [Thread-180/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 114 74 94 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:54] [Server thread/INFO]: Command run by remote user: 'setblock 114 74 94 minecraft:air'
+[10:45:54] [Server thread/INFO]: Block placed
+[10:45:54] [Thread-181/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 114 74 95 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:54] [Server thread/INFO]: Command run by remote user: 'setblock 114 74 95 minecraft:air'
+[10:45:54] [Server thread/INFO]: Block placed
+[10:45:54] [Thread-182/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 114 74 96 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:54] [Server thread/INFO]: Command run by remote user: 'setblock 114 74 96 minecraft:air'
+[10:45:54] [Server thread/INFO]: Block placed
+[10:45:54] [Thread-183/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 114 74 97 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:54] [Server thread/INFO]: Command run by remote user: 'setblock 114 74 97 minecraft:air'
+[10:45:54] [Server thread/INFO]: Block placed
+[10:45:54] [Thread-184/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 114 74 98 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:54] [Server thread/INFO]: Command run by remote user: 'setblock 114 74 98 minecraft:air'
+[10:45:54] [Server thread/INFO]: Block placed
+[10:45:54] [Thread-185/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 114 74 99 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:54] [Server thread/INFO]: Command run by remote user: 'setblock 114 74 99 minecraft:air'
+[10:45:54] [Server thread/INFO]: Block placed
+[10:45:54] [Thread-186/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 115 74 94 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:54] [Server thread/INFO]: Command run by remote user: 'setblock 115 74 94 minecraft:air'
+[10:45:54] [Server thread/INFO]: Block placed
+[10:45:54] [Thread-187/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 115 74 95 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:54] [Server thread/INFO]: Command run by remote user: 'setblock 115 74 95 minecraft:air'
+[10:45:54] [Server thread/INFO]: Block placed
+[10:45:54] [Thread-188/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 115 74 96 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:54] [Server thread/INFO]: Command run by remote user: 'setblock 115 74 96 minecraft:air'
+[10:45:54] [Server thread/INFO]: Block placed
+[10:45:54] [Thread-189/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 115 74 97 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:54] [Server thread/INFO]: Command run by remote user: 'setblock 115 74 97 minecraft:air'
+[10:45:54] [Server thread/INFO]: Block placed
+[10:45:54] [Thread-190/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 115 74 98 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:54] [Server thread/INFO]: Command run by remote user: 'setblock 115 74 98 minecraft:air'
+[10:45:54] [Server thread/INFO]: Block placed
+[10:45:54] [Thread-191/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 115 74 99 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:54] [Server thread/INFO]: Command run by remote user: 'setblock 115 74 99 minecraft:air'
+[10:45:54] [Server thread/INFO]: Block placed
+[10:45:54] [Thread-192/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 116 74 94 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:55] [Server thread/INFO]: Command run by remote user: 'setblock 116 74 94 minecraft:air'
+[10:45:55] [Server thread/INFO]: Block placed
+[10:45:55] [Thread-193/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 116 74 95 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:55] [Server thread/INFO]: Command run by remote user: 'setblock 116 74 95 minecraft:air'
+[10:45:55] [Server thread/INFO]: Block placed
+[10:45:55] [Thread-194/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 116 74 96 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:55] [Server thread/INFO]: Command run by remote user: 'setblock 116 74 96 minecraft:air'
+[10:45:55] [Server thread/INFO]: Block placed
+[10:45:55] [Thread-195/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 116 74 97 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:55] [Server thread/INFO]: Command run by remote user: 'setblock 116 74 97 minecraft:air'
+[10:45:55] [Server thread/INFO]: Block placed
+[10:45:55] [Thread-196/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 116 74 98 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:55] [Server thread/INFO]: Command run by remote user: 'setblock 116 74 98 minecraft:air'
+[10:45:55] [Server thread/INFO]: Block placed
+[10:45:55] [Thread-197/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 116 74 99 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:55] [Server thread/INFO]: Command run by remote user: 'setblock 116 74 99 minecraft:air'
+[10:45:55] [Server thread/INFO]: Block placed
+[10:45:55] [Thread-198/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 117 74 94 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:55] [Server thread/INFO]: Command run by remote user: 'setblock 117 74 94 minecraft:air'
+[10:45:55] [Server thread/INFO]: Block placed
+[10:45:55] [Thread-199/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 117 74 95 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:55] [Server thread/INFO]: Command run by remote user: 'setblock 117 74 95 minecraft:air'
+[10:45:55] [Server thread/INFO]: Block placed
+[10:45:55] [Thread-200/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 117 74 96 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:55] [Server thread/INFO]: Command run by remote user: 'setblock 117 74 96 minecraft:air'
+[10:45:55] [Server thread/INFO]: Block placed
+[10:45:55] [Thread-201/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 117 74 97 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:55] [Server thread/INFO]: Command run by remote user: 'setblock 117 74 97 minecraft:air'
+[10:45:55] [Server thread/INFO]: Block placed
+[10:45:55] [Thread-202/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 117 74 98 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:55] [Server thread/INFO]: Command run by remote user: 'setblock 117 74 98 minecraft:air'
+[10:45:55] [Server thread/INFO]: Block placed
+[10:45:55] [Thread-203/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 117 74 99 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:55] [Server thread/INFO]: Command run by remote user: 'setblock 117 74 99 minecraft:air'
+[10:45:55] [Server thread/INFO]: Block placed
+[10:45:55] [Thread-204/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 118 74 94 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:55] [Server thread/INFO]: Command run by remote user: 'setblock 118 74 94 minecraft:air'
+[10:45:55] [Server thread/INFO]: Block placed
+[10:45:55] [Thread-205/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 118 74 95 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:55] [Server thread/INFO]: Command run by remote user: 'setblock 118 74 95 minecraft:air'
+[10:45:55] [Server thread/INFO]: Block placed
+[10:45:55] [Thread-206/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 118 74 96 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:55] [Server thread/INFO]: Command run by remote user: 'setblock 118 74 96 minecraft:air'
+[10:45:55] [Server thread/INFO]: Block placed
+[10:45:55] [Thread-207/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 118 74 97 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:55] [Server thread/INFO]: Command run by remote user: 'setblock 118 74 97 minecraft:air'
+[10:45:55] [Server thread/INFO]: Block placed
+[10:45:55] [Thread-208/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 118 74 98 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:55] [Server thread/INFO]: Command run by remote user: 'setblock 118 74 98 minecraft:air'
+[10:45:55] [Server thread/INFO]: Block placed
+[10:45:55] [Thread-209/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 118 74 99 minecraft:air"]){AUTHED, ALLOWED} 
+[10:45:55] [Server thread/INFO]: Command run by remote user: 'setblock 118 74 99 minecraft:air'
+[10:45:55] [Server thread/INFO]: Block placed
+[10:46:11] [Thread-210/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 116 69 92 minecraft:redstone_torch"]){AUTHED, ALLOWED} 
+[10:46:11] [Server thread/INFO]: Command run by remote user: 'setblock 116 69 92 minecraft:redstone_torch'
+[10:46:11] [Server thread/INFO]: Block placed
+[10:46:11] [Thread-211/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 115 69 92 minecraft:redstone_torch"]){AUTHED, ALLOWED} 
+[10:46:11] [Server thread/INFO]: Command run by remote user: 'setblock 115 69 92 minecraft:redstone_torch'
+[10:46:11] [Server thread/INFO]: Block placed
+[10:46:12] [Thread-212/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 119 72 99 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:12] [Server thread/INFO]: Command run by remote user: 'setblock 119 72 99 minecraft:air'
+[10:46:12] [Server thread/INFO]: Block placed
+[10:46:12] [Thread-213/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 119 72 100 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:12] [Server thread/INFO]: Command run by remote user: 'setblock 119 72 100 minecraft:air'
+[10:46:12] [Server thread/INFO]: Block placed
+[10:46:12] [Thread-214/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 118 72 100 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:12] [Server thread/INFO]: Command run by remote user: 'setblock 118 72 100 minecraft:air'
+[10:46:12] [Server thread/INFO]: Block placed
+[10:46:12] [Thread-215/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 117 72 100 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:12] [Server thread/INFO]: Command run by remote user: 'setblock 117 72 100 minecraft:air'
+[10:46:12] [Server thread/INFO]: Block placed
+[10:46:12] [Thread-216/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 116 72 100 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:12] [Server thread/INFO]: Command run by remote user: 'setblock 116 72 100 minecraft:air'
+[10:46:12] [Server thread/INFO]: Block placed
+[10:46:12] [Thread-217/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 115 72 100 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:12] [Server thread/INFO]: Command run by remote user: 'setblock 115 72 100 minecraft:air'
+[10:46:12] [Server thread/INFO]: Block placed
+[10:46:12] [Thread-218/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 118 73 93 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:13] [Server thread/INFO]: Command run by remote user: 'setblock 118 73 93 minecraft:air'
+[10:46:13] [Server thread/INFO]: Block placed
+[10:46:13] [Thread-219/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 118 72 93 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:13] [Server thread/INFO]: Command run by remote user: 'setblock 118 72 93 minecraft:air'
+[10:46:13] [Server thread/INFO]: Block placed
+[10:46:13] [Thread-220/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 109 74 98 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:13] [Server thread/INFO]: Command run by remote user: 'setblock 109 74 98 minecraft:air'
+[10:46:13] [Server thread/INFO]: Block placed
+[10:46:13] [Thread-221/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 123 71 97 minecraft:redstone_torch"]){AUTHED, ALLOWED} 
+[10:46:13] [Server thread/INFO]: Command run by remote user: 'setblock 123 71 97 minecraft:redstone_torch'
+[10:46:13] [Server thread/INFO]: Block placed
+[10:46:13] [Thread-222/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 123 71 97 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:13] [Server thread/INFO]: Command run by remote user: 'setblock 123 71 97 minecraft:air'
+[10:46:13] [Server thread/INFO]: Block placed
+[10:46:14] [Thread-223/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 111 69 97 minecraft:redstone_torch"]){AUTHED, ALLOWED} 
+[10:46:14] [Server thread/INFO]: Command run by remote user: 'setblock 111 69 97 minecraft:redstone_torch'
+[10:46:14] [Server thread/INFO]: Block placed
+[10:46:14] [Thread-224/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 111 69 96 minecraft:redstone_torch"]){AUTHED, ALLOWED} 
+[10:46:14] [Server thread/INFO]: Command run by remote user: 'setblock 111 69 96 minecraft:redstone_torch'
+[10:46:14] [Server thread/INFO]: Block placed
+[10:46:14] [Thread-225/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 113 70 94 minecraft:redstone_torch"]){AUTHED, ALLOWED} 
+[10:46:14] [Server thread/INFO]: Command run by remote user: 'setblock 113 70 94 minecraft:redstone_torch'
+[10:46:14] [Server thread/INFO]: Block placed
+[10:46:14] [Thread-226/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 113 70 99 minecraft:redstone_torch"]){AUTHED, ALLOWED} 
+[10:46:14] [Server thread/INFO]: Command run by remote user: 'setblock 113 70 99 minecraft:redstone_torch'
+[10:46:14] [Server thread/INFO]: Block placed
+[10:46:15] [Thread-227/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 111 69 97 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:15] [Server thread/INFO]: Command run by remote user: 'setblock 111 69 97 minecraft:air'
+[10:46:15] [Server thread/INFO]: Block placed
+[10:46:15] [Thread-228/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 111 69 96 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:15] [Server thread/INFO]: Command run by remote user: 'setblock 111 69 96 minecraft:air'
+[10:46:15] [Server thread/INFO]: Block placed
+[10:46:15] [Thread-229/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 113 70 94 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:15] [Server thread/INFO]: Command run by remote user: 'setblock 113 70 94 minecraft:air'
+[10:46:15] [Server thread/INFO]: Block placed
+[10:46:15] [Thread-230/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 113 70 99 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:15] [Server thread/INFO]: Command run by remote user: 'setblock 113 70 99 minecraft:air'
+[10:46:15] [Server thread/INFO]: Block placed
+[10:46:16] [Thread-231/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 119 71 97 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:16] [Server thread/INFO]: Command run by remote user: 'setblock 119 71 97 minecraft:air'
+[10:46:16] [Server thread/INFO]: Block placed
+[10:46:17] [Thread-232/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 119 72 99 minecraft:glass"]){AUTHED, ALLOWED} 
+[10:46:17] [Server thread/INFO]: Command run by remote user: 'setblock 119 72 99 minecraft:glass'
+[10:46:17] [Server thread/INFO]: Block placed
+[10:46:17] [Thread-233/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 119 72 100 minecraft:glass"]){AUTHED, ALLOWED} 
+[10:46:17] [Server thread/INFO]: Command run by remote user: 'setblock 119 72 100 minecraft:glass'
+[10:46:17] [Server thread/INFO]: Block placed
+[10:46:17] [Thread-234/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 118 72 100 minecraft:glass"]){AUTHED, ALLOWED} 
+[10:46:17] [Server thread/INFO]: Command run by remote user: 'setblock 118 72 100 minecraft:glass'
+[10:46:17] [Server thread/INFO]: Block placed
+[10:46:17] [Thread-235/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 117 72 100 minecraft:glass"]){AUTHED, ALLOWED} 
+[10:46:17] [Server thread/INFO]: Command run by remote user: 'setblock 117 72 100 minecraft:glass'
+[10:46:17] [Server thread/INFO]: Block placed
+[10:46:17] [Thread-236/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 116 72 100 minecraft:glass"]){AUTHED, ALLOWED} 
+[10:46:17] [Server thread/INFO]: Command run by remote user: 'setblock 116 72 100 minecraft:glass'
+[10:46:17] [Server thread/INFO]: Block placed
+[10:46:17] [Thread-237/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 115 72 100 minecraft:glass"]){AUTHED, ALLOWED} 
+[10:46:17] [Server thread/INFO]: Command run by remote user: 'setblock 115 72 100 minecraft:glass'
+[10:46:17] [Server thread/INFO]: Block placed
+[10:46:17] [Thread-238/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 118 73 93 minecraft:glass"]){AUTHED, ALLOWED} 
+[10:46:17] [Server thread/INFO]: Command run by remote user: 'setblock 118 73 93 minecraft:glass'
+[10:46:17] [Server thread/INFO]: Block placed
+[10:46:17] [Thread-239/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 118 72 93 minecraft:glass"]){AUTHED, ALLOWED} 
+[10:46:17] [Server thread/INFO]: Command run by remote user: 'setblock 118 72 93 minecraft:glass'
+[10:46:17] [Server thread/INFO]: Block placed
+[10:46:17] [Thread-240/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 109 74 98 minecraft:glass"]){AUTHED, ALLOWED} 
+[10:46:17] [Server thread/INFO]: Command run by remote user: 'setblock 109 74 98 minecraft:glass'
+[10:46:17] [Server thread/INFO]: Block placed
+[10:46:17] [Thread-241/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 116 69 92 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:17] [Server thread/INFO]: Command run by remote user: 'setblock 116 69 92 minecraft:air'
+[10:46:17] [Server thread/INFO]: Block placed
+[10:46:17] [Thread-242/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 115 69 92 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:18] [Server thread/INFO]: Command run by remote user: 'setblock 115 69 92 minecraft:air'
+[10:46:18] [Server thread/INFO]: Block placed
+[10:46:18] [Thread-243/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 119 71 97 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:18] [Server thread/INFO]: Command run by remote user: 'setblock 119 71 97 minecraft:air'
+[10:46:18] [Server thread/INFO]: The block couldn't be placed
+[10:46:20] [Thread-244/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 114 74 94 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:20] [Server thread/INFO]: Command run by remote user: 'setblock 114 74 94 minecraft:air'
+[10:46:20] [Server thread/INFO]: The block couldn't be placed
+[10:46:20] [Thread-245/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 114 74 95 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:20] [Server thread/INFO]: Command run by remote user: 'setblock 114 74 95 minecraft:air'
+[10:46:20] [Server thread/INFO]: The block couldn't be placed
+[10:46:20] [Thread-246/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 114 74 96 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:20] [Server thread/INFO]: Command run by remote user: 'setblock 114 74 96 minecraft:air'
+[10:46:20] [Server thread/INFO]: The block couldn't be placed
+[10:46:20] [Thread-247/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 114 74 97 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:20] [Server thread/INFO]: Command run by remote user: 'setblock 114 74 97 minecraft:air'
+[10:46:20] [Server thread/INFO]: The block couldn't be placed
+[10:46:20] [Thread-248/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 114 74 98 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:20] [Server thread/INFO]: Command run by remote user: 'setblock 114 74 98 minecraft:air'
+[10:46:20] [Server thread/INFO]: The block couldn't be placed
+[10:46:20] [Thread-249/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 114 74 99 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:20] [Server thread/INFO]: Command run by remote user: 'setblock 114 74 99 minecraft:air'
+[10:46:20] [Server thread/INFO]: The block couldn't be placed
+[10:46:20] [Thread-250/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 115 74 94 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:20] [Server thread/INFO]: Command run by remote user: 'setblock 115 74 94 minecraft:air'
+[10:46:20] [Server thread/INFO]: The block couldn't be placed
+[10:46:20] [Thread-251/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 115 74 95 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:20] [Server thread/INFO]: Command run by remote user: 'setblock 115 74 95 minecraft:air'
+[10:46:20] [Server thread/INFO]: The block couldn't be placed
+[10:46:20] [Thread-252/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 115 74 96 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:20] [Server thread/INFO]: Command run by remote user: 'setblock 115 74 96 minecraft:air'
+[10:46:20] [Server thread/INFO]: The block couldn't be placed
+[10:46:20] [Thread-253/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 115 74 97 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:20] [Server thread/INFO]: Command run by remote user: 'setblock 115 74 97 minecraft:air'
+[10:46:20] [Server thread/INFO]: The block couldn't be placed
+[10:46:20] [Thread-254/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 115 74 98 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:20] [Server thread/INFO]: Command run by remote user: 'setblock 115 74 98 minecraft:air'
+[10:46:20] [Server thread/INFO]: The block couldn't be placed
+[10:46:20] [Thread-255/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 115 74 99 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:20] [Server thread/INFO]: Command run by remote user: 'setblock 115 74 99 minecraft:air'
+[10:46:20] [Server thread/INFO]: The block couldn't be placed
+[10:46:20] [Thread-256/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 116 74 94 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:20] [Server thread/INFO]: Command run by remote user: 'setblock 116 74 94 minecraft:air'
+[10:46:20] [Server thread/INFO]: The block couldn't be placed
+[10:46:20] [Thread-257/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 116 74 95 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:20] [Server thread/INFO]: Command run by remote user: 'setblock 116 74 95 minecraft:air'
+[10:46:20] [Server thread/INFO]: The block couldn't be placed
+[10:46:20] [Thread-258/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 116 74 96 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:21] [Server thread/INFO]: Command run by remote user: 'setblock 116 74 96 minecraft:air'
+[10:46:21] [Server thread/INFO]: The block couldn't be placed
+[10:46:21] [Thread-259/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 116 74 97 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:21] [Server thread/INFO]: Command run by remote user: 'setblock 116 74 97 minecraft:air'
+[10:46:21] [Server thread/INFO]: The block couldn't be placed
+[10:46:21] [Thread-260/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 116 74 98 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:21] [Server thread/INFO]: Command run by remote user: 'setblock 116 74 98 minecraft:air'
+[10:46:21] [Server thread/INFO]: The block couldn't be placed
+[10:46:21] [Thread-261/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 116 74 99 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:21] [Server thread/INFO]: Command run by remote user: 'setblock 116 74 99 minecraft:air'
+[10:46:21] [Server thread/INFO]: The block couldn't be placed
+[10:46:21] [Thread-262/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 117 74 94 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:21] [Server thread/INFO]: Command run by remote user: 'setblock 117 74 94 minecraft:air'
+[10:46:21] [Server thread/INFO]: The block couldn't be placed
+[10:46:21] [Thread-263/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 117 74 95 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:21] [Server thread/INFO]: Command run by remote user: 'setblock 117 74 95 minecraft:air'
+[10:46:21] [Server thread/INFO]: The block couldn't be placed
+[10:46:21] [Thread-264/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 117 74 96 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:21] [Server thread/INFO]: Command run by remote user: 'setblock 117 74 96 minecraft:air'
+[10:46:21] [Server thread/INFO]: The block couldn't be placed
+[10:46:21] [Thread-265/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 117 74 97 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:21] [Server thread/INFO]: Command run by remote user: 'setblock 117 74 97 minecraft:air'
+[10:46:21] [Server thread/INFO]: The block couldn't be placed
+[10:46:21] [Thread-266/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 117 74 98 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:21] [Server thread/INFO]: Command run by remote user: 'setblock 117 74 98 minecraft:air'
+[10:46:21] [Server thread/INFO]: The block couldn't be placed
+[10:46:21] [Thread-267/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 117 74 99 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:21] [Server thread/INFO]: Command run by remote user: 'setblock 117 74 99 minecraft:air'
+[10:46:21] [Server thread/INFO]: The block couldn't be placed
+[10:46:21] [Thread-268/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 118 74 94 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:21] [Server thread/INFO]: Command run by remote user: 'setblock 118 74 94 minecraft:air'
+[10:46:21] [Server thread/INFO]: The block couldn't be placed
+[10:46:21] [Thread-269/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 118 74 95 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:21] [Server thread/INFO]: Command run by remote user: 'setblock 118 74 95 minecraft:air'
+[10:46:21] [Server thread/INFO]: The block couldn't be placed
+[10:46:21] [Thread-270/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 118 74 96 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:21] [Server thread/INFO]: Command run by remote user: 'setblock 118 74 96 minecraft:air'
+[10:46:21] [Server thread/INFO]: The block couldn't be placed
+[10:46:21] [Thread-271/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 118 74 97 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:21] [Server thread/INFO]: Command run by remote user: 'setblock 118 74 97 minecraft:air'
+[10:46:21] [Server thread/INFO]: The block couldn't be placed
+[10:46:21] [Thread-272/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 118 74 98 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:21] [Server thread/INFO]: Command run by remote user: 'setblock 118 74 98 minecraft:air'
+[10:46:21] [Server thread/INFO]: The block couldn't be placed
+[10:46:21] [Thread-273/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 118 74 99 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:21] [Server thread/INFO]: Command run by remote user: 'setblock 118 74 99 minecraft:air'
+[10:46:21] [Server thread/INFO]: The block couldn't be placed
+[10:46:52] [Thread-274/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["weather rain"]){AUTHED, ALLOWED} 
+[10:46:52] [Server thread/INFO]: Command run by remote user: 'weather rain'
+[10:46:52] [Server thread/INFO]: CONSOLE: Changed weather to rainy for 895 seconds.
+[10:46:54] [Thread-275/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["weather rain"]){AUTHED, ALLOWED} 
+[10:46:54] [Server thread/INFO]: Command run by remote user: 'weather rain'
+[10:46:54] [Server thread/INFO]: CONSOLE: Changed weather to rainy for 659 seconds.
+[10:46:54] [Thread-276/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 123 71 97 minecraft:redstone_torch"]){AUTHED, ALLOWED} 
+[10:46:54] [Server thread/INFO]: Command run by remote user: 'setblock 123 71 97 minecraft:redstone_torch'
+[10:46:54] [Server thread/INFO]: Block placed
+[10:46:54] [Thread-277/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 123 71 97 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:54] [Server thread/INFO]: Command run by remote user: 'setblock 123 71 97 minecraft:air'
+[10:46:54] [Server thread/INFO]: Block placed
+[10:46:57] [Thread-278/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["weather rain"]){AUTHED, ALLOWED} 
+[10:46:57] [Server thread/INFO]: Command run by remote user: 'weather rain'
+[10:46:57] [Server thread/INFO]: CONSOLE: Changed weather to rainy for 759 seconds.
+[10:46:57] [Thread-279/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 119 71 97 minecraft:air"]){AUTHED, ALLOWED} 
+[10:46:57] [Server thread/INFO]: Command run by remote user: 'setblock 119 71 97 minecraft:air'
+[10:46:57] [Server thread/INFO]: Block placed
+[10:47:00] [Thread-280/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["weather rain"]){AUTHED, ALLOWED} 
+[10:47:00] [Server thread/INFO]: Command run by remote user: 'weather rain'
+[10:47:00] [Server thread/INFO]: CONSOLE: Changed weather to rainy for 700 seconds.
+[10:47:00] [Thread-281/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 123 71 97 minecraft:redstone_torch"]){AUTHED, ALLOWED} 
+[10:47:00] [Server thread/INFO]: Command run by remote user: 'setblock 123 71 97 minecraft:redstone_torch'
+[10:47:00] [Server thread/INFO]: Block placed
+[10:47:00] [Thread-282/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 123 71 97 minecraft:air"]){AUTHED, ALLOWED} 
+[10:47:00] [Server thread/INFO]: Command run by remote user: 'setblock 123 71 97 minecraft:air'
+[10:47:00] [Server thread/INFO]: Block placed
+[10:47:07] [Thread-283/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["weather rain"]){AUTHED, ALLOWED} 
+[10:47:07] [Server thread/INFO]: Command run by remote user: 'weather rain'
+[10:47:07] [Server thread/INFO]: CONSOLE: Changed weather to rainy for 826 seconds.
+[10:47:07] [Thread-284/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 119 71 97 minecraft:air"]){AUTHED, ALLOWED} 
+[10:47:07] [Server thread/INFO]: Command run by remote user: 'setblock 119 71 97 minecraft:air'
+[10:47:07] [Server thread/INFO]: Block placed
+[10:47:18] [Thread-285/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 111 69 97 minecraft:redstone_torch"]){AUTHED, ALLOWED} 
+[10:47:18] [Server thread/INFO]: Command run by remote user: 'setblock 111 69 97 minecraft:redstone_torch'
+[10:47:18] [Server thread/INFO]: Block placed
+[10:47:18] [Thread-286/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 111 69 96 minecraft:redstone_torch"]){AUTHED, ALLOWED} 
+[10:47:18] [Server thread/INFO]: Command run by remote user: 'setblock 111 69 96 minecraft:redstone_torch'
+[10:47:18] [Server thread/INFO]: Block placed
+[10:47:18] [Thread-287/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 113 70 94 minecraft:redstone_torch"]){AUTHED, ALLOWED} 
+[10:47:18] [Server thread/INFO]: Command run by remote user: 'setblock 113 70 94 minecraft:redstone_torch'
+[10:47:18] [Server thread/INFO]: Block placed
+[10:47:18] [Thread-288/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 113 70 99 minecraft:redstone_torch"]){AUTHED, ALLOWED} 
+[10:47:18] [Server thread/INFO]: Command run by remote user: 'setblock 113 70 99 minecraft:redstone_torch'
+[10:47:18] [Server thread/INFO]: Block placed
+[10:47:18] [Thread-289/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 111 69 97 minecraft:redstone_torch"]){AUTHED, ALLOWED} 
+[10:47:18] [Server thread/INFO]: Command run by remote user: 'setblock 111 69 97 minecraft:redstone_torch'
+[10:47:18] [Server thread/INFO]: Block placed
+[10:47:18] [Thread-290/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 111 69 96 minecraft:redstone_torch"]){AUTHED, ALLOWED} 
+[10:47:18] [Server thread/INFO]: Command run by remote user: 'setblock 111 69 96 minecraft:redstone_torch'
+[10:47:18] [Server thread/INFO]: Block placed
+[10:47:18] [Thread-291/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 113 70 94 minecraft:redstone_torch"]){AUTHED, ALLOWED} 
+[10:47:18] [Server thread/INFO]: Command run by remote user: 'setblock 113 70 94 minecraft:redstone_torch'
+[10:47:18] [Server thread/INFO]: Block placed
+[10:47:18] [Thread-292/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 113 70 99 minecraft:redstone_torch"]){AUTHED, ALLOWED} 
+[10:47:18] [Server thread/INFO]: Command run by remote user: 'setblock 113 70 99 minecraft:redstone_torch'
+[10:47:18] [Server thread/INFO]: Block placed
+[10:47:19] [Thread-293/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 111 69 97 minecraft:air"]){AUTHED, ALLOWED} 
+[10:47:19] [Server thread/INFO]: Command run by remote user: 'setblock 111 69 97 minecraft:air'
+[10:47:19] [Server thread/INFO]: Block placed
+[10:47:19] [Thread-294/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 111 69 96 minecraft:air"]){AUTHED, ALLOWED} 
+[10:47:20] [Server thread/INFO]: Command run by remote user: 'setblock 111 69 96 minecraft:air'
+[10:47:20] [Server thread/INFO]: Block placed
+[10:47:20] [Thread-295/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 113 70 94 minecraft:air"]){AUTHED, ALLOWED} 
+[10:47:20] [Server thread/INFO]: Command run by remote user: 'setblock 113 70 94 minecraft:air'
+[10:47:20] [Server thread/INFO]: Block placed
+[10:47:20] [Thread-296/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 113 70 99 minecraft:air"]){AUTHED, ALLOWED} 
+[10:47:20] [Server thread/INFO]: Command run by remote user: 'setblock 113 70 99 minecraft:air'
+[10:47:20] [Server thread/INFO]: Block placed
+[10:47:20] [Thread-297/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 111 69 97 minecraft:air"]){AUTHED, ALLOWED} 
+[10:47:20] [Server thread/INFO]: Command run by remote user: 'setblock 111 69 97 minecraft:air'
+[10:47:20] [Server thread/INFO]: The block couldn't be placed
+[10:47:20] [Thread-298/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 111 69 96 minecraft:air"]){AUTHED, ALLOWED} 
+[10:47:20] [Server thread/INFO]: Command run by remote user: 'setblock 111 69 96 minecraft:air'
+[10:47:20] [Server thread/INFO]: The block couldn't be placed
+[10:47:20] [Thread-299/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 113 70 94 minecraft:air"]){AUTHED, ALLOWED} 
+[10:47:20] [Server thread/INFO]: Command run by remote user: 'setblock 113 70 94 minecraft:air'
+[10:47:20] [Server thread/INFO]: The block couldn't be placed
+[10:47:20] [Thread-300/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 113 70 99 minecraft:air"]){AUTHED, ALLOWED} 
+[10:47:20] [Server thread/INFO]: Command run by remote user: 'setblock 113 70 99 minecraft:air'
+[10:47:20] [Server thread/INFO]: The block couldn't be placed
+[10:47:21] [Thread-301/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 111 69 97 minecraft:redstone_torch"]){AUTHED, ALLOWED} 
+[10:47:21] [Server thread/INFO]: Command run by remote user: 'setblock 111 69 97 minecraft:redstone_torch'
+[10:47:21] [Server thread/INFO]: Block placed
+[10:47:21] [Thread-302/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 111 69 96 minecraft:redstone_torch"]){AUTHED, ALLOWED} 
+[10:47:21] [Server thread/INFO]: Command run by remote user: 'setblock 111 69 96 minecraft:redstone_torch'
+[10:47:21] [Server thread/INFO]: Block placed
+[10:47:21] [Thread-303/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 113 70 94 minecraft:redstone_torch"]){AUTHED, ALLOWED} 
+[10:47:21] [Server thread/INFO]: Command run by remote user: 'setblock 113 70 94 minecraft:redstone_torch'
+[10:47:21] [Server thread/INFO]: Block placed
+[10:47:21] [Thread-304/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 113 70 99 minecraft:redstone_torch"]){AUTHED, ALLOWED} 
+[10:47:21] [Server thread/INFO]: Command run by remote user: 'setblock 113 70 99 minecraft:redstone_torch'
+[10:47:21] [Server thread/INFO]: Block placed
+[10:47:21] [Thread-305/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 111 69 97 minecraft:redstone_torch"]){AUTHED, ALLOWED} 
+[10:47:21] [Server thread/INFO]: Command run by remote user: 'setblock 111 69 97 minecraft:redstone_torch'
+[10:47:21] [Server thread/INFO]: Block placed
+[10:47:21] [Thread-306/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 111 69 96 minecraft:redstone_torch"]){AUTHED, ALLOWED} 
+[10:47:21] [Server thread/INFO]: Command run by remote user: 'setblock 111 69 96 minecraft:redstone_torch'
+[10:47:21] [Server thread/INFO]: Block placed
+[10:47:21] [Thread-307/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 113 70 94 minecraft:redstone_torch"]){AUTHED, ALLOWED} 
+[10:47:21] [Server thread/INFO]: Command run by remote user: 'setblock 113 70 94 minecraft:redstone_torch'
+[10:47:21] [Server thread/INFO]: Block placed
+[10:47:21] [Thread-308/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 113 70 99 minecraft:redstone_torch"]){AUTHED, ALLOWED} 
+[10:47:21] [Server thread/INFO]: Command run by remote user: 'setblock 113 70 99 minecraft:redstone_torch'
+[10:47:21] [Server thread/INFO]: Block placed
+[10:50:34] [Thread-309/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["weather rain"]){AUTHED, ALLOWED} 
+[10:50:34] [Server thread/INFO]: Command run by remote user: 'weather rain'
+[10:50:34] [Server thread/INFO]: CONSOLE: Changed weather to rainy for 721 seconds.
+[10:50:34] [Thread-310/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["weather rain"]){AUTHED, ALLOWED} 
+[10:50:34] [Server thread/INFO]: Command run by remote user: 'weather rain'
+[10:50:34] [Server thread/INFO]: CONSOLE: Changed weather to rainy for 624 seconds.
+[10:53:04] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 4101ms behind, skipping 82 tick(s)
+[10:59:08] [Server thread/INFO]: trappingnoobs lost connection: Disconnected
+[10:59:08] [Server thread/INFO]: trappingnoobs left the game.
