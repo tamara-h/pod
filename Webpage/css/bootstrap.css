@@ -1099,6 +1099,7 @@ h3,
 .h3 {
   margin-top: 20px;
   margin-bottom: 10px;
+  display:block
 }
 h1 small,
 .h1 small,
@@ -1278,7 +1279,6 @@ a.bg-danger:hover {
 .page-header {
   padding-bottom: 9px;
   margin: 40px 0 20px;
-  border-bottom: 1px solid #eee;
 }
 
 .page-header-container {
@@ -3695,7 +3695,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   max-width: none;
 }
 .nav-tabs {
-  border-bottom: 1px solid #363636;
+  border-bottom:3px solid #363636;
 }
 .nav-tabs > li {
   float: left;

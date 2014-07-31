@@ -28,14 +28,13 @@
 	<!--WEATHER PAGE GOING IN HERE going to just show a 7 sorta forecast thingy --> 
 	
 	
-	<div class="page-header">
-      <p><h3><img id="iconx" src="">&nbsp;&nbsp;Detailed current weather for <span id="APILocation"></span></h3></p>
+	<div class="page-header" >
+      <p><h3 style="display:block"><img id="iconx" src="">&nbsp;&nbsp;Detailed current weather for <span id="APILocation"></span></h3></p>
     </div>	
-	<ul class="list-group" style="margin-left:120px;">
+	<ul class="list-group">
 	
 	
-<ul class="list-group" style="color:black;">
-
+<ul class="list-group" style="color:black; margin-bottom:-1px">
   <li class="list-group-item"><b>Weather Description: </b> <span id="weatherDescription"></span></li>
   <li class="list-group-item"><b>Temperature:</b> <span id="OutdoorTemp"></span>&deg;C</li>
   <li class="list-group-item"><b>Wind Speed: </b> <span id="windSpeed"></span>m/s</li>
@@ -53,6 +52,5 @@
 	getLocationFromAPI();
 	gettemp();
 </script>
-	
-  </body>
+</body>
 </html>
