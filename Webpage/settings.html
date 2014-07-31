@@ -38,24 +38,28 @@
 <br>
 
 <h3>Change location </h3>
-<form name="input" onChange="updateLocation()">
-<div style="color:black;"> <
+
+<div style="color:black;"> 
+<form name="input" method="get">
 <select>
-  <option value="Swansea">Swansea</option>
-  <option value="Plymouth">Plymouth</option>
+  <option value="Swansea" action="updateLocation("swansea,uk")>Swansea</option>
+  <option value="Plymouth" action="updateLocation("plymouth,uk")>Plymouth</option>
   <option value="Cardiff">Cardiff</option>
-  <option value="audi">Audi</option>
 </select>
+<input type="submit" value="Submit">
 </div>
 </form>
 <h4><b>current location: </b><span id="APILocation"></span></h4>
-
-
+<!--
+<form name="input" action="demo_form_action.asp" method="get">
+Username: <input type="text" name="user">
+<input type="submit" value="Submit">
+</form>
 
 
 <script>
 getLocationFromAPI();
-updatelocation();
+updateLocation();
 </script>
 </body>
 

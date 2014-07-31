@@ -8,15 +8,12 @@ function XHRequest(variable, value)
     return request.responseText;
 }
 
-function updateLocation() {
-	
-
-
+function updateLocation(newLocation) {
+	return newLocation 
 }
 
 function getWeatherFromAPI() {
-    var url = "http://api.openweathermap.org/data/2.5/weather" +
-    "?q=Swansea,uk&amp;units=metric";
+    var url = "http://api.openweathermap.org/data/2.5/weather?q=" + updateLocation() + "&amp;units=metric";
     var request = new XMLHttpRequest();
     request.open("GET", url, false);
     request.send(null);
