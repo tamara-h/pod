@@ -67,6 +67,14 @@ function getPressure() {
 	}
 }
 
+function PowerOn(ifOn) {
+  XHRequest("PowerOn", ifOn);
+}
+  
+function LightsOn(ifOn) { 
+	XHRequest("LightsOn", ifOn);
+}  
+
 function getHumidity() {
 	var reply = getWeatherFromAPI();
 	var humidity = reply.main.humidity;
@@ -99,21 +107,23 @@ function getLocationFromAPI() {
 function changeMode(type) {
 switch (type) {
 	case holiday: 
-		holidaymode();
+		PowerOn(false);
+		LightsOn(false);
 		break;
 	case day:
-		daymode();
+		PowerOn(true);
+		LightsOn(false);
 		break;
 	case night:
-		nightmode();
+		PowerOn(false);
+		LightsOn(true);
 		break;
 	case away:
-		awaymode();
+		PowerOn(false);
+		LightsOn(false);
 		break;
 
-}
-
-
+	}
 }
 // Auto set location if unset
 if (localStorage.getItem("location") === null)
