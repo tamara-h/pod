@@ -35,6 +35,7 @@ class server():
         # We should have ['x', '=', 'y']
         var = rURLComponents[0]
         val = rURLComponents[2]
+        print("Handling Request")
         print("Variable: " + var + " has been set to value: " + val)
         if not var == "ignore":
             server.mcServer.resolveRequest(var.lower(), val.lower())
@@ -68,6 +69,7 @@ class ServerInterface():
         self.house["doorsOpen"]     = False
         self.house["fireOn"]        = False
         self.house["powerOn"]       = False
+        self.house["lightsOn"]      = False
         self.house["flooded"]       = False
         
         mc_conn = JAPI.Connection()    
@@ -94,23 +96,22 @@ class ServerInterface():
             self.lightFire()    if val == "true" else self.extinguishFire()
         elif var == "poweron":
             self.enablePower()  if val == "true" else self.disablePower()
+        elif var == "lightson":
+            self.enableLights() if val == "true" else self.disableLights();
         elif var == "flooded":
             self.floodHouse()   if val == "true" else self.drainHouse()
         
         
     def setTemperature(self, temp):
-        print("[World Status Update] Temperature is: " + temp)
         self.temperature = int(temp)
         self.worldUpdate()
 
     def setIndoorTemp(self, temp):
-        print("[World Status Update] Indoor Temperature is " + temp)
         self.indoorTemperature = int(temp)
         self.worldUpdate()
         
 
     def setWeather(self, weather):
-        print("[World Status Update] Weather is: " + weather)
         if "rain" in weather:
             self.weather = Weather.Rainy
         else:
@@ -118,8 +119,6 @@ class ServerInterface():
         self.worldUpdate()
 
     def worldUpdate(self):
-        print("[Info] Re-initialising entire environment...")
-
         buffer = self.house.copy()
         
         # OPEN WINDOWS IF OUTSIDE TEMPERATURE IS MORE DESIRABLE THAN INSIDE TEMPERATURE >3S*
@@ -148,8 +147,10 @@ class ServerInterface():
             self.api.server.run_command("weather rain")
 
         # Min temp 15; Max temp 25
-        if self.indoorTemperature <= 16 or self.indoorTemperature >= 24:
-            server.twilio.sendMessage(TwilioMessages.tempWarn)
+        if self.indoorTemperature <= 16:
+            server.twilio.sendMessage(TwilioMessages.tempLowWarn)
+        if self.indoorTemperature >= 24:
+            server.twilio.sendMessage(TwilioMessages.tempHighWarn)
         
         # Reflect buffer changes in-game
         self.actionIf(self.bufferDiffers(buffer, "windowsOpen"  ), self.openWindows if buffer["windowsOpen"]    else self.closeWindows  )
@@ -171,53 +172,65 @@ class ServerInterface():
 
     # Abstractions
     def openWindows(self):
-        print("[House Change] Opening Windows")
         self.house["windowsOpen"] = True
         self.setWindows("air")
         
     def closeWindows(self):
-        print("[House Change] Closing Windows")
         self.house["windowsOpen"] = False
         self.setWindows("glass")
 
-
     def lightFire(self):
-        print("[House Change] Lighting Fire")
-        self.enableRedstone("123 71 97")
-        time.sleep(0.1)
-        self.disableRedstone("123 71 97")
-        self.house["fireOn"] = True
+        if self.house["powerOn"]:
+            self.enableRedstone("123 71 97")
+            time.sleep(0.1)
+            self.disableRedstone("123 71 97")
+            self.house["fireOn"] = True
+        else:
+            print("Could't light fire: Power is not turned on")
 
     def extinguishFire(self):
-        print("[House Change] Extinguish Fire")
         self.setBlocks("air", ["119 71 97"])
         self.house["fireOn"] = False
 
     def openDoors(self):
-        print("[House Change] Opening Doors")
         self.house["doorsOpen"] = True
         self.enableRedstone("116 69 92")
         self.enableRedstone("115 69 92")
 
     def closeDoors(self):
-        print("[House Change] Closing Doors")
         self.house["doorsOpen"] = False
         self.disableRedstone("116 69 92")
         self.disableRedstone("115 69 92")
 
+
     def enablePower(self):
-        self.enableRedstone("111 69 97")
-        self.enableRedstone("111 69 96")
-        self.enableRedstone("113 70 94")
-        self.enableRedstone("113 70 99")
         self.house["powerOn"] = True
 
     def disablePower(self):
+        self.house["powerOn"] = False
+        self.disableLights()
+        self.extinguishFire()
+
+
+    def enableLights(self):
+        if self.house["powerOn"]:
+            print("Enabling lights")
+            self.enableRedstone("111 69 97")
+            self.enableRedstone("111 69 96")
+            self.enableRedstone("113 70 94")
+            self.enableRedstone("113 70 99")
+            self.house["lightsOn"] = True
+        else:
+            print("Couldn't enable lights: Power is not turned on")
+    
+    def disableLights(self):
         self.disableRedstone("111 69 97")
         self.disableRedstone("111 69 96")
         self.disableRedstone("113 70 94")
         self.disableRedstone("113 70 99")
-        self.house["powerOn"] = True
+        self.house["lightsOn"] = False
+
+        
 
     def floodHouse(self, unflood = False):
         innerHouseRect = [(114, 74, 94), (118, 74, 99)]
@@ -236,16 +249,14 @@ class ServerInterface():
 
     # Backend for abstractions
     def enableRedstone(self, position):
-        print("[R-Change] Enabling redstone at " + position)
         self.setBlocks("redstone_torch", [position])
 
     def disableRedstone(self, position):
-        print("[R-Change] Disabling redstone at " + position)
         self.setBlocks("air", [position])
 
 
     def setWindows(self, windowType):
-        windows = "[119 72 100", "118 72 100", "117 72 100", "116 72 100", "115 72 100", "118 73 93", "118 72 93", "109 74 98"]
+        windows = ["119 72 100", "118 72 100", "117 72 100", "116 72 100", "115 72 100", "118 73 93", "118 72 93", "109 74 98"]
         self.setBlocks(windowType, windows)
 
     def setBlocks(self, blockType, blockList):

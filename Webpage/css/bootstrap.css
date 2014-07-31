@@ -3652,6 +3652,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .nav {
   margin-bottom: 0;
   list-style: none;
+  width:55% !important;
+  margin-left:auto;
+  margin-right:auto;
 }
 .nav > li {
   position: relative;
@@ -3696,9 +3699,6 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .nav-tabs {
   //* border-bottom:3px solid #363636;*//
-  margin-left:auto;
-  margin-right:auto;
-  width:100%;
 }
 .nav-tabs > img:hover{
   box-shadow: 0px 0px 20px #fff;
