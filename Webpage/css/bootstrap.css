@@ -159,7 +159,8 @@ hr {
           box-sizing: content-box;
 }
 pre {
-  overflow: auto;
+  overflow: auto;
+
   
 }
 code,
@@ -1284,7 +1285,6 @@ a.bg-danger:hover {
 }
 
 .page-header-container {
-  border-bottom: 1px solid #eee;
   padding-bottom: 9px;
   margin: 40px 0 20px;
 }
@@ -7576,7 +7576,6 @@ a.bg-danger:hover {
 }
 
 .page-header-container {
-  border-bottom: 1px solid #eee;
   padding-bottom: 9px;
   margin: 40px 0 20px;
 }
