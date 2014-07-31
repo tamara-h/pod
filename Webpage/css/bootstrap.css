@@ -1018,6 +1018,9 @@ img {
 .img-circle {
   border-radius: 50%;
 }
+.img-circle:hover {
+  box-shadow: 0px 0px 10px #fff;
+}
 hr {
   margin-top: 20px;
   margin-bottom: 20px;
