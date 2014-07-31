@@ -17,13 +17,6 @@ function getWeatherFromAPI() {
     return reply;
 }
 
-/* Tamara's code from /project.html */
-
-/* okay this is the start of my JavaScript code the example of a call to it (this is a button but you can mess with whatever else idk is
- to get temperature		<input type="submit" value="Temperature" onclick="gettemp()">  --> 
- to get description   <input type="submit" value="Weather" onclick="getweather()">
- to get icon     <input type="submit" value="Weather" onclick="geticon()">
-    					<img id="icon" src="" alt="weather"> */
 
 function geticon() {
     var reply = getWeatherFromAPI();
@@ -71,8 +64,8 @@ function PowerOn(ifOn) {
   XHRequest("PowerOn", ifOn);
 }
   
-function LightsOn(ifOn) { 
-	XHRequest("LightsOn", ifOn);
+function LightsOn(ifLOn) { 
+	XHRequest("LightsOn", ifLOn);
 }  
 
 function getHumidity() {
@@ -93,7 +86,6 @@ function getWindSpeed() {
 	}
 }
 
-//This function may not be necessary if we implement a way of letting the user set a location- at the moment all it does is display what location it is calling the API for 
 function getLocationFromAPI() {
 	var reply = getWeatherFromAPI();
 	var location = reply.name;
@@ -102,7 +94,6 @@ function getLocationFromAPI() {
 		APILocation.innerHTML = location;
 	}
 }
-
 
 function changeMode(type) {
 switch (type) {
@@ -151,17 +142,17 @@ function windowChange(state){
 }
 		  
 function windowStatus() {
-				var responseText = XHRequest("ignore", "x");
-				var data = JSON.parse(responseText);
-				
-				var windowStatus = data.houseStatus.windowsOpen;
-				
-				$('#windowStatus').html( windowStatus ? "Open" : "Closed" );
-				
+	var responseText = XHRequest("ignore", "x");
+	var data = JSON.parse(responseText);
+	var windowStatus = data.houseStatus.windowsOpen;
+		$('#windowStatus').html( windowStatus ? "Open" : "Closed" );
 }
 
+function appliances() {
+	Poweron();
 
-// Auto set location if unset
+}
+
 if (localStorage.getItem("location") === null)
 {
 	localStorage.setItem("location", "plymouth,uk");
