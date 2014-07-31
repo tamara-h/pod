@@ -140,6 +140,7 @@ function lightsStatus(){
 	var data = JSON.parse(responseText);
 	var lightsOn = data.houseStatus.lightsOn;
 	$('#lightsStatus').html( lightsOn ? "On" : "Off" );
+	//alert (lightsOn);
 }
 
 function windowChange(state){
