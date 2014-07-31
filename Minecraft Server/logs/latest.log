@@ -941,3 +941,36 @@
 [10:53:04] [Server thread/WARN]: Can't keep up! Did the system time change, or is the server overloaded? Running 4101ms behind, skipping 82 tick(s)
 [10:59:08] [Server thread/INFO]: trappingnoobs lost connection: Disconnected
 [10:59:08] [Server thread/INFO]: trappingnoobs left the game.
+[11:01:46] [Thread-311/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 111 69 97 minecraft:air"]){AUTHED, ALLOWED} 
+[11:01:46] [Server thread/INFO]: Command run by remote user: 'setblock 111 69 97 minecraft:air'
+[11:01:46] [Server thread/INFO]: Block placed
+[11:01:46] [Thread-312/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 111 69 96 minecraft:air"]){AUTHED, ALLOWED} 
+[11:01:46] [Server thread/INFO]: Command run by remote user: 'setblock 111 69 96 minecraft:air'
+[11:01:46] [Server thread/INFO]: Block placed
+[11:01:46] [Thread-313/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 113 70 94 minecraft:air"]){AUTHED, ALLOWED} 
+[11:01:46] [Server thread/INFO]: Command run by remote user: 'setblock 113 70 94 minecraft:air'
+[11:01:46] [Server thread/INFO]: Block placed
+[11:01:46] [Thread-314/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 113 70 99 minecraft:air"]){AUTHED, ALLOWED} 
+[11:01:46] [Server thread/INFO]: Command run by remote user: 'setblock 113 70 99 minecraft:air'
+[11:01:46] [Server thread/INFO]: Block placed
+[11:01:46] [Thread-315/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 111 69 97 minecraft:redstone_torch"]){AUTHED, ALLOWED} 
+[11:01:46] [Server thread/INFO]: Command run by remote user: 'setblock 111 69 97 minecraft:redstone_torch'
+[11:01:46] [Server thread/INFO]: Block placed
+[11:01:46] [Thread-316/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 111 69 96 minecraft:redstone_torch"]){AUTHED, ALLOWED} 
+[11:01:46] [Server thread/INFO]: Command run by remote user: 'setblock 111 69 96 minecraft:redstone_torch'
+[11:01:46] [Server thread/INFO]: Block placed
+[11:01:46] [Thread-317/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 113 70 94 minecraft:redstone_torch"]){AUTHED, ALLOWED} 
+[11:01:46] [Server thread/INFO]: Command run by remote user: 'setblock 113 70 94 minecraft:redstone_torch'
+[11:01:46] [Server thread/INFO]: Block placed
+[11:01:46] [Thread-318/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["setblock 113 70 99 minecraft:redstone_torch"]){AUTHED, ALLOWED} 
+[11:01:47] [Server thread/INFO]: Command run by remote user: 'setblock 113 70 99 minecraft:redstone_torch'
+[11:01:47] [Server thread/INFO]: Block placed
+[11:03:30] [Thread-319/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["weather rain"]){AUTHED, ALLOWED} 
+[11:03:30] [Server thread/INFO]: Command run by remote user: 'weather rain'
+[11:03:30] [Server thread/INFO]: CONSOLE: Changed weather to rainy for 652 seconds.
+[11:03:30] [Thread-320/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["weather rain"]){AUTHED, ALLOWED} 
+[11:03:30] [Server thread/INFO]: Command run by remote user: 'weather rain'
+[11:03:30] [Server thread/INFO]: CONSOLE: Changed weather to rainy for 748 seconds.
+[11:03:58] [Thread-321/INFO]: [JSONAPI] [API Request] admin requested: server.run_command(["weather rain"]){AUTHED, ALLOWED} 
+[11:03:58] [Server thread/INFO]: Command run by remote user: 'weather rain'
+[11:03:58] [Server thread/INFO]: CONSOLE: Changed weather to rainy for 759 seconds.
