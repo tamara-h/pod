@@ -1,5 +1,4 @@
-function XHRequest(variable, value)
-{
+function XHRequest(variable, value){
     var request = new XMLHttpRequest();
     var url = "http://10.150.85.50:8000/" + variable + "=" + value;
     request.open("GET", url, false);
@@ -16,7 +15,6 @@ function getWeatherFromAPI() {
     var reply = JSON.parse(request.responseText);
     return reply;
 }
-
 
 function geticon() {
     var reply = getWeatherFromAPI();
@@ -66,6 +64,7 @@ function PowerOn(ifOn) {
   
 function LightsOn(ifLOn) { 
 	XHRequest("LightsOn", ifLOn);
+	lightsStatus(); 
 }  
 
 function getHumidity() {
@@ -134,7 +133,14 @@ function doorsStatus() {
 					$('#Alert').show();
 				else
 					$('#Alert').hide();
-		  }
+}
+
+function lightsStatus(){
+	var responseText = XHRequest("ignore", "x");
+	var data = JSON.parse(responseText);
+	var lightsOn = data.houseStatus.lightsOn;
+	$('#lightsStatus').html( lightsOn ? "On" : "Off" );
+}
 
 function windowChange(state){
 				XHRequest("windowsOpen", state);
@@ -160,8 +166,6 @@ function appliances() {
 		appliancesOn = "0"
 	}
 	
-		
-
 }
 
 if (localStorage.getItem("location") === null)
