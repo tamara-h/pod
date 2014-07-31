@@ -40,15 +40,37 @@
 <h3>Change location </h3>
 
 <div style="color:black;"> 
-<form name="input" method="get">
-<select>
-  <option value="Swansea" action="updateLocation("swansea,uk")>Swansea</option>
-  <option value="Plymouth" action="updateLocation("plymouth,uk")>Plymouth</option>
+<select id="location">
+  <option value="Swansea">Swansea</option>
+  <option value="Plymouth">Plymouth</option>
   <option value="Cardiff">Cardiff</option>
 </select>
-<input type="submit" value="Submit">
 </div>
-</form>
+
+<script type="text/javascript">
+	$(function() {
+		var locations = {"Swansea": "swansea,uk", "Plymouth": "plymouth,uk", "Cardiff": "cardiff,uk"}
+		
+		function displayLocation() {
+			var location = localStorage.getItem("location");
+			$.each(locations, function(k, v) {
+				if (v == location){
+					$('#APILocation').html(k);
+				}
+			});
+		}
+		displayLocation();
+		
+		$('#location').change(function() {
+			var location = $(this).val();
+			localStorage.setItem("location", locations[location]);
+			displayLocation();
+		});
+		
+		$('#location').val("selectedIndex", -1);
+	});
+</script>
+
 <h4><b>current location: </b><span id="APILocation"></span></h4>
 <!--
 <form name="input" action="demo_form_action.asp" method="get">

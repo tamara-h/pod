@@ -8,10 +8,6 @@ function XHRequest(variable, value)
     return request.responseText;
 }
 
-function updateLocation(newLocation) {
-	return newLocation 
-}
-
 function getWeatherFromAPI() {
     var url = "http://api.openweathermap.org/data/2.5/weather?q=" + updateLocation() + "&amp;units=metric";
     var request = new XMLHttpRequest();
@@ -97,4 +93,10 @@ function getLocationFromAPI() {
 	if (APILocation != undefined) {
 		APILocation.innerHTML = location;
 	}
+}
+
+// Auto set location if unset
+if (localStorage.getItem("location") === null)
+{
+	localStorage.setItem("location", "plymouth,uk");
 }
