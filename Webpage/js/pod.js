@@ -155,9 +155,10 @@ function windowStatus() {
 }
 
 function appliances() {
+	var cost = 0;
 	PowerOn();
 	LightsOn();
-	
+
 	if (ifon == true && ifLon == true){
 		appliancesOn = "2"
 	} else if (ifon == true || ifLon == true) {
@@ -166,7 +167,12 @@ function appliances() {
 		appliancesOn = "0"
 	}
 	
+	//cost in pounds = kWh * cost/kWh in pounds
+	cost = (appliancesOn * 0.1084);
+
 }
+
+
 
 if (localStorage.getItem("location") === null)
 {
