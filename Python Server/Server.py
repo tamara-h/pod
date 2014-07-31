@@ -109,6 +109,15 @@ class ServerInterface():
     def setIndoorTemp(self, temp):
         self.indoorTemperature = int(temp)
         self.worldUpdate()
+
+        if self.indoorTemperature >= 3000:
+            server.twilio.sendMessage(TwilioMessages.extremeHeat)
+
+        # Min temp 15; Max temp 25
+        if self.indoorTemperature <= 16:
+            server.twilio.sendMessage(TwilioMessages.tempLowWarn)
+        if self.indoorTemperature >= 24:
+            server.twilio.sendMessage(TwilioMessages.tempHighWarn)
         
 
     def setWeather(self, weather):
@@ -126,9 +135,6 @@ class ServerInterface():
             buffer["windowsOpen"]   = True
             buffer["fireOn"]        = False
 
-        if self.indoorTemperature >= 3000:
-            server.twilio.sendMessage(TwilioMessages.extremeHeat)
-
         # CLOSE DOORS & WINDOWS FOR RAIN
         if self.weather == Weather.Rainy:
             buffer["windowsOpen"]   = False
@@ -145,13 +151,7 @@ class ServerInterface():
             self.api.server.run_command("weather clear")
         else:
             self.api.server.run_command("weather rain")
-
-        # Min temp 15; Max temp 25
-        if self.indoorTemperature <= 16:
-            server.twilio.sendMessage(TwilioMessages.tempLowWarn)
-        if self.indoorTemperature >= 24:
-            server.twilio.sendMessage(TwilioMessages.tempHighWarn)
-        
+            
         # Reflect buffer changes in-game
         self.actionIf(self.bufferDiffers(buffer, "windowsOpen"  ), self.openWindows if buffer["windowsOpen"]    else self.closeWindows  )
         self.actionIf(self.bufferDiffers(buffer, "fireOn"       ), self.lightFire   if buffer["fireOn"]         else self.extinguishFire)
