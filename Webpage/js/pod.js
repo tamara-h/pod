@@ -157,16 +157,23 @@ function windowStatus() {
 
 function appliances() {
 	var cost = 0;
+	var Usage = document.getElementById("usage");
+	
 	PowerOn();
 	LightsOn();
 
 	if (ifon == true && ifLon == true){
-		appliancesOn = "2"
+		powerUsage = "2"
 	} else if (ifon == true || ifLon == true) {
-		appliancesOn = "1"
+		powerUsage = "1"
 	} else { 
-		appliancesOn = "0"
+		powerUsage = "0"
 	}
+	
+	if (Usage != undefined)
+    {
+        usage.innerHTML = powerUsage;
+    }
 	
 	//cost in pounds = kWh * cost/kWh in pounds
 	cost = (appliancesOn * 0.1084);
