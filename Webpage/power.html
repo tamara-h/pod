@@ -19,17 +19,22 @@
 		  <li><a href="weather.html" title="Weather"><img src="http://i.imgur.com/s2AIbEM.jpg"></a></li>
 		  <li><a href="lights.html" title="Lights"><img src="http://i.imgur.com/y4cdFTM.jpg"></a></li>
 		  <li class="active"><a href="power.html" title="Power"><img src="http://i.imgur.com/jMNRGzh.jpg"></a></li>
-		  <li><a href="doors.html" title="Doors"><img src="http://i.imgur.com/i5cIKIg.jpg"></a></li>
+		  <li><a href="doors.html" title="Doors and Windows"><img src="http://i.imgur.com/i5cIKIg.jpg"></a></li>
 		  <li><a href="temp.html" title="Temperature"><img src="http://i.imgur.com/ByjVYbI.jpg"></a></li>
 		  <li><a href="settings.html" title="Settings"><img src="http://i.imgur.com/2HeYUdi.jpg"></a></li>
 		</ul>
 	</div>
 <p style="margin-top:20px">
 
-<div class="alert alert-info" role="alert">
-<h4>Current usage:</h4> <span id="usage"></span> 
-<h4>Cost per hour: &pound;0.1344 </h4>
+
+<div class="panel panel-info" style="width:800px; margin-left:auto">
+<div class="panel-heading">Power Usage</div>
+  <div class="panel-body"  style="color:LightSeaGreen ;">
+
+<h4>Current usage: <span id="usage"></span> kWh</h4>
+<h4>Cost per hour:  <span id="cost"></span> &pound;0.1344 </h4>
 </div>
+
 </p>
 <script>
 appliances();

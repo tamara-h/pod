@@ -24,7 +24,12 @@
 		  <li class="active"><a href="settings.html" title="Settings"><img src="http://i.imgur.com/2HeYUdi.jpg"></a></li>
 		</ul>
 	</div>
-<form style="margin-top:20px">
+	
+	<br>
+	
+<div class="panel panel-info" style="width:800px;">
+<div class="panel-heading">Modes</div>
+  <div class="panel-body"  style="color:LightSeaGreen ;">
 <input type="radio" name="sex" value="Holiday" onclick="changeMode(holiday)"> Holiday mode<br>
 <p> This is a mode which turns off the power in your home for when you are away for a long period of time</p><br>
 <input type="radio" name="sex" value="Day" onclick="changeMode(day)"> Day mode<br>
@@ -33,14 +38,17 @@
 <p> This is a mode for during the night. It does not limit light usage, but does limit power usage.</p><br>
 <input type="radio" name="sex" value="Away" onclick="changeMode(away)"> Away from home <br>
 <p> This is a mode for when you are out of the house - for example during work.</p>
-
+</div>
+</div>
+</div>
 </form>
 <br>
 <br>
 
-<h3>Change location </h3>
+<div class="panel panel-info" style="width:800px;">
+<div class="panel-heading">Change location</div>
+  <div class="panel-body"  style="color:LightSeaGreen ;">
 
-<div style="color:black;"> 
 <select id="location">
 	<option value="Belfast">Belfast</option>
 	<option value="Cardiff">Cardiff</option>
@@ -50,8 +58,20 @@
 	<option value="Swansea">Swansea</option>
   
 </select>
-</div>
 
+
+
+
+
+<h4><b>Current location: </b><span id="APILocation"></span></h4>
+</div>
+</div>
+<!--
+<form name="input" action="demo_form_action.asp" method="get">
+Username: <input type="text" name="user">
+<input type="submit" value="Submit">
+</form>
+-->
 <script type="text/javascript">
 	$(function() {
 		var locations = {"Swansea": "swansea,uk", "Plymouth": "plymouth,uk", "Cardiff": "cardiff,uk", "London": "london,uk", "Edinburgh": "Edinburgh", "Belfast": "Belfast"}
@@ -75,14 +95,6 @@
 		$('#location').val("selectedIndex", -1);
 	});
 </script>
-
-<h4><b>Current location: </b><span id="APILocation"></span></h4>
-<!--
-<form name="input" action="demo_form_action.asp" method="get">
-Username: <input type="text" name="user">
-<input type="submit" value="Submit">
-</form>
--->
 
 <script>
 getLocationFromAPI();
