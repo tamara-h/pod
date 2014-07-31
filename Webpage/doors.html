@@ -17,44 +17,28 @@
 	</head>
 
 	<body>
-	  <ul class="nav nav-tabs">
-		<li><a href="project.html" title="Home"><img src=
-		"http://i.imgur.com/pRt9NhZ.jpg" /></a></li>
-
-		<li><a href="about.html" title="About"><img src=
-		"http://i.imgur.com/W38JOgd.jpg" /></a></li>
-
-		<li><a href="weather.html" title="Weather"><img src=
-		"http://i.imgur.com/s2AIbEM.jpg" /></a></li>
-
-		<li><a href="lights.html" title="Lights"><img src=
-		"http://i.imgur.com/y4cdFTM.jpg" /></a></li>
-
-		<li><a href="power.html" title="Power"><img src=
-		"http://i.imgur.com/jMNRGzh.jpg" /></a></li>
-
-		<li class="active"><a href="doors.html" title="Doors"><img src=
-		"http://i.imgur.com/i5cIKIg.jpg" /></a></li>
-
-		<li><a href="temp.html" title="Temperature"><img src=
-		"http://i.imgur.com/ByjVYbI.jpg" /></a></li>
-
-		<li><a href="settings.html" title="Settings"><img src=
-		"http://i.imgur.com/2HeYUdi.jpg" /></a></li>
-	  </ul>
-
+	<div>
+		<ul class="nav nav-tabs">
+		  <li><a href="project.html" title="Home"><img src="http://i.imgur.com/pRt9NhZ.jpg"></a></li>
+		  <li><a href="about.html" title="About"><img src="http://i.imgur.com/W38JOgd.jpg"></a></li>
+		  <li><a href="weather.html" title="Weather"><img src="http://i.imgur.com/s2AIbEM.jpg"></a></li>
+		  <li><a href="lights.html" title="Lights"><img src="http://i.imgur.com/y4cdFTM.jpg"></a></li>
+		  <li><a href="power.html" title="Power"><img src="http://i.imgur.com/jMNRGzh.jpg"></a></li>
+		  <li class="active"><a href="doors.html" title="Doors"><img src="http://i.imgur.com/i5cIKIg.jpg"></a></li>
+		  <li><a href="temp.html" title="Temperature"><img src="http://i.imgur.com/ByjVYbI.jpg"></a></li>
+		  <li><a href="settings.html" title="Settings"><img src="http://i.imgur.com/2HeYUdi.jpg"></a></li>
+		</ul>
+	</div>
 	  <div class="container">
 		<div class="page-header-container">
 		  <h3>Door Status <span id="doorStatus" class="label label-success">Fail</span></h3>
 		</div>
-
 		<div class="alert alert-warning alert-dismissible" role="alert" id="Alert" style=
 		"display: none">
 		  <button type="button" class="close" data-dismiss="alert"><span aria-hidden=
 		  "true">&times;</span><span class="sr-only">Close</span></button> <span id=
 		  "alertContent">Warning! Your doors are open!</span>
 		</div>
-
 		<div class="btn-group btn-group-unmargin">
 		  <button type="button" class="btn btn-primary" onclick="doorChange(true)">Open
 		  Doors</button> <button type="button" class="btn btn-danger" onclick=
@@ -68,7 +52,6 @@
 		<div class="page-header-container">
 		  <h3>Windows Status <span id="windowStatus" class="label label-success">Fail</span></h3>
 		</div>
-
 		<div class="btn-group btn-group-unmargin">
 		  <button type="button" class="btn btn-primary" onclick="windowChange(true)">Open
 		  Windows</button> <button type="button" class="btn btn-danger" onclick=
@@ -77,10 +60,7 @@
 		<br />
 		<br />
 		<script type="text/javascript">
-
 		  windowStatus();
-		  windowChange();
-		  doorChange();
 		  doorsStatus();
 		</script>
 	  </div>
