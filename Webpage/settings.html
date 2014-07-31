@@ -41,15 +41,19 @@
 
 <div style="color:black;"> 
 <select id="location">
-  <option value="Swansea">Swansea</option>
-  <option value="Plymouth">Plymouth</option>
-  <option value="Cardiff">Cardiff</option>
+	<option value="Belfast">Belfast</option>
+	<option value="Cardiff">Cardiff</option>
+	<option value="Edinburgh">Edinburgh</option>
+	<option value="London">London</option>
+	<option value="Plymouth">Plymouth</option>
+	<option value="Swansea">Swansea</option>
+  
 </select>
 </div>
 
 <script type="text/javascript">
 	$(function() {
-		var locations = {"Swansea": "swansea,uk", "Plymouth": "plymouth,uk", "Cardiff": "cardiff,uk"}
+		var locations = {"Swansea": "swansea,uk", "Plymouth": "plymouth,uk", "Cardiff": "cardiff,uk", "London": "london,uk", "Edinburgh": "Edinburgh", "Belfast": "Belfast"}
 		
 		function displayLocation() {
 			var location = localStorage.getItem("location");
