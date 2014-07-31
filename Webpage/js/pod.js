@@ -149,7 +149,18 @@ function windowStatus() {
 }
 
 function appliances() {
-	Poweron();
+	PowerOn();
+	LightsOn();
+	
+	if (ifon == true && ifLon == true){
+		appliancesOn = "2"
+	} else if (ifon == true || ifLon == true) {
+		appliancesOn = "1"
+	} else { 
+		appliancesOn = "0"
+	}
+	
+		
 
 }
 
