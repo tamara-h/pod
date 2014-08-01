@@ -32,27 +32,22 @@
 	</div>
 	
 	<div class="panel panel-info" style="width:800px; margin:auto;">
-<div class="panel-heading"><h3>Door Status</h3> <span id="doorStatus" class="label label-success">Fail</span></div>
+<div class="panel-heading"><h3>Door Status <span id="doorStatus" class="label label-success">Fail</span></h3></div>
   <div class="panel-body"  style="color:LightSeaGreen ;">
-	  <div class="container">
+		<div id="Alert" style="display: nine; margin:auto">
+		<div class="alert alert-warning alert-dismissible" role="alert">
 		
-		<br>
+		  <button type="button" class="close" data-dismiss="alert"><span aria-hidden=
+		  "true">&times;</span><span class="sr-only">Close</span></button> <span id=
+		  "alertContent">Warning! Your doors are open!</span>
+		</div>
+		</div>
 		<div class="btn-group btn-group-unmargin">
 		  <button type="button" style="margin:auto" class="btn btn-primary" onclick="doorChange(true)">Open
 		  Doors</button> <button type="button" class="btn btn-danger" onclick=
 		  "doorChange(false)">Lock Doors</button>
 		</div>
 		<br>
-		<br>
-		<div class="alert alert-warning alert-dismissible" role="alert" id="Alert" style=
-		"display: none; margin:auto;">
-		
-		  <button type="button" class="close" data-dismiss="alert"><span aria-hidden=
-		  "true">&times;</span><span class="sr-only">Close</span></button> <span id=
-		  "alertContent">Warning! Your doors are open!</span>
-		</div>
-		<br />
-	  </div>
 	  </div>
 	  </div>
 	  <br>
@@ -62,7 +57,7 @@
 	  <div class="container">
 		
 <div class="panel panel-info" style="width:800px; margin:auto;">
-<div class="panel-heading">Windows Status <span id="windowStatus" class="label label-success">Fail</span></div>
+<div class="panel-heading"><h3>Windows Status <span id="windowStatus" class="label label-success">Fail</span></h3>	</div>
   <div class="panel-body"  style="color:LightSeaGreen ;">
 	
 		<div class="btn-group btn-group-unmargin">
