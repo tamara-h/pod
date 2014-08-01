@@ -60,12 +60,30 @@ function getPressure() {
 
 function PowerOn(ifOn) {
   XHRequest("PowerOn", ifOn);
+  powerStatus();
+}
+
+function powerStatus() {
+	var responseText = XHRequest("ignore", "x");
+	var data = JSON.parse(responseText);
+	var ifon = data.houseStatus.poweron;
+	$('#powerStatus').html( ifon ? "On" : "Off" );
+	//alert (lightsOn);
 }
   
 function LightsOn(ifLOn) { 
 	XHRequest("LightsOn", ifLOn);
 	lightsStatus(); 
 }  
+
+function lightsStatus(){
+	var responseText = XHRequest("ignore", "x");
+	var data = JSON.parse(responseText);
+	var ifLon = data.houseStatus.lightsOn;
+	$('#lightsStatus').html( ifLon ? "On" : "Off" );
+	//alert (lightsOn);
+	return ifon
+}
 
 function getHumidity() {
 	var reply = getWeatherFromAPI();
@@ -135,13 +153,7 @@ function doorsStatus() {
 					$('#Alert').hide();
 }
 
-function lightsStatus(){
-	var responseText = XHRequest("ignore", "x");
-	var data = JSON.parse(responseText);
-	var lightsOn = data.houseStatus.lightsOn;
-	$('#lightsStatus').html( lightsOn ? "On" : "Off" );
-	//alert (lightsOn);
-}
+
 
 function windowChange(state){
 				XHRequest("windowsOpen", state);
@@ -159,8 +171,8 @@ function appliances() {
 	var cost = 0;
 	var usage = document.getElementById("usage");
 	
-	PowerOn();
-	LightsOn();
+	ifon = powerStatus();
+	ifLon = lightsStatus();
 
 	if (ifon == true && ifLon == true){
 		powerUsage = "2"
