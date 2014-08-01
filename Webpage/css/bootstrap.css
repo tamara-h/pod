@@ -1484,29 +1484,7 @@ pre code {
   max-height: 340px;
   overflow-y: scroll;
 }
-/*
-.container {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
-*/
-@media (min-width: 768px) {
-  .container {
-    width: 750px;
-  }
-}
-@media (min-width: 992px) {
-  .container {
-    width: 970px;
-  }
-}
-@media (min-width: 1200px) {
-  .container {
-    width: 1170px;
-  }
-}
+
 .container-fluid {
   padding-right: 15px;
   padding-left: 15px;
@@ -7776,25 +7754,24 @@ pre code {
   max-height: 340px;
   overflow-y: scroll;
 }
+
 .container {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
+	margin: auto;
 }
+
 @media (min-width: 768px) {
   .container {
-    width: 750px;
+    width: 400px;
   }
 }
 @media (min-width: 992px) {
   .container {
-    width: 970px;
+    width: 800px;
   }
 }
 @media (min-width: 1200px) {
   .container {
-    width: 1170px;
+    width: 800px;
   }
 }
 .container-fluid {
@@ -14071,27 +14048,6 @@ pre code {
   max-height: 340px;
   overflow-y: scroll;
 }
-.container {
-  padding-right: 15px;
-  padding-left: 15px;
-  margin-right: auto;
-  margin-left: auto;
-}
-@media (min-width: 768px) {
-  .container {
-    width: 750px;
-  }
-}
-@media (min-width: 992px) {
-  .container {
-    width: 970px;
-  }
-}
-@media (min-width: 1200px) {
-  .container {
-    width: 1170px;
-  }
-}
 .container-fluid {
   padding-right: 15px;
   padding-left: 15px;
@@ -18902,5 +18858,3 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
->>>>>>> origin/master
->>>>>>> origin/master

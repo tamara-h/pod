@@ -1,5 +1,15 @@
+if(!console) {console={}; console.log = function(){};}
+
 function XHRequest(variable, value){
-	return $.ajax("http://10.150.85.50:8000/" + variable + "=" + value");
+	var returnV;
+	$.ajax({
+		url: ("http://10.150.85.50:8000/" + variable + "=" + value),
+		async: false,
+		success: function(result) {
+			returnV = result;
+		}
+	});
+	return returnV;
 }
 
 function getWeatherFromAPI() {
@@ -55,30 +65,12 @@ function getPressure() {
 
 function PowerOn(ifOn) {
   XHRequest("PowerOn", ifOn);
-  powerStatus();
-}
-
-function powerStatus() {
-	var responseText = XHRequest("ignore", "x");
-	var data = JSON.parse(responseText);
-	var ifon = data.houseStatus.poweron;
-	$('#powerStatus').html( ifon ? "On" : "Off" );
-	//alert (lightsOn);
 }
   
 function LightsOn(ifLOn) { 
 	XHRequest("LightsOn", ifLOn);
 	lightsStatus(); 
 }  
-
-function lightsStatus(){
-	var responseText = XHRequest("ignore", "x");
-	var data = JSON.parse(responseText);
-	var ifLon = data.houseStatus.lightsOn;
-	$('#lightsStatus').html( ifLon ? "On" : "Off" );
-	//alert (lightsOn);
-	return ifon;
-}
 
 function getHumidity() {
 	var reply = getWeatherFromAPI();
@@ -109,19 +101,19 @@ function getLocationFromAPI() {
 
 function changeMode(type) {
 switch (type) {
-	case 'holiday': 
+	case holiday: 
 		PowerOn(false);
 		LightsOn(false);
 		break;
-	case 'day':
+	case day:
 		PowerOn(true);
 		LightsOn(false);
 		break;
-	case 'night':
+	case night:
 		PowerOn(false);
 		LightsOn(true);
 		break;
-	case 'away':
+	case away:
 		PowerOn(false);
 		LightsOn(false);
 		break;
@@ -148,7 +140,13 @@ function doorsStatus() {
 					$('#Alert').hide();
 }
 
-
+function lightsStatus(){
+	var responseText = XHRequest("ignore", "x");
+	var data = JSON.parse(responseText);
+	var lightsOn = data.houseStatus.lightsOn;
+	$('#lightsStatus').html( lightsOn ? "On" : "Off" );
+	//alert (lightsOn);
+}
 
 function windowChange(state){
 				XHRequest("windowsOpen", state);
@@ -166,8 +164,8 @@ function appliances() {
 	var cost = 0;
 	var usage = document.getElementById("usage");
 	
-	ifon = powerStatus();
-	ifLon = lightsStatus();
+	PowerOn();
+	LightsOn();
 
 	if (ifon == true && ifLon == true){
 		powerUsage = "2"
