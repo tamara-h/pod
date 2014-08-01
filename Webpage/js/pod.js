@@ -3,7 +3,7 @@ if(!console) {console={}; console.log = function(){};}
 function XHRequest(variable, value){
 	var returnV;
 	$.ajax({
-		url: ("http://10.150.85.50:8000/" + variable + "=" + value),
+		url: ("http://141.163.72.31:42070/" + variable + "=" + value),
 		async: false,
 		success: function(result) {
 			returnV = result;
@@ -190,7 +190,7 @@ function appliances() {
 
 }
 
-function FLOOD() { 
+function FLOODSTATUS() { 
 	var responseText = XHRequest("ignore", "x");
 	var data = JSON.parse(responseText);
 	var windowStatus = data.houseStatus.flooded;
@@ -199,6 +199,9 @@ function FLOOD() {
 
 }
 
+
+function FLOOD () {
+} 
 
 
 
