@@ -82,7 +82,7 @@ function lightsStatus(){
 	var ifLon = data.houseStatus.lightsOn;
 	$('#lightsStatus').html( ifLon ? "On" : "Off" );
 	//alert (lightsOn);
-	return ifon
+	return ifon;
 }
 
 function getHumidity() {
@@ -114,19 +114,19 @@ function getLocationFromAPI() {
 
 function changeMode(type) {
 switch (type) {
-	case holiday: 
+	case 'holiday': 
 		PowerOn(false);
 		LightsOn(false);
 		break;
-	case day:
+	case 'day':
 		PowerOn(true);
 		LightsOn(false);
 		break;
-	case night:
+	case 'night':
 		PowerOn(false);
 		LightsOn(true);
 		break;
-	case away:
+	case 'away':
 		PowerOn(false);
 		LightsOn(false);
 		break;
