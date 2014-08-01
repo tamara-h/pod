@@ -190,6 +190,16 @@ function appliances() {
 
 }
 
+function FLOOD() { 
+	var responseText = XHRequest("ignore", "x");
+	var data = JSON.parse(responseText);
+	var windowStatus = data.houseStatus.flooded;
+		$('#flooded').html( flooded ? "True" : "Closed" );
+
+
+}
+
+
 
 
 if (localStorage.getItem("location") === null)
