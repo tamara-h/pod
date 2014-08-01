@@ -3,7 +3,7 @@ if(!console) {console={}; console.log = function(){};}
 function XHRequest(variable, value){
 	var returnV;
 	$.ajax({
-		url: ("http://10.150.85.50:8000/" + variable + "=" + value),
+		url: ("http://141.163.72.31:42070/" + variable + "=" + value),
 		async: false,
 		success: function(result) {
 			returnV = result;
@@ -158,36 +158,6 @@ function windowStatus() {
 	var data = JSON.parse(responseText);
 	var windowStatus = data.houseStatus.windowsOpen;
 		$('#windowStatus').html( windowStatus ? "Open" : "Closed" );
-}
-
-function appliances() {
-	var cost = 0;
-	var usage = document.getElementById("usage");
-	
-	PowerOn();
-	LightsOn();
-
-	if (ifon == true && ifLon == true){
-		powerUsage = "2"
-	} else if (ifon == true || ifLon == true) {
-		powerUsage = "1"
-	} else { 
-		powerUsage = "0"
-	}
-	
-	if (usage != undefined)
-    {
-        usage.innerHTML = powerUsage;
-    }
-	
-	//cost in pounds = kWh * cost/kWh in pounds
-	cost = (powerUsage * 0.1084);
-	
-	var costx = document.getElementById("cost")
-	if (costx != undefined) {
-		costx.innerHTML = cost;
-	}
-
 }
 
 

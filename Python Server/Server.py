@@ -263,8 +263,8 @@ class ServerInterface():
 def main():
     server.twilio   = TwilioClient()
     server.mcServer = ServerInterface()
-    httpd           = make_server('', 8000, server.request)
-    print("[Online] Awaiting requests on port 8000")
+    httpd           = make_server('', 42070, server.request)
+    print("[Online] Awaiting requests on port 42070")
 
     # Serve until process is killed
     httpd.serve_forever()

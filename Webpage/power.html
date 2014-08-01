@@ -32,11 +32,28 @@
   <div class="panel-body"  style="color:LightSeaGreen ;">
 
 <h4>Current usage: <span id="usage"></span> kWh</h4>
-<h4>Cost per hour:  <span id="cost"></span> &pound;0.1344 </h4>
+<h4>Cost per hour:  &pound;<span id="cost"></span> (&pound;<span id="cpD"></span> per day)</h4>
 </div>
 
 </p>
-<script>
-appliances();
-</script>
+	<script>
+		var data = JSON.parse(XHRequest("ignore", "x"));
+		var power = 0;
+		if (data.houseStatus.lightsOn)
+		{	
+			power = power + 1;
+		}
+		if (data.houseStatus.fireOn)
+		{
+			power = power + 1;
+		}
+		$('#usage').html(power);
+		$('#cost').html(0.1344 * power);
+		$('#cpD').html(0.1344 * power * 24);
+	</script>
 </body>
+
+
+
+
+</html>
