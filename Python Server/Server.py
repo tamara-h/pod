@@ -213,15 +213,12 @@ class ServerInterface():
 
 
     def enableLights(self):
-        if self.house["powerOn"]:
-            print("Enabling lights")
-            self.enableRedstone("111 69 97")
-            self.enableRedstone("111 69 96")
-            self.enableRedstone("113 70 94")
-            self.enableRedstone("113 70 99")
-            self.house["lightsOn"] = True
-        else:
-            print("Couldn't enable lights: Power is not turned on")
+        print("Enabling lights")
+        self.enableRedstone("111 69 97")
+        self.enableRedstone("111 69 96")
+        self.enableRedstone("113 70 94")
+        self.enableRedstone("113 70 99")
+        self.house["lightsOn"] = True
     
     def disableLights(self):
         self.disableRedstone("111 69 97")
