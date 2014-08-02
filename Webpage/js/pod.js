@@ -1,9 +1,10 @@
 if(!console) {console={}; console.log = function(){};}
 
 function XHRequest(variable, value){
+	
 	var returnV;
 	$.ajax({
-		url: ("http://141.163.72.31:42070/" + variable + "=" + value),
+		url: ("http://192.168.43.33:42070/" + variable + "=" + value),
 		async: false,
 		success: function(result) {
 			returnV = result;
@@ -101,19 +102,19 @@ function getLocationFromAPI() {
 
 function changeMode(type) {
 switch (type) {
-	case holiday: 
+	case 'holiday': 
 		PowerOn(false);
 		LightsOn(false);
 		break;
-	case day:
+	case 'day':
 		PowerOn(true);
 		LightsOn(false);
 		break;
-	case night:
+	case 'night':
 		PowerOn(false);
 		LightsOn(true);
 		break;
-	case away:
+	case 'away':
 		PowerOn(false);
 		LightsOn(false);
 		break;
@@ -192,9 +193,10 @@ function appliances() {
 
 function FLOODSTATUS() { 
 	var responseText = XHRequest("ignore", "x");
+	//alert (responseText);
 	var data = JSON.parse(responseText);
-	var windowStatus = data.houseStatus.flooded;
-		$('#flooded').html( "flooded" ? "True" : "Closed" );
+	var flooded = data.houseStatus.flooded;
+		$('#FLOODSTATUS').html( flooded ? "True" : "False" );
 
 
 }
