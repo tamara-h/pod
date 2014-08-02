@@ -4,7 +4,7 @@ function XHRequest(variable, value){
 	
 	var returnV;
 	$.ajax({
-		url: ("http://192.168.43.33:42070/" + variable + "=" + value),
+		url: ("http://141.163.72.31:42070/" + variable + "=" + value),
 		async: false,
 		success: function(result) {
 			returnV = result;
