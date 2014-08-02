@@ -124,7 +124,7 @@ switch (type) {
 function doorChange(state){
 				XHRequest("doorsOpen", state);
 				doorsStatus();
-		  }
+}
 
 function doorsStatus() {
 				var responseText = XHRequest("ignore", "x");
@@ -194,14 +194,17 @@ function FLOODSTATUS() {
 	var responseText = XHRequest("ignore", "x");
 	var data = JSON.parse(responseText);
 	var windowStatus = data.houseStatus.flooded;
-		$('#flooded').html( flooded ? "True" : "Closed" );
+		$('#flooded').html( "flooded" ? "True" : "Closed" );
 
 
 }
 
+function FLOOD(state){
+	XHRequest("flooded", state);
+	FLOODSTATUS();
+}
 
-function FLOOD () {
-} 
+
 
 
 
