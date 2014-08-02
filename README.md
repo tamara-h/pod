@@ -8,4 +8,4 @@ This is our project. It is a way to control your house, but without actually mov
 
 
 
-Created by Tamara, Maddy, Matt, Ashley
+Created by Tamara, Maddy, Matt & Ashley
