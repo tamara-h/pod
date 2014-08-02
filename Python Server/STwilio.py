@@ -33,3 +33,12 @@ class TwilioClient():
                 )
         else:
             print("[WARNING] Request sent to Twilio; Twilio has been disabled in the server script")
+
+if __name__ == "__main__":
+    TwilioClient.sendMessage("Hi, this is Pod telling you that the Twilio script has been launched in debug mode and is sending every text. They should be in this order: Flood, rain, maximum temperature, minimum temperature, unlocked doors and finally nuclear strike warning.")
+    TwilioClient.sendMessage(TwilioMessages.flood)
+    TwilioClient.sendMessage(TwilioMessages.rain)
+    TwilioClient.sendMessage(TwilioMessages.tempHighWarn)
+    TwilioClient.sendMessage(TwilioMessages.tempLowWarn)
+    TwilioClient.sendMessage(TwilioMessages.doorLeftOpen)
+    TwilioClient.sendMessage(TwilioMessages.extremeHeat)
